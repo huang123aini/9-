@@ -25,7 +25,7 @@
 <nav class="nav" aria-label="章节导航">
   <div class="nav-inner">
     <a href="index.html">总目录</a>
-    <a href="kids.html">白话版</a>
+    <a href="index.html#bookmap">全书地图</a>
     <a href="chapter23.html">第23章 旋转</a>
     <a href="chapter24.html" class="active">第24章 圆</a>
     <a href="chapter25.html">第25章 概率</a>
@@ -60,11 +60,34 @@
     <div class="card">
       <h3>学习目标</h3>
       <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
-      <div id="goalCount" class="muted small-text">0 / 6</div>
+      <div id="goalCount" class="muted small-text">0 / 7</div>
       <div id="goalList" class="goal-list"></div>
     </div>
   </div>
 </section>
+
+<article class="card quick">
+  <div class="card-head"><span class="tag">白话速览</span><h3>先用一句话看懂本章</h3></div>
+  <p class="quick-line">一句话：<b>车轮为什么是圆的。</b> 车轴到轮边的距离处处相等，所以车走起来不颠。圆的所有半径都相等。</p>
+  <div class="grid-2">
+    <div class="quick-box">
+      <h4>你只要抓住 3 件事</h4>
+      <ol class="big-list">
+        <li><b>垂径定理：</b>看到弦，作弦心距。半径、弦心距、半弦组成直角三角形：<span class="m">r² = d² + (弦长/2)²</span>。</li>
+        <li><b>圆周角：</b>同弧所对的圆周角等于圆心角的一半；直径所对的圆周角是 90°；圆内接四边形对角互补。</li>
+        <li><b>直线与圆：</b><span class="m">d &lt; r</span> 相交，<span class="m">d = r</span> 相切，<span class="m">d &gt; r</span> 相离。切线垂直于过切点的半径；从圆外一点引两条切线，切线长相等。</li>
+      </ol>
+    </div>
+    <div class="quick-box">
+      <h4>最容易踩的坑</h4>
+      <p>把弦心距当半径；半弦写成整弦；看到垂直就说切线（还要经过半径外端）。</p>
+      <details class="quick-task">
+        <summary>3 分钟小任务：半径 5，圆心到弦的距离 3，弦长？圆心角 100°，同弧圆周角？（点开看答案）</summary>
+        <div class="quick-answer">半弦长 = √(5² − 3²) = √16 = 4，所以弦长 = 2 × 4 = 8。同弧所对的圆周角 = 100° ÷ 2 = 50°。</div>
+      </details>
+    </div>
+  </div>
+</article>
 
 <article id="chord" class="card demo">
   <div class="card-head"><span class="tag">24.1</span><h3>垂径定理实验台：半径、弦心距、半弦</h3></div>

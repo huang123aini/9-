@@ -18,7 +18,6 @@
       <a class="btn btn-light" href="#plan">开始学习</a>
       <a class="btn btn-ghost-light" href="#completing">先看配方法动图</a>
       <a class="btn btn-ghost-light" href="#more-chapters">第 23–25 章</a>
-      <a class="btn btn-ghost-light" href="kids.html">白话版</a>
     </div>
     <div class="hero-meta">5 章 · 22 个交互动图 · 26 个生活例子 · 24 道自测题</div>
     <p class="print-only print-note">静态 PDF 版：动图已转为示意图，可按页面顺序阅读。</p>
@@ -27,11 +26,11 @@
 
 <nav class="nav" aria-label="页面导航">
   <div class="nav-inner">
+    <a href="#bookmap">全书地图</a>
     <a href="#plan">学习路线</a>
     <a href="#ch21">第 21 章</a>
     <a href="#ch22">第 22 章</a>
     <a href="#more-chapters">第 23–25 章</a>
-    <a href="kids.html">白话版</a>
     <a href="#why">深入原理</a>
     <a href="#daily">生活例子</a>
     <a href="#link">知识串联</a>
@@ -41,6 +40,56 @@
 </nav>
 
 <main>
+
+<section id="bookmap" class="section">
+  <div class="section-head">
+    <span class="section-num">图</span>
+    <div>
+      <h2>整本书地图</h2>
+      <p>九上数学就三条线：代数、几何、统计。先看全景，再决定从哪开始。</p>
+    </div>
+  </div>
+  <div class="bookmap">
+    <div class="bookmap-col">
+      <div class="bookmap-kicker">代数线 · 建议先学</div>
+      <a class="bookmap-card" href="#ch21">
+        <b>21</b>
+        <span>一元二次方程</span>
+        <small>解方程、判断根的情况、检验答案</small>
+      </a>
+      <div class="bookmap-down">↓</div>
+      <a class="bookmap-card" href="#ch22">
+        <b>22</b>
+        <span>二次函数</span>
+        <small>看抛物线、找顶点、求最值</small>
+      </a>
+    </div>
+    <div class="bookmap-col">
+      <div class="bookmap-kicker">几何线 · 接着学</div>
+      <a class="bookmap-card" href="chapter23.html">
+        <b>23</b>
+        <span>旋转</span>
+        <small>图形怎么转、中心对称、坐标规律</small>
+      </a>
+      <div class="bookmap-down">↓</div>
+      <a class="bookmap-card" href="chapter24.html">
+        <b>24</b>
+        <span>圆</span>
+        <small>垂径定理、圆周角、切线、扇形</small>
+      </a>
+    </div>
+    <div class="bookmap-col">
+      <div class="bookmap-kicker">统计线 · 可以穿插</div>
+      <a class="bookmap-card" href="chapter25.html">
+        <b>25</b>
+        <span>概率初步</span>
+        <small>把可能结果数清楚，用频率估计概率</small>
+      </a>
+      <div class="bookmap-note">和生活最近，先学也能建立信心。</div>
+    </div>
+  </div>
+  <div class="tip">21↔22 是一条线：方程的根就是抛物线与 x 轴交点的横坐标。23↔24 是一条线：旋转和圆都在研究图形的位置与对称。25 相对独立，可以最后学，也可以先学。</div>
+</section>
 
 <section id="plan" class="section">
   <div class="section-head">
@@ -80,6 +129,29 @@
     <h2>一元二次方程</h2>
     <p>核心问题：一个未知数、最高次数是 2 的方程，怎么解？</p>
   </div>
+
+  <article class="card quick">
+    <div class="card-head"><span class="tag">白话速览</span><h3>先用一句话看懂本章</h3></div>
+    <p class="quick-line">一句话：<b>知道面积，反推边长。</b> 就像知道正方形面积是 9，问边长是多少；答案是 3 或 −3。</p>
+    <div class="grid-2">
+      <div class="quick-box">
+        <h4>你只要抓住 3 件事</h4>
+        <ol class="big-list">
+          <li><b>长什么样：</b><span class="m">ax² + bx + c = 0</span>，而且 <span class="m">a ≠ 0</span>。a = 0 就不是二次方程了。</li>
+          <li><b>怎么解：</b>能开方就开方，能分解就分解；都不行，用公式。配方就是“把缺的一角补成正方形”。</li>
+          <li><b>Δ 是根的天气预报：</b>Δ &gt; 0 两个不等实根；Δ = 0 两个相等实根；Δ &lt; 0 没有实根。</li>
+        </ol>
+      </div>
+      <div class="quick-box">
+        <h4>最容易踩的坑</h4>
+        <p>开平方只写正根；配方只在一边加；应用题不检验负根。</p>
+        <details class="quick-task">
+          <summary>3 分钟小任务：解 x² − 5x + 6 = 0（点开看答案）</summary>
+          <div class="quick-answer">x² − 5x + 6 = (x − 2)(x − 3) = 0，所以 x = 2 或 x = 3。检验：2 + 3 = 5，2 × 3 = 6。</div>
+        </details>
+      </div>
+    </div>
+  </article>
 
   <article id="intro" class="card">
     <div class="card-head"><span class="tag">21.1</span><h3>先认清：什么是一元二次方程</h3></div>
@@ -302,6 +374,29 @@
     <p>核心问题：一条抛物线，为什么由 a、h、k 三个数就决定了？</p>
   </div>
 
+  <article class="card quick">
+    <div class="card-head"><span class="tag">白话速览</span><h3>先用一句话看懂本章</h3></div>
+    <p class="quick-line">一句话：<b>投篮的路线。</b> 球飞出去，先上升再落下，路线是一条抛物线。二次函数就是描述这条路线。</p>
+    <div class="grid-2">
+      <div class="quick-box">
+        <h4>你只要抓住 3 件事</h4>
+        <ol class="big-list">
+          <li><b>三个数决定抛物线：</b>a 管开口方向和胖瘦；h、k 管顶点位置。顶点式 <span class="m">y = a(x − h)² + k</span>，顶点是 <span class="m">(h, k)</span>。</li>
+          <li><b>对称轴和顶点：</b>对称轴 <span class="m">x = −b/(2a)</span>；a &gt; 0 开口向上，有最小值；a &lt; 0 开口向下，有最大值。</li>
+          <li><b>平移：</b>左加右减、上加下减。先化成顶点式，再找顶点。</li>
+        </ol>
+      </div>
+      <div class="quick-box">
+        <h4>最容易踩的坑</h4>
+        <p>顶点符号写错；平移方向记反；求最值忘记看自变量的取值范围。</p>
+        <details class="quick-task">
+          <summary>3 分钟小任务：y = (x − 2)² + 3 的顶点、对称轴、最小值？（点开看答案）</summary>
+          <div class="quick-answer">顶点是 (2, 3)，对称轴是 x = 2，最小值是 3。因为 a = 1 &gt; 0，开口向上，顶点就是最低点。</div>
+        </details>
+      </div>
+    </div>
+  </article>
+
   <article id="projectile" class="card demo">
     <div class="card-head"><span class="tag">22.1</span><h3>从一条抛物线说起</h3></div>
     <div class="demo-grid">
@@ -451,7 +546,7 @@
           <div class="row"><span>当前利润</span><b id="profitValue">1000 元</b></div>
           <div class="row"><span>最大利润</span><b>1800 元（售价 70 元）</b></div>
         </div>
-        <p>设售价为 x 元，每件利润是 x − 40，销量是 200 − 2x，所以总利润 <span class="m">y = (x − 40)(200 − 2x)</span>。</p>
+        <p>设售价为 x 元（40 ≤ x ≤ 100，销量不能为负），每件利润是 x − 40，销量是 200 − 2x，所以总利润 <span class="m">y = (x − 40)(200 − 2x)</span>。</p>
         <div class="eq-line on">y = −2x² + 280x − 8000</div>
         <div class="eq-line on">y = −2(x² − 140x) − 8000</div>
         <div class="eq-line strong on">y = −2(x − 70)² + 1800</div>
@@ -616,7 +711,7 @@
     <article class="example">
       <div class="example-kicker">商业 · 最值</div>
       <h4>一件商品成本 40 元，怎么定价利润最大？</h4>
-      <p class="scene">售价 x 元时，销量是 200 − 2x 件，总利润 y = (x − 40)(200 − 2x)。</p>
+      <p class="scene">售价 x 元（40 ≤ x ≤ 100）时，销量是 200 − 2x 件，总利润 y = (x − 40)(200 − 2x)。</p>
       <div class="eq">y = −2(x − 70)² + 1800</div>
       <p class="answer">售价 70 元时利润最大，为 1800 元。</p>
       <p class="why">利润 = 每件利润 × 销量，两个含 x 的量相乘，展开后是二次函数；开口向下，顶点就是最大值。</p>
@@ -768,7 +863,7 @@
       <p>随机事件、列举法、两枚骰子、频率估计概率。</p>
     </a>
   </div>
-  <div class="tip">建议顺序：先学第 23 章旋转，再学第 24 章圆，最后学第 25 章概率。如果公式看得有点累，先看 <a href="kids.html">白话版</a> 把画面建立起来，再回来玩动图。</div>
+  <div class="tip">建议顺序：先学第 23 章旋转，再学第 24 章圆，最后学第 25 章概率。每章开头都有一张“白话速览”卡，先看画面，再学公式。</div>
 </section>
 
 </main>

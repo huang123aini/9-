@@ -25,7 +25,7 @@
 <nav class="nav" aria-label="章节导航">
   <div class="nav-inner">
     <a href="index.html">总目录</a>
-    <a href="kids.html">白话版</a>
+    <a href="index.html#bookmap">全书地图</a>
     <a href="chapter23.html">第23章 旋转</a>
     <a href="chapter24.html">第24章 圆</a>
     <a href="chapter25.html" class="active">第25章 概率</a>
@@ -65,6 +65,29 @@
     </div>
   </div>
 </section>
+
+<article class="card quick">
+  <div class="card-head"><span class="tag">白话速览</span><h3>先用一句话看懂本章</h3></div>
+  <p class="quick-line">一句话：<b>抽盲盒前，先数一数。</b> 结果不确定，但可以把所有可能列出来，算一算谁更容易出现。</p>
+  <div class="grid-2">
+    <div class="quick-box">
+      <h4>你只要抓住 3 件事</h4>
+      <ol class="big-list">
+        <li><b>三类事件：</b>必然事件、不可能事件、随机事件。</li>
+        <li><b>等可能试验：</b><span class="m">P(A) = 目标结果数 ÷ 所有等可能结果数</span>。两步试验用表格或树状图；<span class="m">(1, 2)</span> 和 <span class="m">(2, 1)</span> 是两种不同结果。</li>
+        <li><b>频率和概率：</b>频率是试出来的，概率是理论值；大量重复试验时，频率会稳定在概率附近。</li>
+      </ol>
+    </div>
+    <div class="quick-box">
+      <h4>最容易踩的坑</h4>
+      <p>把频率当概率；两枚骰子只数 21 种；不是等可能事件也直接除。</p>
+      <details class="quick-task">
+        <summary>3 分钟小任务：两枚骰子和为 7 的概率？抛硬币 10 次 7 次正面，正面概率是 70% 吗？（点开看答案）</summary>
+        <div class="quick-answer">两枚骰子共有 36 种等可能结果，和为 7 有 6 种，所以概率是 6/36 = 1/6。不是，10 次太少，频率 70% 不能直接当成概率；大量重复试验时，频率才会稳定在 1/2 附近。</div>
+      </details>
+    </div>
+  </div>
+</article>
 
 <article id="spinner" class="card demo">
   <div class="card-head"><span class="tag">25.1</span><h3>转盘实验：等可能事件的概率</h3></div>
