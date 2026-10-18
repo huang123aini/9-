@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教版九上数学 · 一元二次方程与二次函数动图指南</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 · 九年级上册 · 第 21–22 章</div>
+    <h1>一元二次方程 <span class="amp">&</span> 二次函数</h1>
+    <p class="subtitle">把“式子”变成看得见的变化。拖动滑块、点击播放，按自己的节奏一步步学。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#plan">开始学习</a>
+      <a class="btn btn-ghost-light" href="#completing">先看配方法动图</a>
+    </div>
+    <div class="hero-meta">10 个交互动图 · 8 个生活例子 · 6 道自测题 · 零基础友好 · 离线可用</div>
+    <p class="print-only print-note">静态 PDF 版：动图已转为示意图，可按页面顺序阅读。</p>
+  </div>
+</header>
+
+<nav class="nav" aria-label="页面导航">
+  <div class="nav-inner">
+    <a href="#plan">学习路线</a>
+    <a href="#ch21">第 21 章</a>
+    <a href="#ch22">第 22 章</a>
+    <a href="#why">深入原理</a>
+    <a href="#daily">生活例子</a>
+    <a href="#link">知识串联</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="plan" class="section">
+  <div class="section-head">
+    <span class="section-num">00</span>
+    <div>
+      <h2>先定一条学习路线</h2>
+      <p>不要一上来就刷题。先看懂“式子和图像在说什么”，再动笔。</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>建议顺序</h3>
+      <ol class="big-list">
+        <li><b>认识方程</b>：先会判断一元二次方程，认准 a、b、c。</li>
+        <li><b>四种解法</b>：直接开平方 → 配方 → 公式 → 因式分解。</li>
+        <li><b>判别式</b>：先算 Δ，再决定方程有几个实根。</li>
+        <li><b>抛物线</b>：从 y = ax² 开始，再学平移和顶点式。</li>
+        <li><b>最值</b>：把实际问题化成二次函数，找顶点。</li>
+        <li><b>自测 + 错题</b>：用页面底部自测检查掌握情况。</li>
+      </ol>
+      <div class="tip">每个动图都按“先播放 → 再自己拖 → 最后读结论”的顺序使用。</div>
+    </div>
+
+    <div class="card">
+      <h3>学习进度 <span class="muted small-text">（自动保存在本机）</span></h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 10</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<section id="ch21" class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-kicker">第 21 章</div>
+    <h2>一元二次方程</h2>
+    <p>核心问题：一个未知数、最高次数是 2 的方程，怎么解？</p>
+  </div>
+
+  <article id="intro" class="card">
+    <div class="card-head"><span class="tag">21.1</span><h3>先认清：什么是一元二次方程</h3></div>
+    <p>只含一个未知数，并且未知数的最高次数是 2 的整式方程，叫做一元二次方程。一般形式是：</p>
+    <div class="eq big">ax² + bx + c = 0 <span class="muted">(a ≠ 0)</span></div>
+    <div class="grid-3">
+      <div class="mini"><b>a</b><span>二次项系数，不能为 0</span></div>
+      <div class="mini"><b>b</b><span>一次项系数，可以为 0</span></div>
+      <div class="mini"><b>c</b><span>常数项，可以为 0</span></div>
+    </div>
+    <div class="warn"><b>最容易错：</b>a = 0 时就不是一元二次方程了；判断前先整理成一般形式。</div>
+  </article>
+
+  <article id="square-root" class="card demo">
+    <div class="card-head"><span class="tag">21.2</span><h3>直接开平方法：x² = p</h3></div>
+    <div class="demo-grid">
+      <div>
+        <div class="canvas-wrap"><canvas id="canvasSqrt"></canvas></div>
+        <div class="controls">
+          <label class="control"><span>p</span><input id="sqrtP" type="range" min="-2" max="9" step="0.1" value="4"><output id="sqrtPOut">4</output></label>
+        </div>
+        <div class="controls">
+          <button id="sqrtPlay" class="btn">播放 p 的变化</button>
+          <button id="sqrtReset" class="btn ghost">复位</button>
+        </div>
+      </div>
+      <div class="explain">
+        <div class="eq" id="sqrtEq">x² = 4</div>
+        <div class="readout">
+          <div class="row"><span>解</span><b id="sqrtRoots">x = ±2</b></div>
+        </div>
+        <p>把 x² = p 看成抛物线 <span class="m">y = x²</span> 和水平线 <span class="m">y = p</span> 的交点：交点的横坐标就是解。</p>
+        <ul class="tight">
+          <li>p &gt; 0：两个交点，两个根 <span class="m">x = ±√p</span></li>
+          <li>p = 0：只有一个交点，<span class="m">x = 0</span></li>
+          <li>p &lt; 0：没有交点，实数范围内无解</li>
+        </ul>
+        <div class="warn">开平方时不要只写正根。“±” 是在提醒你：平方后都等于 p。</div>
+      </div>
+    </div>
+  </article>
+
+  <article id="completing" class="card demo">
+    <div class="card-head"><span class="tag">21.3</span><h3>配方法：把缺的一角补上</h3></div>
+    <p class="lead">配方法不是“背步骤”，而是“把一个不完整的正方形补完整”。下面用 <span class="m">x² + 6x − 7 = 0</span> 演示。</p>
+    <div class="demo-grid">
+      <div class="cs-stage">
+        <svg class="cs-svg" viewBox="0 0 460 380" role="img" aria-labelledby="csSvgTitle">
+          <title id="csSvgTitle">配方法：x² 加 6x 再加 9 拼成 (x+3)² 的大正方形</title>
+          <rect class="cs-target" x="60" y="50" width="270" height="270" rx="3"></rect>
+          <g id="csGhost" class="cs-ghost">
+            <rect x="240" y="230" width="90" height="90" rx="2"></rect>
+            <text x="285" y="275">?</text>
+          </g>
+          <g id="csSquare" class="cs-piece cs-square">
+            <rect x="60" y="50" width="180" height="180" rx="2"></rect>
+            <text x="150" y="140">x²</text>
+            <text x="150" y="34" class="cs-dim">x</text>
+            <text x="44" y="140" class="cs-dim" transform="rotate(-90 44 140)">x</text>
+          </g>
+          <g id="csRight" class="cs-piece cs-right">
+            <rect x="240" y="50" width="90" height="180" rx="2"></rect>
+            <text x="285" y="140">3x</text>
+            <text x="285" y="34" class="cs-dim">3</text>
+          </g>
+          <g id="csBottom" class="cs-piece cs-bottom">
+            <rect x="60" y="230" width="180" height="90" rx="2"></rect>
+            <text x="150" y="275">3x</text>
+            <text x="44" y="275" class="cs-dim" transform="rotate(-90 44 275)">3</text>
+          </g>
+          <g id="csCorner" class="cs-piece cs-corner">
+            <rect x="240" y="230" width="90" height="90" rx="2"></rect>
+            <text x="285" y="275">9</text>
+          </g>
+          <g id="csOutline" class="cs-outline">
+            <rect x="60" y="50" width="270" height="270" rx="3"></rect>
+            <text x="195" y="350" class="cs-side">x + 3</text>
+            <text x="382" y="185" class="cs-side" transform="rotate(-90 382 185)">x + 3</text>
+          </g>
+        </svg>
+      </div>
+      <div class="explain">
+        <div class="print-only print-note">静态示意图：x² + 6x + 9 = (x + 3)²。一次项系数 6 的一半是 3，平方是 9。</div>
+        <div class="step-kicker" id="csStepNum">第 1 / 8 步</div>
+        <h4 id="csStepTitle" class="step-title">先把常数项移到右边</h4>
+        <p id="csStepText" class="step-text">原方程 x² + 6x − 7 = 0，移项得 x² + 6x = 7。左边就是“一个正方形 + 两条长方形”。</p>
+        <div class="step-nav">
+          <button id="csPrev" class="btn small ghost">上一步</button>
+          <button id="csNext" class="btn small">下一步</button>
+          <button id="csAuto" class="btn small ghost">自动播放</button>
+        </div>
+        <div class="step-dots" id="csDots"></div>
+        <hr class="soft">
+        <div class="eq-line" data-min-step="0">x² + 6x − 7 = 0</div>
+        <div class="eq-line" data-min-step="0">x² + 6x = 7</div>
+        <div class="eq-line" data-min-step="5">x² + 6x + 9 = 7 + 9 = 16</div>
+        <div class="eq-line" data-min-step="6">(x + 3)² = 16</div>
+        <div class="eq-line" data-min-step="7">x + 3 = ±4</div>
+        <div class="eq-line strong" data-min-step="7">x₁ = 1，x₂ = −7</div>
+        <div class="tip">口诀：一次项系数一半的平方。6 的一半是 3，平方是 9。</div>
+      </div>
+    </div>
+  </article>
+
+  <article id="formula" class="card demo">
+    <div class="card-head"><span class="tag">21.4</span><h3>公式法：先看判别式，再代公式</h3></div>
+    <div class="demo-grid">
+      <div>
+        <div class="canvas-wrap"><canvas id="canvasFormula"></canvas></div>
+        <div class="controls">
+          <label class="control"><span>a</span><input id="fa" type="range" min="0.3" max="3" step="0.1" value="1"><output id="faOut">1</output></label>
+          <label class="control"><span>b</span><input id="fb" type="range" min="-6" max="6" step="0.1" value="-4"><output id="fbOut">−4</output></label>
+          <label class="control"><span>c</span><input id="fc" type="range" min="-8" max="8" step="0.1" value="3"><output id="fcOut">3</output></label>
+        </div>
+        <div class="controls">
+          <button id="formulaPlay" class="btn">播放 c 的变化</button>
+          <button class="btn ghost preset" data-a="1" data-b="-4" data-c="3">两根</button>
+          <button class="btn ghost preset" data-a="1" data-b="-4" data-c="4">一个根</button>
+          <button class="btn ghost preset" data-a="1" data-b="-4" data-c="5">无实根</button>
+        </div>
+      </div>
+      <div class="explain">
+        <div class="eq" id="formulaEq">y = x² − 4x + 3</div>
+        <div class="readout">
+          <div class="row"><span>判别式</span><b id="formulaDisc">Δ = 4</b></div>
+          <div class="row"><span>根的情况</span><b id="formulaBadge" class="badge-pos">两个不相等实根</b></div>
+          <div class="row"><span>根</span><b id="formulaRoots">x₁ = 1，x₂ = 3</b></div>
+          <div class="row"><span>顶点</span><b id="formulaVertex">(2, −1)</b></div>
+        </div>
+        <div class="eq small-eq">x = (−b ± √(b² − 4ac)) / 2a</div>
+        <p>判别式 <span class="m">Δ = b² − 4ac</span> 决定抛物线与 x 轴的交点个数，也就决定方程实根的个数。</p>
+        <ul class="tight">
+          <li>Δ &gt; 0：两个不相等实根</li>
+          <li>Δ = 0：两个相等实根</li>
+          <li>Δ &lt; 0：没有实根</li>
+        </ul>
+        <div class="warn">先化成一般形式，再确定 a、b、c 的符号。代公式时最容易漏掉负号。</div>
+      </div>
+    </div>
+  </article>
+
+  <article id="factoring" class="card demo">
+    <div class="card-head"><span class="tag">21.5</span><h3>因式分解法：让两个括号相乘等于 0</h3></div>
+    <div class="demo-grid">
+      <div>
+        <div class="canvas-wrap"><canvas id="canvasFactor"></canvas></div>
+        <div class="controls">
+          <label class="control"><span>p</span><input id="factorP" type="range" min="-4" max="4" step="0.5" value="2"><output id="factorPOut">2</output></label>
+          <label class="control"><span>q</span><input id="factorQ" type="range" min="-4" max="4" step="0.5" value="3"><output id="factorQOut">3</output></label>
+        </div>
+        <div class="controls"><button id="factorPlay" class="btn">播放 q 的变化</button></div>
+      </div>
+      <div class="explain">
+        <div class="eq" id="factorEq">x² − 5x + 6 = 0</div>
+        <div class="eq" id="factorFactored">(x − 2)(x − 3) = 0</div>
+        <div class="readout">
+          <div class="row"><span>两根之和</span><b id="factorSum">5</b></div>
+          <div class="row"><span>两根之积</span><b id="factorProduct">6</b></div>
+        </div>
+        <p>如果 <span class="m">(x − p)(x − q) = 0</span>，那么 <span class="m">x = p</span> 或 <span class="m">x = q</span>。反过来，已知两根，也可以写出方程。</p>
+        <div class="tip">拓展：<span class="m">x₁ + x₂ = −b/a</span>，<span class="m">x₁x₂ = c/a</span>。这里 a = 1，所以和是 5，积是 6。</div>
+        <div class="warn">把 q 拖到 2，两个根重合，方程变成 (x − 2)² = 0，此时只有一个根（两个相等实根）。</div>
+      </div>
+    </div>
+  </article>
+
+  <article id="method-summary" class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>四种解法怎么选？</h3></div>
+    <div class="table-wrap">
+      <table class="delta-table">
+        <thead><tr><th>方法</th><th>适合的样子</th><th>关键动作</th></tr></thead>
+        <tbody>
+          <tr><td>直接开平方</td><td><span class="m">x² = p</span> 或 <span class="m">(x + m)² = p</span></td><td>两边开平方，记得写 ±</td></tr>
+          <tr><td>配方法</td><td>二次项系数为 1，一次项系数是偶数</td><td>加“一次项系数一半的平方”</td></tr>
+          <tr><td>公式法</td><td>任何一元二次方程</td><td>先算 Δ = b² − 4ac，再代公式</td></tr>
+          <tr><td>因式分解</td><td>容易拆成两个一次因式</td><td>令每个括号分别等于 0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">选择顺序：能直接开平方或因式分解就先做；看不出怎么分解时，用公式法最稳；配方法主要用于理解公式和顶点式。</div>
+    <p class="muted small-text">应用题五步：设未知数 → 找等量关系 → 列方程 → 解并检验 → 写答。</p>
+  </article>
+
+  <article id="rectangle" class="card demo">
+    <div class="card-head"><span class="tag">21.6</span><h3>应用：围一个面积 21 m² 的矩形</h3></div>
+    <div class="demo-grid">
+      <div>
+        <div class="canvas-wrap"><canvas id="canvasRect"></canvas></div>
+        <div class="controls">
+          <label class="control"><span>x</span><input id="rectX" type="range" min="1" max="9" step="0.1" value="3"><output id="rectXOut">3</output></label>
+        </div>
+        <div class="controls">
+          <button id="rectPlay" class="btn">播放 x 的变化</button>
+          <button id="rectReset" class="btn ghost">复位</button>
+        </div>
+      </div>
+      <div class="explain">
+        <div class="eq" id="rectEq">x(10 − x) = 21</div>
+        <div class="readout">
+          <div class="row"><span>当前面积</span><b id="rectArea">21</b></div>
+          <div class="row"><span>另一条边</span><b id="rectOther">7</b></div>
+        </div>
+        <div class="hit" id="rectHit">命中：x = 3，面积 = 21</div>
+        <p>周长 20 m，说明长 + 宽 = 10 m。设一边为 x，另一边就是 10 − x，面积 <span class="m">A = x(10 − x)</span>。</p>
+        <div class="eq-line on">x(10 − x) = 21</div>
+        <div class="eq-line on">x² − 10x + 21 = 0</div>
+        <div class="eq-line on">(x − 3)(x − 7) = 0</div>
+        <div class="eq-line strong on">x = 3 或 x = 7</div>
+        <p>两个答案都对：一边 3 m、另一边 7 m，只是把长和宽交换了。</p>
+        <div class="tip">顺带看一眼：A = −x² + 10x 的最大值在 x = 5，面积 25 m²。这就是第 22 章要学的二次函数最值。</div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="ch22" class="chapter">
+  <div class="chapter-head">
+    <div class="chapter-kicker">第 22 章</div>
+    <h2>二次函数</h2>
+    <p>核心问题：一条抛物线，为什么由 a、h、k 三个数就决定了？</p>
+  </div>
+
+  <article id="projectile" class="card demo">
+    <div class="card-head"><span class="tag">22.1</span><h3>从一条抛物线说起</h3></div>
+    <div class="demo-grid">
+      <div>
+        <div class="canvas-wrap"><canvas id="canvasProjectile"></canvas></div>
+        <div class="controls">
+          <button id="projectilePlay" class="btn">发射</button>
+          <button id="projectileReset" class="btn ghost">重置</button>
+        </div>
+      </div>
+      <div class="explain">
+        <div class="print-only print-note">静态图：虚线是完整轨迹，红球在起点。网页版可点击“发射”看小球运动。</div>
+        <div class="eq">y = −x² + 4x</div>
+        <p>小球的高度 y 和水平距离 x 之间的关系，是一条开口向下的抛物线。最高点在 x = 2，高度 4。</p>
+        <ul class="tight">
+          <li>二次函数的图像是抛物线，不是折线</li>
+          <li>开口向下，说明函数有最大值</li>
+          <li>顶点就是最高点</li>
+        </ul>
+        <div class="tip">a 决定开口方向和胖瘦，(h, k) 决定顶点位置。先记住这句话，后面再拆开看。</div>
+      </div>
+    </div>
+  </article>
+
+  <article id="parabola-basic" class="card demo">
+    <div class="card-head"><span class="tag">22.2</span><h3>y = ax²：a 到底管什么？</h3></div>
+    <div class="demo-grid">
+      <div>
+        <div class="canvas-wrap"><canvas id="canvasBasic"></canvas></div>
+        <div class="controls">
+          <label class="control"><span>a</span><input id="basicA" type="range" min="-2" max="2" step="0.1" value="1"><output id="basicAOut">1</output></label>
+        </div>
+        <div class="controls"><button id="basicPlay" class="btn">播放 a 的变化</button></div>
+      </div>
+      <div class="explain">
+        <div class="eq" id="basicEq">y = x²</div>
+        <div class="readout">
+          <div class="row"><span>a</span><b id="basicARead">1</b></div>
+          <div class="row"><span>开口</span><b id="basicDir">向上</b></div>
+        </div>
+        <p>a &gt; 0 开口向上；a &lt; 0 开口向下。|a| 越大，开口越窄；|a| 越小，开口越宽。</p>
+        <ul class="tight">
+          <li>所有 y = ax² 的顶点都在原点 (0, 0)</li>
+          <li>对称轴都是 y 轴，即 x = 0</li>
+          <li>a 的绝对值越大，抛物线越“瘦”</li>
+        </ul>
+        <div class="tip">把 a 从 1 拖到 2，再拖到 0.5，比较开口的胖瘦。</div>
+      </div>
+    </div>
+  </article>
+
+  <article id="shift" class="card demo">
+    <div class="card-head"><span class="tag">22.3</span><h3>平移实验台：左加右减，上加下减</h3></div>
+    <div class="demo-grid">
+      <div>
+        <div class="canvas-wrap"><canvas id="canvasShift"></canvas></div>
+        <div class="controls">
+          <label class="control"><span>a</span><input id="shiftA" type="range" min="-2" max="2" step="0.1" value="1"><output id="shiftAOut">1</output></label>
+          <label class="control"><span>h</span><input id="shiftH" type="range" min="-4" max="4" step="0.1" value="0"><output id="shiftHOut">0</output></label>
+          <label class="control"><span>k</span><input id="shiftK" type="range" min="-4" max="4" step="0.1" value="0"><output id="shiftKOut">0</output></label>
+        </div>
+        <div class="controls">
+          <button id="shiftKPlay" class="btn">看 k 的作用</button>
+          <button id="shiftHPlay" class="btn">看 h 的作用</button>
+          <button id="shiftBoth" class="btn ghost">合起来</button>
+          <button id="shiftReset" class="btn ghost">复位</button>
+        </div>
+        <div class="status" id="shiftStatus">当前是基准抛物线 y = x²。</div>
+      </div>
+      <div class="explain">
+        <div class="print-only print-note">静态图：h = 0、k = 0 时，基准曲线与平移后曲线重合。网页版可拖动 h、k 观察平移。</div>
+        <div class="eq" id="shiftEq">y = x²</div>
+        <div class="readout">
+          <div class="row"><span>顶点</span><b id="shiftVertex">(0, 0)</b></div>
+          <div class="row"><span>对称轴</span><b id="shiftAxis">x = 0</b></div>
+        </div>
+        <p>顶点式：<span class="m">y = a(x − h)² + k</span>，顶点是 <span class="m">(h, k)</span>。</p>
+        <ul class="tight">
+          <li>k &gt; 0：向上平移；k &lt; 0：向下平移</li>
+          <li>h &gt; 0：向右平移；h &lt; 0：向左平移</li>
+        </ul>
+        <div class="warn">注意括号里的符号：向右移 2，写成 (x − 2)²，不是 (x + 2)²。口诀“左加右减”说的是括号里的加减。</div>
+      </div>
+    </div>
+  </article>
+
+  <article id="vertex-form" class="card demo">
+    <div class="card-head"><span class="tag">22.4</span><h3>把一般式化成顶点式</h3></div>
+    <div class="demo-grid">
+      <div>
+        <div class="canvas-wrap"><canvas id="canvasVertex"></canvas></div>
+        <div class="preset-row" id="vertexPresets">
+          <button class="preset active" data-preset="0">例 1</button>
+          <button class="preset" data-preset="1">例 2</button>
+          <button class="preset" data-preset="2">例 3</button>
+        </div>
+        <div class="controls">
+          <button id="vertexPrev" class="btn small ghost">上一步</button>
+          <button id="vertexNext" class="btn small">下一步</button>
+          <button id="vertexAuto" class="btn small ghost">自动播放</button>
+        </div>
+      </div>
+      <div class="explain">
+        <div class="v-steps" id="vertexSteps"></div>
+        <div class="eq" id="vertexEq">y = (x − 2)² − 1</div>
+        <div class="readout">
+          <div class="row"><span>顶点</span><b id="vertexPoint">(2, −1)</b></div>
+          <div class="row"><span>对称轴</span><b id="vertexAxis">x = 2</b></div>
+        </div>
+        <div class="tip">通用步骤：提二次项系数 → 配一次项系数一半的平方 → 写成完全平方 → 整理常数。</div>
+      </div>
+    </div>
+  </article>
+
+  <article id="forms-summary" class="card">
+    <div class="card-head"><span class="tag">总结</span><h3>二次函数的三种常用形式</h3></div>
+    <div class="table-wrap">
+      <table class="delta-table">
+        <thead><tr><th>形式</th><th>表达式</th><th>一眼能看出</th></tr></thead>
+        <tbody>
+          <tr><td>一般式</td><td><span class="m">y = ax² + bx + c</span></td><td>开口方向、与 y 轴交点 (0, c)</td></tr>
+          <tr><td>顶点式</td><td><span class="m">y = a(x − h)² + k</span></td><td>顶点 (h, k)、对称轴 x = h、最值</td></tr>
+          <tr><td>交点式（拓展）</td><td><span class="m">y = a(x − x₁)(x − x₂)</span></td><td>与 x 轴交点 (x₁, 0)、(x₂, 0)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">求最值、看对称轴，优先化成顶点式；已知图像上三个点，用一般式列方程组；已知与 x 轴的两个交点，用交点式更快（拓展）。</div>
+  </article>
+
+  <article id="profit" class="card demo">
+    <div class="card-head"><span class="tag">22.5</span><h3>应用：定价多少，利润最大？</h3></div>
+    <div class="demo-grid">
+      <div>
+        <div class="canvas-wrap"><canvas id="canvasProfit"></canvas></div>
+        <div class="controls">
+          <label class="control"><span>售价</span><input id="profitPrice" type="range" min="40" max="100" step="1" value="50"><output id="profitPriceOut">50 元</output></label>
+        </div>
+        <div class="controls">
+          <button id="profitPlay" class="btn">播放价格变化</button>
+          <button id="profitReset" class="btn ghost">复位</button>
+        </div>
+      </div>
+      <div class="explain">
+        <div class="eq">利润 = (售价 − 40)(200 − 2 × 售价)</div>
+        <div class="eq" id="profitEq">y = −2(x − 70)² + 1800</div>
+        <div class="readout">
+          <div class="row"><span>当前利润</span><b id="profitValue">1000 元</b></div>
+          <div class="row"><span>最大利润</span><b>1800 元（售价 70 元）</b></div>
+        </div>
+        <p>设售价为 x 元，每件利润是 x − 40，销量是 200 − 2x，所以总利润 <span class="m">y = (x − 40)(200 − 2x)</span>。</p>
+        <div class="eq-line on">y = −2x² + 280x − 8000</div>
+        <div class="eq-line on">y = −2(x² − 140x) − 8000</div>
+        <div class="eq-line strong on">y = −2(x − 70)² + 1800</div>
+        <p>开口向下，顶点 (70, 1800) 就是最大值。售价 70 元时，利润最大 1800 元。</p>
+        <div class="tip">最值问题先判断开口方向：a &gt; 0 有最小值，a &lt; 0 有最大值。</div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="why" class="section">
+  <div class="section-head">
+    <span class="section-num">理</span>
+    <div>
+      <h2>深入原理：公式不是天上掉下来的</h2>
+      <p>知道“怎么算”还不够，知道“为什么成立”，才不会把公式记混。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">原理 1</span><h3>配方法如何推出求根公式</h3></div>
+    <div class="demo-grid">
+      <div class="derivation">
+        <div class="d-line">ax² + bx + c = 0 <span class="d-note">前提：a ≠ 0</span></div>
+        <div class="d-line">x² + (b/a)x + c/a = 0 <span class="d-note">两边同时除以 a</span></div>
+        <div class="d-line">x² + (b/a)x = −c/a <span class="d-note">常数项移到右边</span></div>
+        <div class="d-line">x² + (b/a)x + <span class="hl">(b/2a)²</span> = <span class="hl">(b/2a)²</span> − c/a <span class="d-note">两边加上“一次项系数一半的平方”</span></div>
+        <div class="d-line">(x + b/2a)² = (b² − 4ac) / (4a²) <span class="d-note">左边写成完全平方，右边通分</span></div>
+        <div class="d-line">x + b/2a = ±√(b² − 4ac) / (2a) <span class="d-note">两边开平方，别漏 ±</span></div>
+        <div class="d-line strong">x = (−b ± √(b² − 4ac)) / (2a)</div>
+      </div>
+      <div class="explain">
+        <p>关键只有一句：<b>把左边配成完全平方</b>。左边一旦变成“某个式子的平方”，右边就是一个常数，直接开平方即可。</p>
+        <p>为什么右边分母是 4a²？因为 (b/2a)² = b²/(4a²)，通分后就是 (b² − 4ac)/(4a²)。</p>
+        <p>为什么最后可以写成 2a 而不是 2|a|？因为前面有 ±，正负号已经把分母的符号“吸收”掉了。</p>
+        <div class="warn">a ≠ 0 是整个过程的前提：否则不能除以 a，方程也不再是二次方程。</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">原理 2</span><h3>判别式为什么能决定根的个数</h3></div>
+    <div class="demo-grid">
+      <div class="explain">
+        <p>配方后得到：</p>
+        <div class="eq">(x + b/2a)² = (b² − 4ac) / (4a²)</div>
+        <p>左边是一个平方，永远 ≥ 0；右边分母 4a² 永远 &gt; 0。所以右边的符号完全由 <span class="m">Δ = b² − 4ac</span> 决定。</p>
+        <ul class="tight">
+          <li>Δ &gt; 0：右边是正数，开平方有两个相反数 → 两个根</li>
+          <li>Δ = 0：右边是 0，平方等于 0 只有一个值 → 两个相等实根</li>
+          <li>Δ &lt; 0：右边是负数，实数的平方不可能为负 → 没有实根</li>
+        </ul>
+      </div>
+      <div class="explain">
+        <p>从图像看，顶点纵坐标是：</p>
+        <div class="eq">k = (4ac − b²) / (4a) = −Δ / (4a)</div>
+        <p>以 a &gt; 0 为例：Δ &gt; 0 时顶点在 x 轴下方，抛物线穿过 x 轴两次；Δ = 0 时顶点刚好在 x 轴上；Δ &lt; 0 时顶点在 x 轴上方，整条曲线都在 x 轴上方。</p>
+        <div class="tip">代数和几何在这里说的是同一件事：<b>Δ 的符号 = 抛物线与 x 轴交点的个数</b>。</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">原理 3</span><h3>因式分解与根与系数的关系</h3></div>
+    <div class="demo-grid">
+      <div class="explain">
+        <p>如果两个数相乘等于 0，那么至少有一个数是 0：</p>
+        <div class="eq">AB = 0 → A = 0 或 B = 0</div>
+        <p>所以只要能写成 <span class="m">a(x − x₁)(x − x₂) = 0</span>，就能直接读出两个根 x₁、x₂。</p>
+        <p>把它展开，再和 <span class="m">ax² + bx + c</span> 对比：</p>
+        <div class="eq small-eq">a(x − x₁)(x − x₂) = ax² − a(x₁ + x₂)x + a x₁x₂</div>
+        <div class="eq">x₁ + x₂ = −b/a，x₁x₂ = c/a</div>
+      </div>
+      <div class="explain">
+        <p>这就是“根与系数的关系”（韦达定理）：</p>
+        <ul class="tight">
+          <li>两根之和 = 一次项系数的相反数除以二次项系数</li>
+          <li>两根之积 = 常数项除以二次项系数</li>
+        </ul>
+        <p>它也解释了十字相乘：要找两个数，使它们的和等于 −b/a，积等于 c/a。</p>
+        <div class="tip">当 a = 1 时最好用：找两个数，和是 −b，积是 c。例如 x² − 5x + 6 = 0，−b = 5，所以找和为 5、积为 6 的两个数：2 和 3。</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">原理 4</span><h3>顶点公式为什么是 x = −b/(2a)</h3></div>
+    <div class="demo-grid">
+      <div class="derivation">
+        <div class="d-line">y = ax² + bx + c</div>
+        <div class="d-line">y = a(x² + (b/a)x) + c <span class="d-note">提出二次项系数 a</span></div>
+        <div class="d-line">y = a(x + b/2a)² + c − b²/(4a) <span class="d-note">括号内配成完全平方</span></div>
+        <div class="d-line strong">y = a(x + b/2a)² + (4ac − b²)/(4a)</div>
+      </div>
+      <div class="explain">
+        <p>所以顶点式里的 <span class="m">h = −b/(2a)</span>，<span class="m">k = (4ac − b²)/(4a)</span>。</p>
+        <p>为什么顶点在 h？因为平方项 <span class="m">a(x − h)²</span> 在括号等于 0 时取得最小（或最大）值，也就是 x = h 的时候。</p>
+        <p>再往深一层：抛物线关于 x = h 对称。如果它与 x 轴有两个交点，这两个交点一定关于 h 对称，而它们的平均数正是 −b/(2a)。</p>
+        <div class="tip">a &gt; 0 时顶点是最低点，函数有最小值 k；a &lt; 0 时顶点是最高点，函数有最大值 k。</div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>日常里的一元二次方程</h2>
+      <p>看到“面积”“乘积”“最高/最低”“平方”，就要警惕：这可能是二次关系。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <p>为什么生活里会出现二次方程？因为很多量是“两个含 x 的量相乘”：面积 = 长 × 宽，利润 = 每件利润 × 销量，路程 = 速度 × 时间。只要其中一个或两个含 x，展开后就会出现 x²。</p>
+    <div class="tip">判断技巧：先找“两个量相乘”的关系，再把它们都用同一个未知数表示。展开后如果出现 x²，就进入二次的世界。</div>
+  </article>
+
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">几何 · 面积</div>
+      <h4>用 20 m 篱笆围矩形花园，面积 21 m²</h4>
+      <p class="scene">设一边为 x m，另一边就是 10 − x m。</p>
+      <div class="eq">x(10 − x) = 21</div>
+      <div class="eq small-eq">x² − 10x + 21 = 0 → (x − 3)(x − 7) = 0</div>
+      <p class="answer">x = 3 或 7：花园是 3 m × 7 m。</p>
+      <p class="why">周长固定时，面积是二次函数；x = 5 时面积最大，为 25 m²（正方形）。</p>
+      <a class="demo-link" href="#rectangle">对应动图：矩形面积 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">几何 · 边框</div>
+      <h4>给 20 cm × 30 cm 的照片加一圈等宽相框</h4>
+      <p class="scene">相框宽 x cm，加上边框后总尺寸是 (20 + 2x) × (30 + 2x)。若总面积为 1200 cm²：</p>
+      <div class="eq">(20 + 2x)(30 + 2x) = 1200</div>
+      <div class="eq small-eq">4x² + 100x − 600 = 0 → x² + 25x − 150 = 0</div>
+      <div class="eq small-eq">(x + 30)(x − 5) = 0</div>
+      <p class="answer">x = 5 cm（负根 −30 不符合长度）。</p>
+      <p class="why">照片面积 600 cm²，边框面积也是 600 cm²。注意边框在四边都增加 2x，不是 x。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">运动 · 抛物线</div>
+      <h4>喷泉的水柱高度</h4>
+      <p class="scene">水柱高度 y（m）与水平距离 x（m）满足 y = −x² + 4x。水柱落回地面时 y = 0。</p>
+      <div class="eq">−x² + 4x = 0 → x(4 − x) = 0</div>
+      <p class="answer">x = 0（起点）或 x = 4（落点），水柱喷出 4 m 远。</p>
+      <p class="why">高度为 3 m 时：−x² + 4x = 3 → x² − 4x + 3 = 0 → x = 1 或 3，说明水柱在 1 m 和 3 m 处都经过 3 m 高。</p>
+      <a class="demo-link" href="#projectile">对应动图：抛物线 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">物理 · 自由落体</div>
+      <h4>从 20 m 高的地方丢下一个物体</h4>
+      <p class="scene">忽略空气阻力，下落距离 h = 5t²（g 取 10 m/s²）。落到地面时 h = 20。</p>
+      <div class="eq">5t² = 20 → t² = 4</div>
+      <p class="answer">t = ±2；时间取正，t = 2 s。</p>
+      <p class="why">这里是直接开平方法。负根 −2 在数学上存在，但“时间不能为负”，所以舍去。</p>
+      <a class="demo-link" href="#square-root">对应动图：直接开平方 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">商业 · 最值</div>
+      <h4>一件商品成本 40 元，怎么定价利润最大？</h4>
+      <p class="scene">售价 x 元时，销量是 200 − 2x 件，总利润 y = (x − 40)(200 − 2x)。</p>
+      <div class="eq">y = −2(x − 70)² + 1800</div>
+      <p class="answer">售价 70 元时利润最大，为 1800 元。</p>
+      <p class="why">利润 = 每件利润 × 销量，两个含 x 的量相乘，展开后是二次函数；开口向下，顶点就是最大值。</p>
+      <a class="demo-link" href="#profit">对应动图：最大利润 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">数 · 乘积</div>
+      <h4>两个连续正整数的积是 156</h4>
+      <p class="scene">设较小的数为 n，较大的数是 n + 1。</p>
+      <div class="eq">n(n + 1) = 156 → n² + n − 156 = 0</div>
+      <div class="eq small-eq">(n + 13)(n − 12) = 0</div>
+      <p class="answer">n = 12（正数），所以两个数是 12 和 13。</p>
+      <p class="why">负根 n = −13 也满足方程，但题目限定“正整数”，所以舍去。解应用题最后一定要检验。</p>
+      <a class="demo-link" href="#factoring">对应动图：因式分解 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">几何 · 勾股定理</div>
+      <h4>一块矩形屏幕，长比宽多 2，对角线是 10</h4>
+      <p class="scene">设宽为 w，长为 w + 2，由勾股定理：</p>
+      <div class="eq">w² + (w + 2)² = 10²</div>
+      <div class="eq small-eq">2w² + 4w − 96 = 0 → w² + 2w − 48 = 0</div>
+      <div class="eq small-eq">(w + 8)(w − 6) = 0</div>
+      <p class="answer">w = 6，长 = 8；负根 −8 舍去。</p>
+      <p class="why">勾股定理本身是二次关系，所以“已知斜边和两边差”常常列出一元二次方程。</p>
+      <a class="demo-link" href="#formula">对应动图：公式法 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">建筑 · 拱形</div>
+      <h4>抛物线形拱桥</h4>
+      <p class="scene">桥拱高度 y 与水平位置 x 满足 y = −0.02x(x − 20)。求桥拱与水面相交的位置。</p>
+      <div class="eq">−0.02x(x − 20) = 0</div>
+      <p class="answer">x = 0 或 x = 20，桥拱跨度为 20 m。</p>
+      <p class="why">拱桥、隧道、喷泉、投篮轨迹都常被近似成抛物线；求“高度为 0”就是用二次方程找交点。</p>
+      <a class="demo-link" href="#parabola-basic">对应动图：抛物线 →</a>
+    </article>
+  </div>
+
+  <div class="tip">这些例子里，未知数的实际意义会限制答案：长度、时间、数量通常不能为负，所以负根要检验后舍去。这叫“数学解”与“实际解”的区别。</div>
+</section>
+
+<section id="link" class="section">
+  <div class="section-head">
+    <span class="section-num">21↔22</span>
+    <div>
+      <h2>知识串联：方程和抛物线是同一件事</h2>
+      <p>第 21 章求出来的根，就是第 22 章抛物线与 x 轴交点的横坐标。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="link-grid">
+      <div class="link-box">
+        <div class="eq">ax² + bx + c = 0</div>
+        <p>第 21 章：求方程的根</p>
+      </div>
+      <div class="link-arrow">⟷</div>
+      <div class="link-box">
+        <div class="eq">y = ax² + bx + c</div>
+        <p>第 22 章：看抛物线与 x 轴的交点</p>
+      </div>
+    </div>
+    <table class="delta-table">
+      <thead><tr><th>判别式</th><th>方程的根</th><th>抛物线与 x 轴</th></tr></thead>
+      <tbody>
+        <tr><td><span class="m">Δ &gt; 0</span></td><td>两个不相等实根</td><td>两个交点</td></tr>
+        <tr><td><span class="m">Δ = 0</span></td><td>两个相等实根</td><td>一个交点（相切）</td></tr>
+        <tr><td><span class="m">Δ &lt; 0</span></td><td>没有实根</td><td>没有交点</td></tr>
+      </tbody>
+    </table>
+    <p class="center muted">同一件事，两种看法：代数上叫“解方程”，几何上叫“找交点”。</p>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：你真的看懂了吗？</h2>
+      <p>先自己选，再看解析。做错不可怕，找到错因才有用。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点与练习建议</h2>
+      <p>这些地方错一次，就要在错题本上写一次“错因”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>忘记 a ≠ 0</b>：看到 x² 项就以为一定是二次方程。</li>
+        <li><b>开平方漏负根</b>：x² = 9 只写 x = 3，漏掉 x = −3。</li>
+        <li><b>配方只加一边</b>：等式左边加 9，右边也要加 9。</li>
+        <li><b>平移方向记反</b>：向右平移 2，方程里是 (x − 2)²。</li>
+        <li><b>顶点符号写错</b>：y = a(x − h)² + k 的顶点是 (h, k)，不是 (−h, k)。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>每天 25 分钟怎么练</h3>
+      <ul class="tight roomy">
+        <li>先用 5 分钟看一个动图，自己复述“它在变什么”。</li>
+        <li>再用 10 分钟做 3 道同类题，必须写出 a、b、c。</li>
+        <li>最后用 10 分钟整理错因：是概念错、符号错，还是计算错。</li>
+        <li>每周回来看一次“知识串联”表，把方程和图像对上。</li>
+        <li>不要只背公式：先判断 Δ，再决定要不要代公式。</li>
+      </ul>
+      <div class="tip">这份页面是原创学习指导，不替代教材和课堂。遇到不懂的题，先画图，再列式。</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版九年级数学上册 · 第 21–22 章互动学习页</p>
+  <p class="muted">用浏览器打开即可，无需联网。建议使用 Chrome、Safari 或 Edge。</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
