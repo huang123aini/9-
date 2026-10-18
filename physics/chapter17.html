@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第17章 欧姆定律 · 九上物理动图指南</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chapters.css">
+<link rel="stylesheet" href="physics.css">
+</head>
+<body class="chapter-page" data-chapter="p17">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 · 九年级上册 · 第 17 章</div>
+    <h1>欧姆定律</h1>
+    <p class="subtitle">同一导体，电流与电压成正比，与电阻成反比。I = U/R 是电学计算的核心。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#iu">先看 I–U 图像</a>
+    </div>
+    <div class="hero-meta">4 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="chapter16.html">第16章 电压 电阻</a>
+    <a href="chapter17.html" class="active">第17章 欧姆定律</a>
+    <a href="chapter18.html">第18章 电功率</a>
+    <a href="#ohm">伏安法</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="opening" class="section opening">
+  <div class="opening-card">
+    <div class="opening-kicker">开场白</div>
+    <h2>电流、电压、电阻，到底谁决定谁？</h2>
+    <p>电压越大，电流越大；电阻越大，电流越小。这听起来像常识，但到底大多少？能不能用一个公式算出来？</p>
+    <p>这一章，我们用实验和图像找出三者之间的定量关系，学会用一只电压表和一只电流表测出未知电阻，还会发现一个反直觉的结论：两只灯泡串联时，额定功率大的那只反而不一定更亮。</p>
+    <div class="opening-question"><b>先想一想：</b>如果电压加倍、电阻也加倍，电流会怎么变？</div>
+  </div>
+</section>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">17</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>I–U 图像 → I–R 关系 → 欧姆定律 → 伏安法测电阻 → 串并联规律。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>欧姆定律</b>：I = U/R，同一导体、同一状态。</li>
+        <li><b>I–U 图像</b>：电阻一定时，I 与 U 成正比，图像是过原点的直线。</li>
+        <li><b>I–R 关系</b>：电压一定时，I 与 R 成反比。</li>
+        <li><b>伏安法测电阻</b>：R = U/I，电压表并联、电流表串联。</li>
+        <li><b>串联</b>：R总 = R₁ + R₂，电流相等，电压相加。</li>
+        <li><b>并联</b>：1/R总 = 1/R₁ + 1/R₂，电压相等，电流相加。</li>
+      </ol>
+      <div class="tip">用欧姆定律时先确认“同一段导体”和“同一时刻”，不能把不同导体的 U、I、R 混用。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 5</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article id="iu" class="card demo">
+  <div class="card-head"><span class="tag">17.1</span><h3>I–U 图像：电阻一定时，电流与电压成正比</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasIU"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>电阻 R</span><input id="iuR" type="range" min="5" max="30" step="1" value="10"><output id="iuROut">10 Ω</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>电压 U</span><input id="iuU" type="range" min="0" max="12" step="0.5" value="6"><output id="iuUOut">6.0 V</output></label>
+      </div>
+      <div class="controls">
+        <button id="iuReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>电阻 R</span><b id="iuRRead">10 Ω</b></div>
+        <div class="row"><span>电压 U</span><b id="iuURead">6.0 V</b></div>
+        <div class="row"><span>电流 I = U/R</span><b id="iuIRead">0.60 A</b></div>
+        <div class="row"><span>直线斜率</span><b id="iuSlopeRead">0.10 A/V</b></div>
+      </div>
+      <p>电阻不变时，电压增大，电流也按比例增大。I–U 图像是一条过原点的直线。</p>
+      <ul class="tight">
+        <li>斜率等于 1/R：电阻越大，直线越平缓。</li>
+        <li>图像过原点：U = 0 时 I = 0。</li>
+        <li>不同电阻的 I–U 直线斜率不同。</li>
+      </ul>
+      <div class="warn">I–U 图像是直线，说明 I 与 U 成正比；但只有在电阻不变时才能这样说。</div>
+    </div>
+  </div>
+</article>
+
+<article id="ir" class="card demo">
+  <div class="card-head"><span class="tag">17.2</span><h3>I–R 关系：电压一定时，电流与电阻成反比</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasIR"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>电压 U</span><input id="irU" type="range" min="1" max="12" step="0.5" value="6"><output id="irUOut">6.0 V</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>电阻 R</span><input id="irR" type="range" min="2" max="30" step="1" value="10"><output id="irROut">10 Ω</output></label>
+      </div>
+      <div class="controls">
+        <button id="irReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>电压 U</span><b id="irURead">6.0 V</b></div>
+        <div class="row"><span>电阻 R</span><b id="irRRead">10 Ω</b></div>
+        <div class="row"><span>电流 I</span><b id="irIRead">0.60 A</b></div>
+        <div class="row"><span>结论</span><b id="irConclusion">I 与 R 成反比</b></div>
+      </div>
+      <p>保持电压不变，增大电阻，电流减小。I–R 图像是双曲线的一支，不是直线。</p>
+      <ul class="tight">
+        <li>R 变为原来的 2 倍，I 变为原来的 1/2。</li>
+        <li>图像不会与坐标轴相交，因为 R 不能为 0。</li>
+        <li>这个实验要用控制变量法：控制 U 不变。</li>
+      </ul>
+      <div class="warn">“I 与 R 成反比”的前提是电压一定。电压变了，结论就不成立。</div>
+    </div>
+  </div>
+</article>
+
+<article id="ohm" class="card demo">
+  <div class="card-head"><span class="tag">17.3</span><h3>伏安法测电阻：R = U/I</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasOhm"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>电源 U</span><input id="ohmSource" type="range" min="3" max="12" step="0.5" value="6"><output id="ohmSourceOut">6.0 V</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>待测 Rₓ</span><input id="ohmRx" type="range" min="5" max="20" step="1" value="10"><output id="ohmRxOut">10 Ω</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>变阻器</span><input id="ohmRheo" type="range" min="0" max="100" step="1" value="50"><output id="ohmRheoOut">50%</output></label>
+      </div>
+      <div class="controls">
+        <button id="ohmReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>电流表示数 I</span><b id="ohmIRead">0.20 A</b></div>
+        <div class="row"><span>电压表示数 U</span><b id="ohmURead">2.0 V</b></div>
+        <div class="row"><span>计算电阻 R = U/I</span><b id="ohmRRead">10.0 Ω</b></div>
+        <div class="row"><span>真实电阻 Rₓ</span><b id="ohmRxRead">10 Ω</b></div>
+      </div>
+      <p>用电压表测出 Rₓ 两端电压 U，用电流表测出通过 Rₓ 的电流 I，再由 R = U/I 算出电阻。</p>
+      <ul class="tight">
+        <li>电流表串联，电压表并联在 Rₓ 两端。</li>
+        <li>滑动变阻器用来改变电流和电压，便于多次测量。</li>
+        <li>多次测量求平均值，可以减小误差。</li>
+      </ul>
+      <div class="warn">计算出的 R = U/I 是这段导体的电阻，不是“电压越大电阻越大”。移动滑片时 U、I 都变，但它们的比值不变。</div>
+    </div>
+  </div>
+</article>
+
+<article id="rules17" class="card demo">
+  <div class="card-head"><span class="tag">17.4</span><h3>串并联规律：等效电阻怎么算</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasRules17"></canvas></div>
+      <div class="choice-row">
+        <button id="rule17Series" class="btn small is-active">串联</button>
+        <button id="rule17Parallel" class="btn small ghost">并联</button>
+      </div>
+      <div class="controls">
+        <label class="control"><span>电源 U</span><input id="rule17Source" type="range" min="3" max="12" step="0.5" value="6"><output id="rule17SourceOut">6.0 V</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>R₁</span><input id="rule17R1" type="range" min="5" max="30" step="1" value="10"><output id="rule17R1Out">10 Ω</output></label>
+        <label class="control"><span>R₂</span><input id="rule17R2" type="range" min="5" max="30" step="1" value="20"><output id="rule17R2Out">20 Ω</output></label>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>连接方式</span><b id="rule17Type">串联</b></div>
+        <div class="row"><span>等效电阻 R总</span><b id="rule17Req">30 Ω</b></div>
+        <div class="row"><span>总电流 I</span><b id="rule17Current">0.20 A</b></div>
+        <div class="row"><span>U₁ / U₂</span><b id="rule17Voltages">2.0 V / 4.0 V</b></div>
+        <div class="row"><span>I₁ / I₂</span><b id="rule17Currents">0.20 A / 0.20 A</b></div>
+      </div>
+      <p>串联总电阻等于各电阻之和；并联总电阻的倒数等于各电阻倒数之和。</p>
+      <ul class="tight">
+        <li>串联：<span class="m">R总 = R₁ + R₂</span>，总电阻大于任一分电阻。</li>
+        <li>并联：<span class="m">1/R总 = 1/R₁ + 1/R₂</span>，总电阻小于任一分电阻。</li>
+        <li>串联分压，并联分流。</li>
+      </ul>
+      <div class="warn">并联总电阻不是两个电阻相加。两个电阻并联，总电阻比其中任何一个都小。</div>
+    </div>
+  </div>
+</article>
+
+<section id="summary" class="section">
+  <div class="section-head">
+    <span class="section-num">17.5</span>
+    <div>
+      <h2>欧姆定律的使用条件</h2>
+      <p>同一段导体、同一状态，三个量必须对应。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="table-wrap">
+      <table class="delta-table">
+        <thead><tr><th>公式</th><th>含义</th><th>适用条件</th></tr></thead>
+        <tbody>
+          <tr><td><span class="m">I = U/R</span></td><td>电流由电压和电阻决定</td><td>同一段导体，同一状态</td></tr>
+          <tr><td><span class="m">U = IR</span></td><td>导体两端电压等于电流乘电阻</td><td>同上</td></tr>
+          <tr><td><span class="m">R = U/I</span></td><td>用电压和电流的比值计算电阻</td><td>测量和计算电阻，不表示 R 由 U、I 决定</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">欧姆定律的“同体性”和“同时性”：U、I、R 必须属于同一段导体，并且是同一时刻的值。</div>
+  </div>
+</section>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>日常里的欧姆定律</h2>
+      <p>调光、测电阻、分压分流，都离不开 I = U/R。</p>
+    </div>
+  </div>
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">测量 · 伏安法</div>
+      <h4>测一个未知电阻</h4>
+      <p class="scene">电压表示数为 2.4 V，电流表示数为 0.3 A。</p>
+      <div class="eq">R = U/I = 2.4 ÷ 0.3 = 8 Ω</div>
+      <p class="answer">待测电阻约为 8 Ω。</p>
+      <p class="why">电压表并联在待测电阻两端，电流表串联在电路中。</p>
+      <a class="demo-link" href="#ohm">对应动图：伏安法 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">调光 · 电流</div>
+      <h4>调光台灯变暗</h4>
+      <p class="scene">滑动变阻器接入电阻变大，电路总电阻变大。</p>
+      <div class="eq">I = U/R总，R总 ↑ → I ↓</div>
+      <p class="answer">电流变小，灯泡的实际功率变小，灯变暗。</p>
+      <p class="why">电源电压不变时，电流与总电阻成反比。</p>
+      <a class="demo-link" href="#ir">对应动图：I–R 关系 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">图像 · 正比</div>
+      <h4>I–U 图像是一条直线</h4>
+      <p class="scene">某导体两端电压为 4 V 时，电流为 0.4 A。</p>
+      <div class="eq">R = 4 ÷ 0.4 = 10 Ω</div>
+      <p class="answer">电压为 8 V 时，电流为 0.8 A。</p>
+      <p class="why">电阻不变时，电流与电压成正比，图像过原点。</p>
+      <a class="demo-link" href="#iu">对应动图：I–U 图像 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">分压 · 串联</div>
+      <h4>两个电阻串联分压</h4>
+      <p class="scene">R₁ = 10 Ω，R₂ = 20 Ω，接在 6 V 电源上。</p>
+      <div class="eq">I = 6 ÷ 30 = 0.2 A；U₁ = 2 V，U₂ = 4 V</div>
+      <p class="answer">电阻大的 R₂ 分得更多电压。</p>
+      <p class="why">串联电流相等，电压按电阻比例分配。</p>
+      <a class="demo-link" href="#rules17">对应动图：串并联规律 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">分流 · 并联</div>
+      <h4>两个电阻并联分流</h4>
+      <p class="scene">R₁ = 10 Ω，R₂ = 20 Ω，并联接在 6 V 电源上。</p>
+      <div class="eq">I₁ = 0.6 A，I₂ = 0.3 A，I总 = 0.9 A</div>
+      <p class="answer">电阻小的支路电流大。</p>
+      <p class="why">并联电压相等，电流与电阻成反比。</p>
+      <a class="demo-link" href="#rules17">对应动图：串并联规律 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">安全 · 电阻</div>
+      <h4>为什么不能湿手碰开关</h4>
+      <p class="scene">人体潮湿后电阻变小，通过人体的电流变大。</p>
+      <div class="eq">I = U/R，R ↓ → I ↑</div>
+      <p class="answer">电流变大，触电危险增加。</p>
+      <p class="why">安全用电的原则是不接触低压带电体，不靠近高压带电体。</p>
+      <a class="demo-link" href="#ir">对应动图：I–R 关系 →</a>
+    </article>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：欧姆定律掌握了吗？</h2>
+      <p>先自己选，再看解析。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>这些地方错一次，就在错题本上写一次“错因”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>把不同导体的量混用</b>：I、U、R 必须属于同一段导体。</li>
+        <li><b>认为 R 与 U、I 有关</b>：R = U/I 是计算式，不是决定式。</li>
+        <li><b>单位不统一</b>：mA 要换成 A，kΩ 要换成 Ω。</li>
+        <li><b>并联总电阻算成相加</b>：并联总电阻小于任一分电阻。</li>
+        <li><b>伏安法连接错误</b>：电流表串联、电压表并联，滑动变阻器一上一下。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>练习建议</h3>
+      <ul class="tight roomy">
+        <li>做题先画等效电路图，标出已知量和未知量。</li>
+        <li>串联题先求总电阻，再求电流，最后分电压。</li>
+        <li>并联题先确定电压相等，再分别求各支路电流。</li>
+        <li>图像题先看坐标轴，再算斜率，斜率是 1/R。</li>
+        <li>计算完检查单位，电流用 A，电压用 V，电阻用 Ω。</li>
+      </ul>
+      <div class="tip">欧姆定律题的关键是“先找同一段导体”，再决定用哪个公式。</div>
+    </div>
+  </div>
+</section>
+
+<section id="more" class="section">
+  <div class="section-head">
+    <span class="section-num">→</span>
+    <div>
+      <h2>继续学习</h2>
+      <p>知道电流和电压，还要知道电流做功的快慢。下一章学电功率。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter16.html">
+      <div class="kicker">上一章</div>
+      <h4>电压 电阻</h4>
+      <p>电压表、串并联电压、电阻、变阻器。</p>
+    </a>
+    <a class="chapter-link" href="chapter18.html">
+      <div class="kicker">下一章</div>
+      <h4>电功率</h4>
+      <p>电能、额定功率、灯泡亮度、焦耳定律。</p>
+    </a>
+    <a class="chapter-link" href="index.html">
+      <div class="kicker">总目录</div>
+      <h4>九上物理</h4>
+      <p>第 13–18 章学习路线与公式速查。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版九年级物理上册 · 第 17 章 欧姆定律 · 互动学习页</p>
+  <p class="muted">本页为原创学习指导，不替代教材和课堂。</p>
+</footer>
+
+<script src="../chapter-common.js"></script>
+<script src="physics-common.js"></script>
+<script src="chapter17.js"></script>
+</body>
+</html>

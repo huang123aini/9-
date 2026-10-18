@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第18章 电功率 · 九上物理动图指南</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chapters.css">
+<link rel="stylesheet" href="physics.css">
+</head>
+<body class="chapter-page" data-chapter="p18">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 · 九年级上册 · 第 18 章</div>
+    <h1>电功率</h1>
+    <p class="subtitle">电流做功有快有慢。额定功率只有一个，实际功率随电压变化；灯泡亮度由实际功率决定。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#energy">先看电能计算</a>
+    </div>
+    <div class="hero-meta">4 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="chapter17.html">第17章 欧姆定律</a>
+    <a href="chapter18.html" class="active">第18章 电功率</a>
+    <a href="index.html#formulas">公式速查</a>
+    <a href="#bulbs">灯泡亮度</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="opening" class="section opening">
+  <div class="opening-card">
+    <div class="opening-kicker">开场白</div>
+    <h2>同样是一度电，为什么空调用起来“跑”得特别快？</h2>
+    <p>电灯、电视、空调都用电，但它们“吃电”的速度完全不同。1000 W 的电器用 1 小时就是 1 度电，而 40 W 的电灯要用 25 小时才用 1 度电。</p>
+    <p>这一章，我们算电费、看灯泡亮度、研究电热，弄明白“额定功率”和“实际功率”到底差在哪里，以及为什么灯泡串联时，功率大的反而不一定更亮。</p>
+    <div class="opening-question"><b>先想一想：</b>“220 V 100 W”和“220 V 40 W”的两只灯泡串联，谁更亮？</div>
+  </div>
+</section>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">18</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>电能 → 电功 → 电功率 → 额定功率与实际功率 → 焦耳定律。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>电能</b>：电流做功的过程就是电能转化为其他形式能的过程。</li>
+        <li><b>电功</b>：W = UIt = Pt，单位 J 和 kW·h。</li>
+        <li><b>电功率</b>：P = W/t = UI，表示电流做功的快慢。</li>
+        <li><b>额定功率</b>：用电器在额定电压下的功率，只有一个。</li>
+        <li><b>实际功率</b>：用电器在实际电压下的功率，随电压变化。</li>
+        <li><b>灯泡亮度</b>：由实际功率决定，不由额定功率直接决定。</li>
+        <li><b>焦耳定律</b>：Q = I²Rt，适用于所有电路。</li>
+      </ol>
+      <div class="tip">看到“耗电多少”想到电功 W，看到“做功快慢”想到电功率 P。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 5</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article id="energy" class="card demo">
+  <div class="card-head"><span class="tag">18.1</span><h3>电能与电功：用电器用了几度电</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasEnergy"></canvas></div>
+      <div class="choice-row">
+        <button class="btn small is-active" data-appliance="lamp">电灯 40 W</button>
+        <button class="btn small ghost" data-appliance="tv">电视 150 W</button>
+        <button class="btn small ghost" data-appliance="air">空调 1500 W</button>
+        <button class="btn small ghost" data-appliance="heater">热水器 2000 W</button>
+      </div>
+      <div class="controls">
+        <label class="control"><span>工作时间</span><input id="energyTime" type="range" min="0.5" max="10" step="0.5" value="2"><output id="energyTimeOut">2.0 h</output></label>
+      </div>
+      <div class="controls">
+        <button id="energyReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>用电器</span><b id="energyName">电灯</b></div>
+        <div class="row"><span>功率 P</span><b id="energyPower">40 W</b></div>
+        <div class="row"><span>工作时间 t</span><b id="energyTimeRead">2.0 h</b></div>
+        <div class="row"><span>消耗电能 W = Pt</span><b id="energyWork">0.08 kW·h</b></div>
+        <div class="row"><span>电费（0.6 元/kW·h）</span><b id="energyCost">0.05 元</b></div>
+      </div>
+      <div class="eq">W = Pt</div>
+      <p>功率用 kW、时间用 h，算出的电能单位就是 kW·h（度）。1 kW·h = 3.6×10⁶ J。</p>
+      <ul class="tight">
+        <li>电能表测量用电器消耗的电能。</li>
+        <li>功率越大、使用时间越长，消耗的电能越多。</li>
+        <li>“度”是电能的常用单位，不是功率单位。</li>
+      </ul>
+      <div class="warn">计算电费时，功率要先换成 kW，时间要用 h，否则结果会差很多。</div>
+    </div>
+  </div>
+</article>
+
+<article id="rated" class="card demo">
+  <div class="card-head"><span class="tag">18.2</span><h3>额定功率与实际功率：电压变了，功率怎么变</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasRated"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>实际电压 U</span><input id="ratedVoltage" type="range" min="0" max="240" step="5" value="220"><output id="ratedVoltageOut">220 V</output></label>
+      </div>
+      <div class="controls">
+        <button id="ratedReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>额定电压 / 额定功率</span><b id="ratedRated">220 V / 100 W</b></div>
+        <div class="row"><span>灯丝电阻 R</span><b id="ratedR">484 Ω</b></div>
+        <div class="row"><span>实际功率 P实</span><b id="ratedActualP">100.0 W</b></div>
+        <div class="row"><span>灯泡亮度</span><b id="ratedBright">正常发光</b></div>
+      </div>
+      <p>这只灯泡标着“220 V 100 W”，它的额定电压是 220 V，额定功率是 100 W。灯丝电阻可近似认为不变。</p>
+      <ul class="tight">
+        <li>实际电压等于额定电压时，实际功率等于额定功率，正常发光。</li>
+        <li>实际电压低于额定电压时，实际功率变小，灯变暗。</li>
+        <li>实际电压高于额定电压时，实际功率变大，可能烧坏灯泡。</li>
+      </ul>
+      <div class="warn">额定功率只有一个，实际功率可以有很多个。不能说“实际功率是额定功率”。</div>
+    </div>
+  </div>
+</article>
+
+<article id="bulbs" class="card demo">
+  <div class="card-head"><span class="tag">18.3</span><h3>灯泡亮度：串联时谁更亮</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasBulbs"></canvas></div>
+      <div class="choice-row">
+        <button id="bulbSeries" class="btn small is-active">串联</button>
+        <button id="bulbParallel" class="btn small ghost">并联</button>
+      </div>
+      <div class="controls">
+        <label class="control"><span>电源电压</span><input id="bulbVoltage" type="range" min="110" max="240" step="5" value="220"><output id="bulbVoltageOut">220 V</output></label>
+      </div>
+      <div class="controls">
+        <button id="bulbReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>连接方式</span><b id="bulbType">串联</b></div>
+        <div class="row"><span>L₁ 实际功率</span><b id="bulbP1">8.2 W</b></div>
+        <div class="row"><span>L₂ 实际功率</span><b id="bulbP2">20.4 W</b></div>
+        <div class="row"><span>更亮的灯</span><b id="bulbBrighter">L₂（40 W）</b></div>
+      </div>
+      <p>L₁“220 V 100 W”，L₂“220 V 40 W”。串联时电流相同，电阻大的 L₂ 实际功率更大，反而更亮。</p>
+      <ul class="tight">
+        <li>灯泡亮度由实际功率决定。</li>
+        <li>串联时，电阻大的灯泡更亮：<span class="m">P = I²R</span>。</li>
+        <li>并联时，电阻小的灯泡更亮：<span class="m">P = U²/R</span>。</li>
+      </ul>
+      <div class="warn">“100 W 的灯泡一定比 40 W 的亮”只在并联（额定电压）时成立。串联时结论相反。</div>
+    </div>
+  </div>
+</article>
+
+<article id="joule" class="card demo">
+  <div class="card-head"><span class="tag">18.4</span><h3>焦耳定律：电流通过导体产生的热量</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasJoule"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>电流 I</span><input id="jouleCurrent" type="range" min="0" max="3" step="0.1" value="2"><output id="jouleCurrentOut">2.0 A</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>电阻 R</span><input id="jouleResistance" type="range" min="2" max="20" step="1" value="10"><output id="jouleResistanceOut">10 Ω</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>通电时间 t</span><input id="jouleTime" type="range" min="0" max="300" step="10" value="60"><output id="jouleTimeOut">60 s</output></label>
+      </div>
+      <div class="controls">
+        <button id="jouleReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>发热功率 P = I²R</span><b id="jouleP">40 W</b></div>
+        <div class="row"><span>产生热量 Q = I²Rt</span><b id="jouleQ">2400 J</b></div>
+        <div class="row"><span>折合</span><b id="jouleQKJ">2.4 kJ</b></div>
+        <div class="row"><span>导线发热程度</span><b id="jouleLevel">明显</b></div>
+      </div>
+      <div class="eq">Q = I²Rt</div>
+      <p>电流通过导体产生的热量，与电流的平方成正比，与电阻成正比，与通电时间成正比。</p>
+      <ul class="tight">
+        <li>焦耳定律适用于所有电路。</li>
+        <li>纯电阻电路中，电能全部转化为内能，Q = W。</li>
+        <li>非纯电阻电路中，Q &lt; W，例如电动机。</li>
+      </ul>
+      <div class="warn">电流变为原来的 2 倍，热量变为原来的 4 倍，不是 2 倍。</div>
+    </div>
+  </div>
+</article>
+
+<section id="summary" class="section">
+  <div class="section-head">
+    <span class="section-num">18.5</span>
+    <div>
+      <h2>电功与电功率对比</h2>
+      <p>一个说“做了多少”，一个说“做得多快”。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="table-wrap">
+      <table class="delta-table">
+        <thead><tr><th>物理量</th><th>含义</th><th>公式</th><th>单位</th></tr></thead>
+        <tbody>
+          <tr><td>电功 W</td><td>电流做了多少功，消耗多少电能</td><td><span class="m">W = UIt = Pt</span></td><td>J、kW·h</td></tr>
+          <tr><td>电功率 P</td><td>电流做功的快慢</td><td><span class="m">P = W/t = UI</span></td><td>W、kW</td></tr>
+          <tr><td>电热 Q</td><td>电流通过导体产生的热量</td><td><span class="m">Q = I²Rt</span></td><td>J</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">纯电阻电路中，W = Q，P = I²R = U²/R；非纯电阻电路中，只能用 P = UI 计算总功率。</div>
+  </div>
+</section>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>日常里的电功率</h2>
+      <p>电费、亮度、发热，都和电功率有关。</p>
+    </div>
+  </div>
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">电费 · 电功</div>
+      <h4>1000 W 的电器用 1 小时</h4>
+      <p class="scene">电热水壶功率 1000 W，工作 1 h。</p>
+      <div class="eq">W = Pt = 1 kW × 1 h = 1 kW·h</div>
+      <p class="answer">消耗 1 度电，电费约 0.6 元。</p>
+      <p class="why">1 kW·h = 3.6×10⁶ J，是电能常用的单位。</p>
+      <a class="demo-link" href="#energy">对应动图：电能计算 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">灯泡 · 实际功率</div>
+      <h4>100 W 灯泡接在 110 V 上</h4>
+      <p class="scene">“220 V 100 W”的灯泡，不计温度对电阻的影响。</p>
+      <div class="eq">R = 484 Ω，P实 = 110² ÷ 484 = 25 W</div>
+      <p class="answer">实际功率约为 25 W，灯泡变暗。</p>
+      <p class="why">电压变为一半，功率变为四分之一。</p>
+      <a class="demo-link" href="#rated">对应动图：实际功率 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">串联 · 亮度</div>
+      <h4>100 W 和 40 W 灯泡串联</h4>
+      <p class="scene">两只灯串联接在 220 V 电路中。</p>
+      <div class="eq">R₁ = 484 Ω，R₂ = 1210 Ω</div>
+      <p class="answer">40 W 的灯泡电阻大，实际功率大，反而更亮。</p>
+      <p class="why">串联电流相同，P = I²R，电阻大的实际功率大。</p>
+      <a class="demo-link" href="#bulbs">对应动图：灯泡亮度 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">电热 · 焦耳定律</div>
+      <h4>电热丝为什么发热明显</h4>
+      <p class="scene">电流 2 A 通过 10 Ω 的电热丝，通电 60 s。</p>
+      <div class="eq">Q = I²Rt = 2² × 10 × 60 = 2400 J</div>
+      <p class="answer">产生 2400 J 的热量。</p>
+      <p class="why">电热丝电阻较大，电流通过时发热明显，用来烧水、取暖。</p>
+      <a class="demo-link" href="#joule">对应动图：焦耳定律 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">节能 · 功率</div>
+      <h4>节能灯与白炽灯</h4>
+      <p class="scene">15 W 的节能灯亮度约相当于 60 W 的白炽灯。</p>
+      <div class="eq">60 W → 15 W，功率降为 1/4</div>
+      <p class="answer">相同使用时间，节能灯消耗的电能更少。</p>
+      <p class="why">节能灯把更多的电能转化为光能，发热损失更少。</p>
+      <a class="demo-link" href="#energy">对应动图：电能计算 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">安全 · 功率</div>
+      <h4>大功率电器不要共用一个插座</h4>
+      <p class="scene">多个大功率电器同时工作，干路电流很大。</p>
+      <div class="eq">P = UI，I = P/U</div>
+      <p class="answer">干路电流过大，导线发热，可能引发火灾。</p>
+      <p class="why">家庭电路中，用电器并联，总功率变大，总电流也变大。</p>
+      <a class="demo-link" href="#joule">对应动图：焦耳定律 →</a>
+    </article>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：电功率掌握了吗？</h2>
+      <p>先自己选，再看解析。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>这些地方错一次，就在错题本上写一次“错因”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>把额定功率当成实际功率</b>：实际功率随实际电压变化。</li>
+        <li><b>用额定功率判断亮度</b>：亮度由实际功率决定。</li>
+        <li><b>单位不换算</b>：W、kW、h、s、J、kW·h 要先统一。</li>
+        <li><b>认为 P=U²/R 适用于所有电路</b>：它只适用于纯电阻电路。</li>
+        <li><b>焦耳定律写成 Q=UIt</b>：只有纯电阻电路才有 Q=W=UIt。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>练习建议</h3>
+      <ul class="tight roomy">
+        <li>先判断电路是纯电阻还是非纯电阻。</li>
+        <li>计算电费用 kW·h，计算热量用 J。</li>
+        <li>比较灯泡亮度，先求实际功率，再看数值。</li>
+        <li>串联用 P=I²R，并联用 P=U²/R，更省事。</li>
+        <li>所有计算先统一单位，再代入公式。</li>
+      </ul>
+      <div class="tip">电功率题的关键是分清“额定”和“实际”，以及“总功率”和“发热功率”。</div>
+    </div>
+  </div>
+</section>
+
+<section id="more" class="section">
+  <div class="section-head">
+    <span class="section-num">→</span>
+    <div>
+      <h2>九上物理完成</h2>
+      <p>热学和电学的主干知识到此结束，接下来可以复习全书、整理错题。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter17.html">
+      <div class="kicker">上一章</div>
+      <h4>欧姆定律</h4>
+      <p>I=U/R、伏安法、串并联规律。</p>
+    </a>
+    <a class="chapter-link" href="index.html#formulas">
+      <div class="kicker">复习</div>
+      <h4>公式速查</h4>
+      <p>热学和电学公式集中复习。</p>
+    </a>
+    <a class="chapter-link" href="index.html">
+      <div class="kicker">总目录</div>
+      <h4>九上物理</h4>
+      <p>回到总目录，按章节查漏补缺。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版九年级物理上册 · 第 18 章 电功率 · 互动学习页</p>
+  <p class="muted">本页为原创学习指导，不替代教材和课堂。</p>
+</footer>
+
+<script src="../chapter-common.js"></script>
+<script src="physics-common.js"></script>
+<script src="chapter18.js"></script>
+</body>
+</html>

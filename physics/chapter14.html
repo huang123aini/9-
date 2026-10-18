@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第14章 内能的利用 · 九上物理动图指南</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chapters.css">
+<link rel="stylesheet" href="physics.css">
+</head>
+<body class="chapter-page" data-chapter="p14">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 · 九年级上册 · 第 14 章</div>
+    <h1>内能的利用</h1>
+    <p class="subtitle">燃料燃烧放出内能，热机把内能变成机械能。效率不可能达到 100%，但能量总量始终守恒。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#engine">先看四冲程动图</a>
+    </div>
+    <div class="hero-meta">4 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="chapter13.html">第13章 内能</a>
+    <a href="chapter14.html" class="active">第14章 内能的利用</a>
+    <a href="chapter15.html">第15章 电流和电路</a>
+    <a href="#efficiency">热机效率</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="opening" class="section opening">
+  <div class="opening-card">
+    <div class="opening-kicker">开场白</div>
+    <h2>汽车为什么会跑？火箭为什么能飞上天？</h2>
+    <p>踩下油门，汽油在发动机里燃烧，一股看不见的力量推动活塞，汽车就动了起来。燃料里藏着的能量，怎样变成机械能？</p>
+    <p>这一章，我们把热机“拆开”看看：四个冲程怎样循环，燃料的热值怎样计算，为什么再好的发动机也不可能把能量全部用上。</p>
+    <div class="opening-question"><b>先想一想：</b>一箱汽油燃烧放出的能量，最后都去了哪里？</div>
+  </div>
+</section>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">14</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>热机 → 四冲程 → 燃料热值 → 热机效率 → 能量守恒。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>热机</b>：利用内能做功的机械，内燃机是常见的一种。</li>
+        <li><b>四冲程</b>：吸气、压缩、做功、排气，一个循环曲轴转 2 圈。</li>
+        <li><b>能量转化</b>：压缩冲程机械能→内能，做功冲程内能→机械能。</li>
+        <li><b>热值</b>：1 kg 燃料完全燃烧放出的热量，Q放 = mq。</li>
+        <li><b>热机效率</b>：η = W有用 / Q放 × 100%，一定小于 100%。</li>
+        <li><b>能量守恒</b>：能量不会凭空产生或消灭，总量保持不变。</li>
+      </ol>
+      <div class="tip">看到“汽车、火箭、燃气灶、发电机”，先找能量从哪种形式变成哪种形式。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 5</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article id="engine" class="card demo">
+  <div class="card-head"><span class="tag">14.1</span><h3>四冲程内燃机：一个循环发生了什么</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasEngine"></canvas></div>
+      <div class="legend">
+        <span><i style="background:#38bdf8"></i>吸气</span>
+        <span><i style="background:#f97316"></i>压缩/做功</span>
+        <span><i style="background:#94a3b8"></i>排气</span>
+      </div>
+      <div class="controls">
+        <button id="enginePlay" class="btn small">播放一个工作循环</button>
+        <button id="engineReset" class="btn small ghost">复位</button>
+      </div>
+      <div class="controls">
+        <button class="btn small ghost engine-step" data-stroke="0">吸气</button>
+        <button class="btn small ghost engine-step" data-stroke="1">压缩</button>
+        <button class="btn small ghost engine-step" data-stroke="2">做功</button>
+        <button class="btn small ghost engine-step" data-stroke="3">排气</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>当前冲程</span><b id="engineStroke">吸气冲程</b></div>
+        <div class="row"><span>活塞运动</span><b id="enginePiston">向下</b></div>
+        <div class="row"><span>气门状态</span><b id="engineValve">进气门开</b></div>
+        <div class="row"><span>能量转化</span><b id="engineConvert">—</b></div>
+      </div>
+      <p>汽油机的一个工作循环包括四个冲程，活塞往复运动 2 次，曲轴转 2 圈，对外做功 1 次。</p>
+      <ul class="tight">
+        <li><b>吸气冲程</b>：进气门开，活塞向下，吸入空气和汽油的混合物。</li>
+        <li><b>压缩冲程</b>：两气门关，活塞向上，机械能转化为内能。</li>
+        <li><b>做功冲程</b>：火花塞点火，燃气推动活塞向下，内能转化为机械能。</li>
+        <li><b>排气冲程</b>：排气门开，活塞向上，把废气排出。</li>
+      </ul>
+      <div class="warn">只有做功冲程是燃气对外做功，其余三个冲程靠飞轮的惯性完成。</div>
+    </div>
+  </div>
+</article>
+
+<article id="fuel" class="card demo">
+  <div class="card-head"><span class="tag">14.2</span><h3>燃料热值：同样质量，谁放热多</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasFuel"></canvas></div>
+      <div class="choice-row">
+        <button class="btn small ghost" data-fuel="wood">干木柴</button>
+        <button class="btn small ghost" data-fuel="alcohol">酒精</button>
+        <button class="btn small is-active" data-fuel="gasoline">汽油</button>
+        <button class="btn small ghost" data-fuel="hydrogen">氢气</button>
+      </div>
+      <div class="controls">
+        <label class="control"><span>质量 m</span><input id="fuelMass" type="range" min="0.1" max="5" step="0.1" value="1"><output id="fuelMassOut">1 kg</output></label>
+      </div>
+      <div class="controls">
+        <button id="fuelReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>燃料</span><b id="fuelName">汽油</b></div>
+        <div class="row"><span>热值 q</span><b id="fuelQ">4.6×10⁷ J/kg</b></div>
+        <div class="row"><span>质量 m</span><b id="fuelMassRead">1 kg</b></div>
+        <div class="row"><span>完全燃烧放热</span><b id="fuelHeat">4.6×10⁷ J</b></div>
+      </div>
+      <div class="eq">Q放 = mq</div>
+      <p>热值 q 表示 1 kg 某种燃料完全燃烧放出的热量，是燃料的一种属性。</p>
+      <ul class="tight">
+        <li>热值与燃料的质量、是否完全燃烧无关。</li>
+        <li>气体燃料常用 Q = Vq，q 的单位是 J/m³。</li>
+        <li>氢气的热值很大，常用作火箭燃料。</li>
+      </ul>
+      <div class="warn">“完全燃烧”是计算前提。实际燃烧往往不充分，放出的热量会小于 mq。</div>
+    </div>
+  </div>
+</article>
+
+<article id="efficiency" class="card demo">
+  <div class="card-head"><span class="tag">14.3</span><h3>热机效率：有用功只占一部分</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasEfficiency"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>总热量 Q</span><input id="effTotal" type="range" min="100" max="1000" step="10" value="500"><output id="effTotalOut">500 kJ</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>效率 η</span><input id="effRate" type="range" min="20" max="45" step="1" value="30"><output id="effRateOut">30%</output></label>
+      </div>
+      <div class="controls">
+        <button id="effReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>燃料放出总热量</span><b id="effTotalRead">500 kJ</b></div>
+        <div class="row"><span>有用机械能</span><b id="effUseful">150 kJ</b></div>
+        <div class="row"><span>损失能量</span><b id="effLoss">350 kJ</b></div>
+        <div class="row"><span>热机效率</span><b id="effRateRead">30%</b></div>
+      </div>
+      <div class="eq">η = W有用 / Q放 × 100%</div>
+      <p>热机效率一定小于 100%，因为废气带走热量、散热损失、摩擦损失都不可避免。</p>
+      <ul class="tight">
+        <li>废气带走大部分热量，是主要损失。</li>
+        <li>减少散热、减小摩擦、使燃料充分燃烧，可以提高效率。</li>
+        <li>效率是“有用功占总热量的比例”，不是功率。</li>
+      </ul>
+      <div class="warn">热机效率高，不代表做功快。效率说的是“能量利用率”，功率说的是“做功快慢”。</div>
+    </div>
+  </div>
+</article>
+
+<article id="conservation" class="card demo">
+  <div class="card-head"><span class="tag">14.4</span><h3>能量守恒：摆球的动能和势能在交换</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasPendulum"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>摆角</span><input id="pendAngle" type="range" min="0" max="60" step="1" value="50"><output id="pendAngleOut">50°</output></label>
+      </div>
+      <div class="controls">
+        <button id="pendPlay" class="btn small">开始摆动</button>
+        <button id="pendReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>摆角</span><b id="pendAngleRead">50°</b></div>
+        <div class="row"><span>重力势能</span><b id="pendPE">100%</b></div>
+        <div class="row"><span>动能</span><b id="pendKE">0%</b></div>
+        <div class="row"><span>机械能总量</span><b id="pendTotal">100%</b></div>
+      </div>
+      <p>摆球从最高点释放，高度降低、速度增大，重力势能转化为动能；摆到另一侧时，动能又转化为重力势能。</p>
+      <ul class="tight">
+        <li>理想情况下，动能与势能相互转化，机械能总量保持不变。</li>
+        <li>实际摆球会慢慢停下，因为空气阻力和摩擦把机械能转化为内能。</li>
+        <li>能量守恒定律：能量既不会凭空消灭，也不会凭空产生。</li>
+      </ul>
+      <div class="tip">能量守恒说的是“总量不变”，不是“形式不变”。能量可以从一种形式转化为另一种形式。</div>
+    </div>
+  </div>
+</article>
+
+<section id="summary" class="section">
+  <div class="section-head">
+    <span class="section-num">14.5</span>
+    <div>
+      <h2>热机效率与功率别混淆</h2>
+      <p>一个说“能量用了多少”，一个说“做功有多快”。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="table-wrap">
+      <table class="delta-table">
+        <thead><tr><th>物理量</th><th>含义</th><th>公式</th><th>单位</th></tr></thead>
+        <tbody>
+          <tr><td>热值</td><td>1 kg 燃料完全燃烧放出的热量</td><td><span class="m">q = Q放 / m</span></td><td>J/kg</td></tr>
+          <tr><td>热机效率</td><td>有用机械能占总热量的比例</td><td><span class="m">η = W有用 / Q放</span></td><td>无单位，常用百分数</td></tr>
+          <tr><td>功率</td><td>做功的快慢</td><td><span class="m">P = W / t</span></td><td>W</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">效率高不等于功率大。效率高的热机可能做功慢，功率大的热机可能效率低。</div>
+  </div>
+</section>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>日常里的内能利用</h2>
+      <p>从汽车到火箭，从燃气灶到发电机，内能的利用无处不在。</p>
+    </div>
+  </div>
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">交通 · 热机</div>
+      <h4>汽车发动机的四个冲程</h4>
+      <p class="scene">汽油在气缸内燃烧，推动活塞运动，再通过曲轴带动车轮。</p>
+      <div class="eq">内能 → 机械能</div>
+      <p class="answer">做功冲程把内能转化为机械能，其余冲程靠飞轮惯性完成。</p>
+      <p class="why">一个工作循环活塞往复 2 次、曲轴转 2 圈、对外做功 1 次。</p>
+      <a class="demo-link" href="#engine">对应动图：四冲程 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">航天 · 热值</div>
+      <h4>火箭为什么用氢燃料</h4>
+      <p class="scene">氢气的热值约为 1.4×10⁸ J/kg，远大于汽油。</p>
+      <div class="eq">Q放 = mq</div>
+      <p class="answer">相同质量，氢气完全燃烧放出的热量更多。</p>
+      <p class="why">火箭还需要携带氧化剂，因为太空没有空气，无法支持燃烧。</p>
+      <a class="demo-link" href="#fuel">对应动图：燃料热值 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">厨房 · 效率</div>
+      <h4>燃气灶烧水的效率</h4>
+      <p class="scene">燃气完全燃烧放出 1.0×10⁷ J 热量，水吸收 3.5×10⁶ J。</p>
+      <div class="eq">η = 3.5×10⁶ ÷ 1.0×10⁷ = 35%</div>
+      <p class="answer">这次烧水的效率约为 35%。</p>
+      <p class="why">大量热量被废气、锅体和空气带走，所以效率不高。</p>
+      <a class="demo-link" href="#efficiency">对应动图：热机效率 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">摩擦 · 转化</div>
+      <h4>摩擦生热</h4>
+      <p class="scene">双手摩擦、钻木取火、砂轮磨刀，都会发热。</p>
+      <div class="eq">机械能 → 内能</div>
+      <p class="answer">克服摩擦做功，机械能转化为内能，温度升高。</p>
+      <p class="why">这是能量转化，不是能量消失；总能量仍然守恒。</p>
+      <a class="demo-link" href="#conservation">对应动图：能量守恒 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">发电 · 转化链</div>
+      <h4>水力发电</h4>
+      <p class="scene">高处的水流下，推动水轮机，带动发电机发电。</p>
+      <div class="eq">重力势能 → 动能 → 机械能 → 电能</div>
+      <p class="answer">水的机械能最终转化为电能。</p>
+      <p class="why">能量每转化一次，都有一部分变成内能散失，但总量守恒。</p>
+      <a class="demo-link" href="#conservation">对应动图：能量守恒 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">家电 · 转化</div>
+      <h4>电饭锅煮饭</h4>
+      <p class="scene">电流通过电热丝，电热丝发热，把内能传给米饭和水。</p>
+      <div class="eq">电能 → 内能</div>
+      <p class="answer">电饭锅利用电流的热效应工作。</p>
+      <p class="why">第 18 章会学到：电热由焦耳定律 Q = I²Rt 计算。</p>
+      <a class="demo-link" href="chapter18.html">对应章节：电功率 →</a>
+    </article>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：内能的利用掌握了吗？</h2>
+      <p>先自己选，再看解析。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>这些地方错一次，就在错题本上写一次“错因”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>把热值当成热量</b>：热值是属性，与燃料质量无关；热量是过程量。</li>
+        <li><b>认为效率可以达到 100%</b>：废气、散热、摩擦损失不可避免。</li>
+        <li><b>四冲程圈数记错</b>：一个工作循环曲轴转 2 圈，活塞往复 2 次，做功 1 次。</li>
+        <li><b>把效率与功率混为一谈</b>：效率是能量利用率，功率是做功快慢。</li>
+        <li><b>说“能量消失了”</b>：能量只是转化或转移，总量保持不变。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>练习建议</h3>
+      <ul class="tight roomy">
+        <li>先判断能量转化方向，再选择公式。</li>
+        <li>Q放 = mq 中，m 用 kg，q 用 J/kg。</li>
+        <li>效率计算先找“有用能量”和“总能量”，再相除。</li>
+        <li>四冲程题先画活塞运动方向，再判断气门开闭。</li>
+        <li>用能量守恒解释现象时，说清楚“从什么形式变成什么形式”。</li>
+      </ul>
+      <div class="tip">热机效率题的关键是分清“燃料放出的总热量”和“真正用来做有用功的能量”。</div>
+    </div>
+  </div>
+</section>
+
+<section id="more" class="section">
+  <div class="section-head">
+    <span class="section-num">→</span>
+    <div>
+      <h2>继续学习</h2>
+      <p>热学到这里告一段落，下一章进入电学。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter13.html">
+      <div class="kicker">上一章</div>
+      <h4>内能</h4>
+      <p>分子热运动、比热容、热量计算。</p>
+    </a>
+    <a class="chapter-link" href="chapter15.html">
+      <div class="kicker">下一章</div>
+      <h4>电流和电路</h4>
+      <p>电荷、电流、串联并联、电流表。</p>
+    </a>
+    <a class="chapter-link" href="index.html">
+      <div class="kicker">总目录</div>
+      <h4>九上物理</h4>
+      <p>第 13–18 章学习路线与公式速查。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版九年级物理上册 · 第 14 章 内能的利用 · 互动学习页</p>
+  <p class="muted">本页为原创学习指导，不替代教材和课堂。</p>
+</footer>
+
+<script src="../chapter-common.js"></script>
+<script src="physics-common.js"></script>
+<script src="chapter14.js"></script>
+</body>
+</html>

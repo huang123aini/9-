@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第15章 电流和电路 · 九上物理动图指南</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chapters.css">
+<link rel="stylesheet" href="physics.css">
+</head>
+<body class="chapter-page" data-chapter="p15">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 · 九年级上册 · 第 15 章</div>
+    <h1>电流和电路</h1>
+    <p class="subtitle">电荷的定向移动形成电流。电路有通路、断路和短路三种状态，串联和并联是两种基本连接方式。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#static">先看摩擦起电</a>
+    </div>
+    <div class="hero-meta">4 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="chapter14.html">第14章 内能的利用</a>
+    <a href="chapter15.html" class="active">第15章 电流和电路</a>
+    <a href="chapter16.html">第16章 电压 电阻</a>
+    <a href="#series">串联与并联</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="opening" class="section opening">
+  <div class="opening-card">
+    <div class="opening-kicker">开场白</div>
+    <h2>电，到底是怎么“流”的？</h2>
+    <p>按下开关，灯就亮了；脱毛衣时，噼里啪啦冒火花。电看不见、摸不着，却能让灯泡发光、让手机充电、让风扇转起来。</p>
+    <p>这一章，我们跟着电荷走一遍电路：电流从哪里来、往哪里去，串联和并联有什么不同，又为什么绝对不能把电池两极直接用导线连起来。</p>
+    <div class="opening-question"><b>先想一想：</b>为什么一串彩灯里坏了一个灯泡，整串都不亮了？</div>
+  </div>
+</section>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">15</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>电荷 → 电流 → 电路组成 → 三种状态 → 串联并联 → 电流表。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>两种电荷</b>：正电荷和负电荷，同种排斥、异种吸引。</li>
+        <li><b>摩擦起电</b>：实质是电子从一个物体转移到另一个物体。</li>
+        <li><b>电流</b>：电荷定向移动形成，规定正电荷定向移动方向为电流方向。</li>
+        <li><b>电路组成</b>：电源、用电器、开关、导线。</li>
+        <li><b>三种状态</b>：通路、断路、短路，电源短路很危险。</li>
+        <li><b>串联并联</b>：串联一条路径，并联多条路径。</li>
+        <li><b>电流表</b>：串联接入，电流从“+”进、“−”出。</li>
+      </ol>
+      <div class="tip">看电路先找电源，再顺着导线找电流路径，最后判断用电器是否在路径上。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 5</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article id="static" class="card demo">
+  <div class="card-head"><span class="tag">15.1</span><h3>摩擦起电：电子从一个物体跑到另一个物体</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasStatic"></canvas></div>
+      <div class="choice-row">
+        <button class="btn small is-active" data-pair="glass">玻璃棒 + 丝绸</button>
+        <button class="btn small ghost" data-pair="rubber">橡胶棒 + 毛皮</button>
+      </div>
+      <div class="controls">
+        <button id="staticPlay" class="btn small">摩擦起电</button>
+        <button id="staticReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>实验材料</span><b id="staticPair">玻璃棒和丝绸</b></div>
+        <div class="row"><span>电子转移方向</span><b id="staticDirection">—</b></div>
+        <div class="row"><span>玻璃棒</span><b id="staticLeft">不带电</b></div>
+        <div class="row"><span>丝绸</span><b id="staticRight">不带电</b></div>
+      </div>
+      <p>两种不同物质相互摩擦，电子从束缚能力弱的物体转移到束缚能力强的物体，使两个物体带上等量异种电荷。</p>
+      <ul class="tight">
+        <li>玻璃棒与丝绸摩擦：玻璃棒失去电子带正电，丝绸得到电子带负电。</li>
+        <li>橡胶棒与毛皮摩擦：橡胶棒得到电子带负电，毛皮失去电子带正电。</li>
+        <li>同种电荷相互排斥，异种电荷相互吸引。</li>
+      </ul>
+      <div class="warn">摩擦起电不是创造电荷，而是电荷的转移。电荷的总量保持不变。</div>
+    </div>
+  </div>
+</article>
+
+<article id="states" class="card demo">
+  <div class="card-head"><span class="tag">15.2</span><h3>电路的三种状态：通路、断路、短路</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasCircuit"></canvas></div>
+      <div class="controls">
+        <button id="circuitClosed" class="btn small">通路</button>
+        <button id="circuitOpen" class="btn small ghost">断路</button>
+        <button id="circuitShort" class="btn small ghost">短路</button>
+        <button id="circuitReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>电路状态</span><b id="circuitState">通路</b></div>
+        <div class="row"><span>电流情况</span><b id="circuitCurrent">有电流</b></div>
+        <div class="row"><span>灯泡</span><b id="circuitLamp">发光</b></div>
+        <div class="row"><span>电源</span><b id="circuitSource">正常</b></div>
+      </div>
+      <p><b>通路</b>：处处连通的电路，有电流。<b>断路</b>：某处断开的电路，没有电流。<b>短路</b>：电流不经过用电器，直接构成回路。</p>
+      <ul class="tight">
+        <li>开关断开、导线断了、接触不良，都会造成断路。</li>
+        <li>电源短路时电流很大，可能烧坏电源，甚至引起火灾。</li>
+        <li>用电器短路时，该用电器不工作，其余部分可能仍工作。</li>
+      </ul>
+      <div class="warn">绝对不能用导线把电源两极直接连起来。短路不是“电路短一点”，而是电流绕过了用电器。</div>
+    </div>
+  </div>
+</article>
+
+<article id="series" class="card demo">
+  <div class="card-head"><span class="tag">15.3</span><h3>串联与并联：两条不同的电流路径</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasSeries"></canvas></div>
+      <div class="choice-row">
+        <button id="typeSeries" class="btn small is-active">串联</button>
+        <button id="typeParallel" class="btn small ghost">并联</button>
+      </div>
+      <div class="controls">
+        <button id="switchOne" class="btn small">S₁ 闭合</button>
+        <button id="switchTwo" class="btn small">S₂ 闭合</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>连接方式</span><b id="seriesType">串联</b></div>
+        <div class="row"><span>电流路径</span><b id="seriesPath">一条</b></div>
+        <div class="row"><span>灯泡 L₁</span><b id="seriesL1">发光</b></div>
+        <div class="row"><span>灯泡 L₂</span><b id="seriesL2">发光</b></div>
+        <div class="row"><span>开关作用</span><b id="seriesSwitch">控制整个电路</b></div>
+      </div>
+      <p>串联电路中只有一条电流路径，任何一个开关断开，整个电路都断路；并联电路有多条路径，各支路可以独立工作。</p>
+      <ul class="tight">
+        <li>串联：电流处处相等，I = I₁ = I₂。</li>
+        <li>并联：干路电流等于各支路电流之和，I = I₁ + I₂。</li>
+        <li>家庭电路中的用电器大多是并联的，一个坏了不影响其他。</li>
+      </ul>
+      <div class="tip">节日小彩灯常常串联，一个灯坏了整串都不亮；家庭里的灯和插座是并联的。</div>
+    </div>
+  </div>
+</article>
+
+<article id="ammeter" class="card demo">
+  <div class="card-head"><span class="tag">15.4</span><h3>电流表：串联接入，先看量程再读数</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasAmmeter"></canvas></div>
+      <div class="choice-row">
+        <button class="btn small is-active" data-range="0.6">量程 0–0.6 A</button>
+        <button class="btn small ghost" data-range="3">量程 0–3 A</button>
+      </div>
+      <div class="controls">
+        <label class="control"><span>电流 I</span><input id="ammeterCurrent" type="range" min="0" max="3" step="0.01" value="0.3"><output id="ammeterCurrentOut">0.30 A</output></label>
+      </div>
+      <div class="controls">
+        <button id="ammeterReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>量程</span><b id="ammeterRange">0–0.6 A</b></div>
+        <div class="row"><span>分度值</span><b id="ammeterStep">0.02 A</b></div>
+        <div class="row"><span>示数</span><b id="ammeterRead">0.30 A</b></div>
+        <div class="row"><span>连接方式</span><b>串联</b></div>
+      </div>
+      <p>电流表必须与被测用电器串联，电流从“+”接线柱流入，从“−”接线柱流出。</p>
+      <ul class="tight">
+        <li>0–0.6 A 量程，每小格 0.02 A。</li>
+        <li>0–3 A 量程，每小格 0.1 A。</li>
+        <li>被测电流不能超过量程；不能把电流表直接接在电源两极上。</li>
+      </ul>
+      <div class="warn">读数前先确认量程，再确认分度值。指针位置相同，不同量程的示数不同。</div>
+    </div>
+  </div>
+</article>
+
+<section id="summary" class="section">
+  <div class="section-head">
+    <span class="section-num">15.5</span>
+    <div>
+      <h2>串联与并联对比</h2>
+      <p>判断连接方式，最可靠的方法是“顺着电流路径走一遍”。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="table-wrap">
+      <table class="delta-table">
+        <thead><tr><th>比较项目</th><th>串联</th><th>并联</th></tr></thead>
+        <tbody>
+          <tr><td>电流路径</td><td>只有一条</td><td>有两条或多条</td></tr>
+          <tr><td>开关作用</td><td>一个开关控制整个电路</td><td>干路开关控制整个电路，支路开关控制本支路</td></tr>
+          <tr><td>用电器关系</td><td>一个断路，全部停止工作</td><td>各支路独立工作，互不影响</td></tr>
+          <tr><td>电流规律</td><td><span class="m">I = I₁ = I₂</span></td><td><span class="m">I = I₁ + I₂</span></td></tr>
+          <tr><td>生活实例</td><td>节日小彩灯、部分开关与灯</td><td>家庭电路中的用电器</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">判断串联还是并联，不要看元件画得整不整齐，要看电流有没有分岔。</div>
+  </div>
+</section>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>日常里的电流和电路</h2>
+      <p>从手电筒到家庭电路，电流的路径决定了用电器怎样工作。</p>
+    </div>
+  </div>
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">照明 · 电路</div>
+      <h4>手电筒的电路</h4>
+      <p class="scene">电池、灯泡、开关和导线组成一个简单电路。</p>
+      <div class="eq">电源 → 开关 → 灯泡 → 导线 → 电源</div>
+      <p class="answer">闭合开关，电路成为通路，灯泡发光。</p>
+      <p class="why">手电筒通常用两节干电池串联，总电压为 3 V。</p>
+      <a class="demo-link" href="#states">对应动图：电路状态 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">静电 · 电荷</div>
+      <h4>塑料尺吸引碎纸屑</h4>
+      <p class="scene">塑料尺在头发上摩擦后，靠近碎纸屑。</p>
+      <div class="eq">摩擦 → 电子转移 → 带电 → 吸引轻小物体</div>
+      <p class="answer">塑料尺带了电，能吸引轻小的纸屑。</p>
+      <p class="why">带电体有吸引轻小物体的性质，这是摩擦起电的常见现象。</p>
+      <a class="demo-link" href="#static">对应动图：摩擦起电 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">家庭 · 并联</div>
+      <h4>家里的灯和插座</h4>
+      <p class="scene">打开一盏灯，其他电器仍能正常工作。</p>
+      <div class="eq">并联：各支路独立工作</div>
+      <p class="answer">家庭电路中的用电器大多是并联的。</p>
+      <p class="why">并联时各用电器两端电压相同，一个坏了不会影响其他支路。</p>
+      <a class="demo-link" href="#series">对应动图：串联与并联 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">节日 · 串联</div>
+      <h4>一串小彩灯</h4>
+      <p class="scene">很多小灯泡串在同一条路径上。</p>
+      <div class="eq">串联：I = I₁ = I₂</div>
+      <p class="answer">一个灯泡坏了，整串灯都不亮。</p>
+      <p class="why">串联只有一条电流路径，任何一处断开都会造成整个电路断路。</p>
+      <a class="demo-link" href="#series">对应动图：串联与并联 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">测量 · 电流表</div>
+      <h4>读取电流表示数</h4>
+      <p class="scene">电流表使用 0–0.6 A 量程，指针指在第 15 个小格。</p>
+      <div class="eq">15 × 0.02 A = 0.30 A</div>
+      <p class="answer">电流表的示数为 0.30 A。</p>
+      <p class="why">先看量程，再算分度值，最后数格数，三步不能少。</p>
+      <a class="demo-link" href="#ammeter">对应动图：电流表 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">材料 · 导体</div>
+      <h4>为什么金属容易导电</h4>
+      <p class="scene">金属导线中有大量自由电子。</p>
+      <div class="eq">自由电子定向移动 → 电流</div>
+      <p class="answer">金属靠自由电子导电，酸、碱、盐溶液靠离子导电。</p>
+      <p class="why">导体容易导电，绝缘体不容易导电，但不是绝对不导电。</p>
+      <a class="demo-link" href="#states">对应动图：电路状态 →</a>
+    </article>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：电流和电路掌握了吗？</h2>
+      <p>先自己选，再看解析。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>这些地方错一次，就在错题本上写一次“错因”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>摩擦起电是创造电荷</b>：不是创造，是电子转移，电荷总量不变。</li>
+        <li><b>电流方向弄反</b>：规定正电荷定向移动方向为电流方向，金属中与电子移动方向相反。</li>
+        <li><b>把短路当成通路</b>：短路时电流绕过用电器，电源可能被烧坏。</li>
+        <li><b>电流表并联</b>：电流表必须串联，并联会短路并损坏电表。</li>
+        <li><b>串联、并联判断错</b>：看电流是否分岔，不看元件摆放位置。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>练习建议</h3>
+      <ul class="tight roomy">
+        <li>画电路图时先画电源，再画干路，最后画支路。</li>
+        <li>连接实物图时，导线不要交叉，开关要断开。</li>
+        <li>读电流表先看量程，再算分度值，最后读数。</li>
+        <li>判断串并联时，用不同颜色笔描出电流路径。</li>
+        <li>遇到短路题，先找“电流不经过用电器”的那条路径。</li>
+      </ul>
+      <div class="tip">电路题最稳的做法：先画等效电路图，再标电流方向，最后判断状态。</div>
+    </div>
+  </div>
+</section>
+
+<section id="more" class="section">
+  <div class="section-head">
+    <span class="section-num">→</span>
+    <div>
+      <h2>继续学习</h2>
+      <p>有了电流，还要知道是什么在推动它。下一章学电压和电阻。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter14.html">
+      <div class="kicker">上一章</div>
+      <h4>内能的利用</h4>
+      <p>热机、热值、效率、能量守恒。</p>
+    </a>
+    <a class="chapter-link" href="chapter16.html">
+      <div class="kicker">下一章</div>
+      <h4>电压 电阻</h4>
+      <p>电压表、串并联电压、电阻、变阻器。</p>
+    </a>
+    <a class="chapter-link" href="index.html">
+      <div class="kicker">总目录</div>
+      <h4>九上物理</h4>
+      <p>第 13–18 章学习路线与公式速查。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版九年级物理上册 · 第 15 章 电流和电路 · 互动学习页</p>
+  <p class="muted">本页为原创学习指导，不替代教材和课堂。</p>
+</footer>
+
+<script src="../chapter-common.js"></script>
+<script src="physics-common.js"></script>
+<script src="chapter15.js"></script>
+</body>
+</html>

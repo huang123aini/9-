@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第13章 内能 · 九上物理动图指南</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chapters.css">
+<link rel="stylesheet" href="physics.css">
+</head>
+<body class="chapter-page" data-chapter="p13">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 · 九年级上册 · 第 13 章</div>
+    <h1>内能</h1>
+    <p class="subtitle">分子在不停地运动，温度越高越剧烈。内能可以靠做功改变，也可以靠热传递改变。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#diffusion">先看扩散动图</a>
+    </div>
+    <div class="hero-meta">4 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="chapter13.html" class="active">第13章 内能</a>
+    <a href="chapter14.html">第14章 内能的利用</a>
+    <a href="chapter15.html">第15章 电流和电路</a>
+    <a href="#calc">热量计算</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="opening" class="section opening">
+  <div class="opening-card">
+    <div class="opening-kicker">开场白</div>
+    <h2>一杯热水，为什么会慢慢变凉？</h2>
+    <p>冬天摸铁栏杆，觉得比摸木头冷得多；妈妈一炒菜，香味就飘满整个屋子。这些天天发生的小事，背后都藏着一群看不见的“小家伙”——分子。</p>
+    <p>它们一直在运动，温度越高越活跃。这一章，我们就从这些现象出发，弄明白“热”到底是什么、内能从哪里来，以及怎样用 Q = cmΔt 算出热量。</p>
+    <div class="opening-question"><b>先想一想：</b>同样多的水和油，用同样的火加热，谁先热起来？</div>
+  </div>
+</section>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">13</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>分子热运动 → 内能 → 改变内能的两种方式 → 比热容 → 热量计算。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>分子热运动</b>：物质由分子构成，分子永不停息地做无规则运动。</li>
+        <li><b>扩散现象</b>：不同物质相互接触时彼此进入对方，温度越高扩散越快。</li>
+        <li><b>内能</b>：物体内所有分子热运动的动能与分子势能的总和。</li>
+        <li><b>改变内能</b>：做功和热传递，两种方式等效。</li>
+        <li><b>比热容</b>：单位质量物质温度升高 1℃ 吸收的热量，水的比热容较大。</li>
+        <li><b>热量计算</b>：Q = cmΔt，注意 Δt 是温度变化量。</li>
+      </ol>
+      <div class="tip">看到“闻到香味”“墨水扩散”“糖溶解”，先想到分子热运动，再想到温度。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 5</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article id="diffusion" class="card demo">
+  <div class="card-head"><span class="tag">13.1</span><h3>扩散实验：温度越高，分子跑得越快</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasDiffusion"></canvas></div>
+      <div class="legend">
+        <span><i style="background:#2563eb"></i>冷水分子</span>
+        <span><i style="background:#ef4444"></i>墨水分子</span>
+        <span><i style="background:#f59e0b"></i>温度</span>
+      </div>
+      <div class="controls">
+        <label class="control"><span>温度</span><input id="diffTemp" type="range" min="0" max="100" step="1" value="20"><output id="diffTempOut">20℃</output></label>
+      </div>
+      <div class="controls">
+        <button id="diffPlay" class="btn small">滴入墨水</button>
+        <button id="diffReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>温度</span><b id="diffTempRead">20℃</b></div>
+        <div class="row"><span>分子运动</span><b id="diffSpeedRead">较慢</b></div>
+        <div class="row"><span>扩散程度</span><b id="diffMixRead">0%</b></div>
+      </div>
+      <p>墨水分子进入水中，水分子也进入墨水中，彼此进入对方，这就是<b>扩散现象</b>。</p>
+      <ul class="tight">
+        <li>扩散说明：分子在不停地做无规则运动。</li>
+        <li>温度越高，分子热运动越剧烈，扩散越快。</li>
+        <li>扩散可以在气体、液体、固体之间发生。</li>
+      </ul>
+      <div class="warn">扩散不是“被风吹散”，也不是化学反应。它靠的是分子自身的无规则运动。</div>
+    </div>
+  </div>
+</article>
+
+<article id="work" class="card demo">
+  <div class="card-head"><span class="tag">13.2</span><h3>做功改变内能：压缩气体，温度升高</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasPiston"></canvas></div>
+      <div class="legend">
+        <span><i style="background:#38bdf8"></i>气体分子</span>
+        <span><i style="background:#94a3b8"></i>活塞</span>
+        <span><i style="background:#ef4444"></i>温度升高</span>
+      </div>
+      <div class="controls">
+        <button id="pistonCompress" class="btn small">向下压缩</button>
+        <button id="pistonExpand" class="btn small ghost">向上膨胀</button>
+        <button id="pistonReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>气体体积</span><b id="pistonVolume">较大</b></div>
+        <div class="row"><span>气体温度</span><b id="pistonTemp">20℃</b></div>
+        <div class="row"><span>内能</span><b id="pistonEnergy">较小</b></div>
+        <div class="row"><span>能量转化</span><b id="pistonConvert">—</b></div>
+      </div>
+      <p>压缩活塞时，外界对气体做功，气体的内能增加，温度升高；气体膨胀时，气体对外做功，内能减少，温度降低。</p>
+      <ul class="tight">
+        <li>做功改变内能：机械能 ↔ 内能。</li>
+        <li>对物体做功，物体内能增加；物体对外做功，内能减少。</li>
+        <li>热传递改变内能：能量从高温物体传到低温物体，或从同一物体的高温部分传到低温部分。</li>
+      </ul>
+      <div class="tip">柴油机的压缩冲程就是靠压缩空气使温度升高，达到柴油的着火点。</div>
+    </div>
+  </div>
+</article>
+
+<article id="specific" class="card demo">
+  <div class="card-head"><span class="tag">13.3</span><h3>比热容：同样加热，谁升温慢</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasHeatCurves"></canvas></div>
+      <div class="legend">
+        <span><i style="background:#2563eb"></i>水（c = 4.2×10³）</span>
+        <span><i style="background:#f59e0b"></i>煤油（c ≈ 2.1×10³）</span>
+      </div>
+      <div class="controls">
+        <label class="control"><span>加热时间</span><input id="heatTime" type="range" min="0" max="5" step="0.1" value="0"><output id="heatTimeOut">0 min</output></label>
+      </div>
+      <div class="controls">
+        <button id="heatPlay" class="btn small">开始加热</button>
+        <button id="heatReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>吸收热量</span><b id="heatQ">0 J</b></div>
+        <div class="row"><span>水的温度</span><b id="heatWaterT">20℃</b></div>
+        <div class="row"><span>煤油的温度</span><b id="heatOilT">20℃</b></div>
+        <div class="row"><span>谁升温快</span><b id="heatFaster">—</b></div>
+      </div>
+      <p>质量相同的水和煤油，吸收相同的热量，煤油的温度升高得更快。这说明水的<b>比热容</b>更大。</p>
+      <ul class="tight">
+        <li>比热容 c：单位质量物质温度升高 1℃ 吸收的热量。</li>
+        <li>水的比热容是 4.2×10³ J/(kg·℃)，在常见物质中较大。</li>
+        <li>比热容是物质的一种属性，与质量、温度变化无关。</li>
+      </ul>
+      <div class="warn">同种物质在不同状态下的比热容可能不同，例如水和冰的比热容不同。</div>
+    </div>
+  </div>
+</article>
+
+<article id="calc" class="card demo">
+  <div class="card-head"><span class="tag">13.4</span><h3>热量计算器：Q = cmΔt</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasHeatCalc"></canvas></div>
+      <div class="choice-row">
+        <button class="btn small is-active" data-material="water">水</button>
+        <button class="btn small ghost" data-material="iron">铁</button>
+        <button class="btn small ghost" data-material="aluminum">铝</button>
+      </div>
+      <div class="controls">
+        <label class="control"><span>质量 m</span><input id="calcMass" type="range" min="0.5" max="5" step="0.1" value="2"><output id="calcMassOut">2 kg</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>升温 Δt</span><input id="calcDelta" type="range" min="10" max="80" step="1" value="30"><output id="calcDeltaOut">30℃</output></label>
+      </div>
+      <div class="controls">
+        <button id="calcReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>物质</span><b id="calcMaterial">水</b></div>
+        <div class="row"><span>比热容 c</span><b id="calcC">4.2×10³ J/(kg·℃)</b></div>
+        <div class="row"><span>吸收热量 Q</span><b id="calcQ">2.52×10⁵ J</b></div>
+        <div class="row"><span>折合</span><b id="calcKJ">252 kJ</b></div>
+      </div>
+      <div class="eq">Q = cmΔt</div>
+      <p>Q 是吸收或放出的热量，c 是比热容，m 是质量，Δt 是温度变化量。</p>
+      <ul class="tight">
+        <li>吸热升温：Δt = t末 − t初。</li>
+        <li>放热降温：Δt = t初 − t末，结果取正值。</li>
+        <li>单位要统一：m 用 kg，c 用 J/(kg·℃)，Q 的单位才是 J。</li>
+      </ul>
+      <div class="warn">不要把 Δt 当成末温。题目说“升高到 60℃”和“升高了 60℃”完全不同。</div>
+    </div>
+  </div>
+</article>
+
+<section id="summary" class="section">
+  <div class="section-head">
+    <span class="section-num">13.5</span>
+    <div>
+      <h2>温度、内能、热量别混淆</h2>
+      <p>三者有关系，但不是同一个概念。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="table-wrap">
+      <table class="delta-table">
+        <thead><tr><th>概念</th><th>含义</th><th>是否状态量</th><th>常见说法</th></tr></thead>
+        <tbody>
+          <tr><td>温度</td><td>表示物体的冷热程度</td><td>是</td><td>“今天很热”“水温 60℃”</td></tr>
+          <tr><td>内能</td><td>所有分子热运动动能与分子势能的总和</td><td>是</td><td>“物体具有内能”</td></tr>
+          <tr><td>热量</td><td>热传递过程中转移的内能多少</td><td>否，是过程量</td><td>“吸收热量”“放出热量”</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">一切物体都有内能，0℃ 的冰也有内能。温度升高，内能一定增加；但内能增加，温度不一定升高，例如晶体熔化时温度不变。</div>
+  </div>
+</section>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>日常里的内能</h2>
+      <p>分子热运动、比热容和热传递，在生活里随处可见。</p>
+    </div>
+  </div>
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">厨房 · 扩散</div>
+      <h4>炒菜时闻到香味</h4>
+      <p class="scene">菜里的香味分子进入空气中，运动到你的鼻子里。</p>
+      <div class="eq">温度越高 → 扩散越快</div>
+      <p class="answer">炒菜时温度高，香味分子运动剧烈，所以很快就闻到。</p>
+      <p class="why">扩散是分子无规则运动的直接证据，不是风吹的结果。</p>
+      <a class="demo-link" href="#diffusion">对应动图：扩散实验 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">取暖 · 热传递</div>
+      <h4>热水袋暖手</h4>
+      <p class="scene">2 kg 的水从 80℃ 降到 40℃，放出多少热量？</p>
+      <div class="eq">Q = cmΔt = 4.2×10³ × 2 × 40 = 3.36×10⁵ J</div>
+      <p class="answer">放出约 3.36×10⁵ J 的热量。</p>
+      <p class="why">热量从高温的水传给低温的手，直到温度相同，这就是热平衡。</p>
+      <a class="demo-link" href="#calc">对应动图：热量计算 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">气候 · 比热容</div>
+      <h4>海边昼夜温差小</h4>
+      <p class="scene">同样受太阳照射，海水和沙石的温度变化不同。</p>
+      <div class="eq">Q = cmΔt，c水 较大 → Δt 较小</div>
+      <p class="answer">海水升温慢、降温也慢，所以海边昼夜温差较小。</p>
+      <p class="why">水的比热容大，吸收或放出相同热量时，温度变化小。</p>
+      <a class="demo-link" href="#specific">对应动图：比热容 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">汽车 · 冷却</div>
+      <h4>发动机用水冷却</h4>
+      <p class="scene">发动机工作时温度很高，需要冷却液带走热量。</p>
+      <div class="eq">水的 c = 4.2×10³ J/(kg·℃)</div>
+      <p class="answer">相同质量、相同升温，水能带走更多热量。</p>
+      <p class="why">水的比热容大，冷却效果好；冬天水结冰会体积膨胀，所以要用防冻液。</p>
+      <a class="demo-link" href="#specific">对应动图：比热容 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">生活 · 做功</div>
+      <h4>搓手取暖</h4>
+      <p class="scene">双手快速摩擦，手心变热。</p>
+      <div class="eq">机械能 → 内能</div>
+      <p class="answer">克服摩擦做功，机械能转化为内能，手的内能增加。</p>
+      <p class="why">这是做功改变内能，不是热传递。钻木取火也是同一个道理。</p>
+      <a class="demo-link" href="#work">对应动图：做功改变内能 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">太阳能 · 热量</div>
+      <h4>太阳能热水器</h4>
+      <p class="scene">100 kg 水从 20℃ 升高到 50℃，吸收多少热量？</p>
+      <div class="eq">Q = 4.2×10³ × 100 × 30 = 1.26×10⁷ J</div>
+      <p class="answer">吸收约 1.26×10⁷ J 的热量。</p>
+      <p class="why">太阳能通过热传递把内能传给水，水的温度升高。</p>
+      <a class="demo-link" href="#calc">对应动图：热量计算 →</a>
+    </article>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：内能掌握了吗？</h2>
+      <p>先自己选，再看解析。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>这些地方错一次，就在错题本上写一次“错因”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>说物体“含有热量”</b>：热量是过程量，只能说吸收或放出多少热量。</li>
+        <li><b>Δt 算错</b>：升温用末温减初温，降温用初温减末温，结果取正值。</li>
+        <li><b>把比热容当成热量</b>：比热容是物质的属性，不随质量、温度变化。</li>
+        <li><b>认为 0℃ 物体没有内能</b>：一切物体都有内能，0℃ 的冰也有。</li>
+        <li><b>温度不变就认为内能不变</b>：晶体熔化时温度不变，但内能增加。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>练习建议</h3>
+      <ul class="tight roomy">
+        <li>先判断是“做功”还是“热传递”改变内能。</li>
+        <li>热量计算先写公式，再统一单位，最后代入。</li>
+        <li>遇到“升高到”和“升高了”，先在题目上圈出关键词。</li>
+        <li>用比热容解释生活现象时，先说 c 的大小，再说 Δt 的大小。</li>
+        <li>自己画一张“温度—内能—热量”关系图。</li>
+      </ul>
+      <div class="tip">热学题的关键不是套公式，而是先判断能量从哪里来、到哪里去。</div>
+    </div>
+  </div>
+</section>
+
+<section id="more" class="section">
+  <div class="section-head">
+    <span class="section-num">→</span>
+    <div>
+      <h2>继续学习</h2>
+      <p>内能怎样被利用？下一章看热机。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter14.html">
+      <div class="kicker">第 14 章</div>
+      <h4>内能的利用</h4>
+      <p>四冲程内燃机、热值、热机效率、能量守恒。</p>
+    </a>
+    <a class="chapter-link" href="chapter15.html">
+      <div class="kicker">第 15 章</div>
+      <h4>电流和电路</h4>
+      <p>电荷、电流、串联并联、电流表。</p>
+    </a>
+    <a class="chapter-link" href="index.html">
+      <div class="kicker">总目录</div>
+      <h4>九上物理</h4>
+      <p>第 13–18 章学习路线与公式速查。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版九年级物理上册 · 第 13 章 内能 · 互动学习页</p>
+  <p class="muted">本页为原创学习指导，不替代教材和课堂。</p>
+</footer>
+
+<script src="../chapter-common.js"></script>
+<script src="physics-common.js"></script>
+<script src="chapter13.js"></script>
+</body>
+</html>

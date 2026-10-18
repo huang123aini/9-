@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第16章 电压 电阻 · 九上物理动图指南</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chapters.css">
+<link rel="stylesheet" href="physics.css">
+</head>
+<body class="chapter-page" data-chapter="p16">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 · 九年级上册 · 第 16 章</div>
+    <h1>电压 电阻</h1>
+    <p class="subtitle">电压是形成电流的原因，电阻是导体对电流的阻碍。电压表并联，滑动变阻器“一上一下”。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#volt">先看电压表</a>
+    </div>
+    <div class="hero-meta">4 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="chapter15.html">第15章 电流和电路</a>
+    <a href="chapter16.html" class="active">第16章 电压 电阻</a>
+    <a href="chapter17.html">第17章 欧姆定律</a>
+    <a href="#resistance">电阻</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="opening" class="section opening">
+  <div class="opening-card">
+    <div class="opening-kicker">开场白</div>
+    <h2>是什么在“推”电流？又是什么在“挡”电流？</h2>
+    <p>水往低处流，是因为有水位差；电流能在导线里流动，也是因为有电压。可同样是 1.5 V 的电池，接上不同的导线，电流为什么会不一样？</p>
+    <p>这一章，我们认识电压和电阻，学会用电压表，还要弄明白：调光台灯的旋钮一转，灯为什么就变暗了。</p>
+    <div class="opening-question"><b>先想一想：</b>一根又长又细的导线，和一根又短又粗的导线，谁的电阻更大？</div>
+  </div>
+</section>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">16</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>电压 → 电压表 → 串并联电压规律 → 电阻 → 滑动变阻器。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>电压</b>：使电路中形成电流的原因，电源是提供电压的装置。</li>
+        <li><b>电压表</b>：并联在被测用电器两端，电流从“+”进、“−”出。</li>
+        <li><b>串并联电压</b>：串联总电压等于各部分电压之和；并联各支路电压相等。</li>
+        <li><b>电阻</b>：导体对电流的阻碍作用，单位欧姆（Ω）。</li>
+        <li><b>电阻影响因素</b>：材料、长度、横截面积，还与温度有关。</li>
+        <li><b>滑动变阻器</b>：改变接入电路的电阻丝长度，从而改变电阻。</li>
+      </ol>
+      <div class="tip">把电压类比成水压，把电阻类比成水管阻力，但记住类比不是等同。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 5</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article id="volt" class="card demo">
+  <div class="card-head"><span class="tag">16.1</span><h3>电压表：并联在谁的两端，就测谁的电压</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasVoltage"></canvas></div>
+      <div class="choice-row">
+        <button class="btn small is-active" data-target="lamp">测灯泡电压</button>
+        <button class="btn small ghost" data-target="source">测电源电压</button>
+      </div>
+      <div class="controls">
+        <label class="control"><span>电源电压</span><input id="voltageSource" type="range" min="1.5" max="12" step="0.5" value="6"><output id="voltageSourceOut">6.0 V</output></label>
+      </div>
+      <div class="controls">
+        <button id="voltageReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>电压表接在</span><b id="voltageTargetRead">灯泡两端</b></div>
+        <div class="row"><span>电压表示数</span><b id="voltageReading">4.0 V</b></div>
+        <div class="row"><span>灯泡两端电压</span><b id="voltageLampRead">4.0 V</b></div>
+        <div class="row"><span>定值电阻电压</span><b id="voltageResistorRead">2.0 V</b></div>
+      </div>
+      <p>电压表要与被测用电器<b>并联</b>。图中灯泡和定值电阻串联，电源电压被两者分担。</p>
+      <ul class="tight">
+        <li>电压表内阻很大，并联时几乎不分流。</li>
+        <li>电流从电压表的“+”接线柱流入，“−”接线柱流出。</li>
+        <li>被测电压不能超过电压表量程。</li>
+      </ul>
+      <div class="warn">电压表不能串联在电路中。串联后电路几乎断路，其他用电器不能正常工作。</div>
+    </div>
+  </div>
+</article>
+
+<article id="rules" class="card demo">
+  <div class="card-head"><span class="tag">16.2</span><h3>串并联电压规律：加还是相等</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasVoltageRules"></canvas></div>
+      <div class="choice-row">
+        <button id="voltSeries" class="btn small is-active">串联</button>
+        <button id="voltParallel" class="btn small ghost">并联</button>
+      </div>
+      <div class="controls">
+        <label class="control"><span>电源 U</span><input id="voltSource2" type="range" min="3" max="12" step="0.5" value="6"><output id="voltSourceOut">6.0 V</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>R₁</span><input id="voltR1" type="range" min="5" max="30" step="1" value="10"><output id="voltR1Out">10 Ω</output></label>
+        <label class="control"><span>R₂</span><input id="voltR2" type="range" min="5" max="30" step="1" value="20"><output id="voltR2Out">20 Ω</output></label>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>连接方式</span><b id="voltType">串联</b></div>
+        <div class="row"><span>L₁ 两端电压</span><b id="voltU1">2.0 V</b></div>
+        <div class="row"><span>L₂ 两端电压</span><b id="voltU2">4.0 V</b></div>
+        <div class="row"><span>总电压</span><b id="voltTotal">6.0 V</b></div>
+        <div class="row"><span>规律</span><b id="voltRule">U = U₁ + U₂</b></div>
+      </div>
+      <p>串联电路中，总电压等于各部分电压之和；并联电路中，各支路两端电压相等，都等于电源电压。</p>
+      <ul class="tight">
+        <li>串联分压：电阻越大，分得的电压越大，<span class="m">U₁/U₂ = R₁/R₂</span>。</li>
+        <li>并联等压：<span class="m">U₁ = U₂ = U</span>。</li>
+        <li>电压表并联在谁两端，就测谁的电压。</li>
+      </ul>
+      <div class="tip">串联时“大电阻分大电压”；并联时各支路电压相同，电阻只影响电流。</div>
+    </div>
+  </div>
+</article>
+
+<article id="resistance" class="card demo">
+  <div class="card-head"><span class="tag">16.3</span><h3>电阻的影响因素：长度、粗细、材料</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasResistance"></canvas></div>
+      <div class="choice-row">
+        <button class="btn small is-active" data-resist="copper">铜</button>
+        <button class="btn small ghost" data-resist="iron">铁</button>
+        <button class="btn small ghost" data-resist="nichrome">镍铬合金</button>
+      </div>
+      <div class="controls">
+        <label class="control"><span>长度 L</span><input id="resLength" type="range" min="0.5" max="2" step="0.1" value="1"><output id="resLengthOut">1.0 m</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>横截面积 S</span><input id="resArea" type="range" min="0.5" max="2" step="0.1" value="1"><output id="resAreaOut">1.0 mm²</output></label>
+      </div>
+      <div class="controls">
+        <button id="resReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>材料</span><b id="resMaterial">铜</b></div>
+        <div class="row"><span>电阻率 ρ</span><b id="resRho">0.017 Ω·mm²/m</b></div>
+        <div class="row"><span>长度 L</span><b id="resLengthRead">1.0 m</b></div>
+        <div class="row"><span>横截面积 S</span><b id="resAreaRead">1.0 mm²</b></div>
+        <div class="row"><span>电阻 R</span><b id="resR">0.017 Ω</b></div>
+      </div>
+      <div class="eq">R = ρL / S</div>
+      <p>在温度一定时，导体的电阻与长度成正比，与横截面积成反比，还与材料有关。</p>
+      <ul class="tight">
+        <li>导线越长，电阻越大。</li>
+        <li>导线越细，电阻越大。</li>
+        <li>镍铬合金的电阻率比铜大得多，常用于电热丝。</li>
+        <li>电阻是导体本身的性质，与电压、电流无关。</li>
+      </ul>
+      <div class="warn">研究多个因素时要用控制变量法：只改变一个量，其余量保持不变。</div>
+    </div>
+  </div>
+</article>
+
+<article id="rheostat" class="card demo">
+  <div class="card-head"><span class="tag">16.4</span><h3>滑动变阻器：移动滑片，改变接入电阻</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasRheostat"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>滑片位置</span><input id="rheoPos" type="range" min="0" max="100" step="1" value="50"><output id="rheoPosOut">50%</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>电源 U</span><input id="rheoSource" type="range" min="3" max="12" step="0.5" value="6"><output id="rheoSourceOut">6.0 V</output></label>
+      </div>
+      <div class="controls">
+        <button id="rheoReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>接入电阻 R变</span><b id="rheoR">10 Ω</b></div>
+        <div class="row"><span>电路电流 I</span><b id="rheoCurrent">0.30 A</b></div>
+        <div class="row"><span>灯泡电压 U灯</span><b id="rheoLampU">3.0 V</b></div>
+        <div class="row"><span>灯泡亮度</span><b id="rheoBright">较暗</b></div>
+      </div>
+      <p>滑动变阻器通过改变接入电路中电阻丝的长度来改变电阻。滑片向右移动，接入电阻变大，电流变小，灯泡变暗。</p>
+      <ul class="tight">
+        <li>接线要“一上一下”，接同两个上接线柱或同两个下接线柱都不起作用。</li>
+        <li>闭合开关前，滑片要调到阻值最大处，保护电路。</li>
+        <li>变阻器与灯泡串联，可以改变灯泡的电流和亮度。</li>
+      </ul>
+      <div class="warn">滑动变阻器不是“改变电压的元件”，它通过改变电阻来改变电流和电压分配。</div>
+    </div>
+  </div>
+</article>
+
+<section id="summary" class="section">
+  <div class="section-head">
+    <span class="section-num">16.5</span>
+    <div>
+      <h2>电压与电阻对比</h2>
+      <p>一个是“推动力”，一个是“阻碍力”，不要混为一谈。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="table-wrap">
+      <table class="delta-table">
+        <thead><tr><th>物理量</th><th>作用</th><th>单位</th><th>测量工具</th><th>连接方式</th></tr></thead>
+        <tbody>
+          <tr><td>电压 U</td><td>使电荷定向移动形成电流</td><td>V</td><td>电压表</td><td>并联</td></tr>
+          <tr><td>电阻 R</td><td>阻碍电流，反映导体性质</td><td>Ω</td><td>伏安法间接测量</td><td>接入电路</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">常见电压：一节干电池 1.5 V，铅蓄电池 2 V，家庭电路 220 V，对人体安全电压不高于 36 V。</div>
+  </div>
+</section>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>日常里的电压和电阻</h2>
+      <p>从电池到调光台灯，电压和电阻决定了电流的大小。</p>
+    </div>
+  </div>
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">电源 · 电压</div>
+      <h4>一节干电池的电压</h4>
+      <p class="scene">手电筒常用两节干电池串联。</p>
+      <div class="eq">1.5 V + 1.5 V = 3 V</div>
+      <p class="answer">两节干电池串联后的总电压是 3 V。</p>
+      <p class="why">串联电池组的电压等于各节电池电压之和。</p>
+      <a class="demo-link" href="#rules">对应动图：串联电压 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">测量 · 电压表</div>
+      <h4>电压表读数</h4>
+      <p class="scene">电压表使用 0–3 V 量程，指针指在第 20 个小格。</p>
+      <div class="eq">20 × 0.1 V = 2.0 V</div>
+      <p class="answer">电压表的示数为 2.0 V。</p>
+      <p class="why">0–3 V 量程每小格 0.1 V；0–15 V 量程每小格 0.5 V。</p>
+      <a class="demo-link" href="#volt">对应动图：电压表 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">导线 · 电阻</div>
+      <h4>为什么输电线要用粗铜线</h4>
+      <p class="scene">远距离输电时，导线越长，电阻越大，能量损失越多。</p>
+      <div class="eq">R = ρL / S</div>
+      <p class="answer">用铜这种电阻率小的材料，并增大横截面积，可以减小电阻。</p>
+      <p class="why">长度和材料由实际条件决定，增大横截面积是常用的减阻方法。</p>
+      <a class="demo-link" href="#resistance">对应动图：电阻影响因素 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">调光 · 变阻器</div>
+      <h4>调光台灯</h4>
+      <p class="scene">转动旋钮，灯泡的亮度发生变化。</p>
+      <div class="eq">R变 ↑ → I ↓ → 灯泡变暗</div>
+      <p class="answer">滑动变阻器改变接入电阻，从而改变电流和灯泡亮度。</p>
+      <p class="why">变阻器与灯泡串联，电阻变大时，电路总电阻变大，电流变小。</p>
+      <a class="demo-link" href="#rheostat">对应动图：滑动变阻器 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">分压 · 串联</div>
+      <h4>两个电阻串联分压</h4>
+      <p class="scene">R₁ = 10 Ω，R₂ = 20 Ω，串联接在 6 V 电源上。</p>
+      <div class="eq">U₁ = 6 × 10/30 = 2 V，U₂ = 4 V</div>
+      <p class="answer">R₂ 分得更多电压，因为它的电阻更大。</p>
+      <p class="why">串联分压规律：U₁/U₂ = R₁/R₂。</p>
+      <a class="demo-link" href="#rules">对应动图：串联电压 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">材料 · 电阻率</div>
+      <h4>电炉丝为什么用镍铬合金</h4>
+      <p class="scene">电炉丝需要电阻较大、耐高温的材料。</p>
+      <div class="eq">镍铬合金 ρ 较大 → R 较大 → 发热多</div>
+      <p class="answer">相同长度和粗细下，镍铬合金的电阻比铜大得多。</p>
+      <p class="why">电热丝利用电流的热效应工作，需要较大的电阻。</p>
+      <a class="demo-link" href="#resistance">对应动图：电阻影响因素 →</a>
+    </article>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：电压和电阻掌握了吗？</h2>
+      <p>先自己选，再看解析。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>这些地方错一次，就在错题本上写一次“错因”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>电压表串联</b>：电压表必须并联，串联会使电路几乎断路。</li>
+        <li><b>电压表正负接线柱接反</b>：电流要从“+”流入、“−”流出。</li>
+        <li><b>认为电阻与电压电流有关</b>：电阻由导体本身决定，U、I 变化时 R 不变。</li>
+        <li><b>滑动变阻器接同侧接线柱</b>：必须“一上一下”，否则移动滑片不起作用。</li>
+        <li><b>并联电压规律记错</b>：并联各支路电压相等，不是相加。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>练习建议</h3>
+      <ul class="tight roomy">
+        <li>连接电路前先画电路图，标出电压表并联的位置。</li>
+        <li>读电压表先看量程，再算分度值，最后读数。</li>
+        <li>判断串并联电压时，先找“电流分岔点”。</li>
+        <li>研究电阻影响因素时，写清楚控制了什么变量。</li>
+        <li>闭合开关前，滑动变阻器滑片调到阻值最大处。</li>
+      </ul>
+      <div class="tip">电压表“并联”，电流表“串联”；变阻器“一上一下”，这三句话要记牢。</div>
+    </div>
+  </div>
+</section>
+
+<section id="more" class="section">
+  <div class="section-head">
+    <span class="section-num">→</span>
+    <div>
+      <h2>继续学习</h2>
+      <p>电压、电阻、电流三者之间有定量关系，下一章正式学习欧姆定律。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter15.html">
+      <div class="kicker">上一章</div>
+      <h4>电流和电路</h4>
+      <p>电荷、电路状态、串并联、电流表。</p>
+    </a>
+    <a class="chapter-link" href="chapter17.html">
+      <div class="kicker">下一章</div>
+      <h4>欧姆定律</h4>
+      <p>I=U/R、伏安法测电阻、串并联规律。</p>
+    </a>
+    <a class="chapter-link" href="index.html">
+      <div class="kicker">总目录</div>
+      <h4>九上物理</h4>
+      <p>第 13–18 章学习路线与公式速查。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版九年级物理上册 · 第 16 章 电压 电阻 · 互动学习页</p>
+  <p class="muted">本页为原创学习指导，不替代教材和课堂。</p>
+</footer>
+
+<script src="../chapter-common.js"></script>
+<script src="physics-common.js"></script>
+<script src="chapter16.js"></script>
+</body>
+</html>

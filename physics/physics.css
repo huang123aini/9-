@@ -1,0 +1,247 @@
+body[data-chapter="p-index"] .hero {
+  background:
+    radial-gradient(720px 380px at 82% 10%, rgba(34, 211, 238, 0.42), transparent 65%),
+    radial-gradient(640px 400px at 8% 94%, rgba(245, 158, 11, 0.38), transparent 65%),
+    linear-gradient(135deg, #061325 0%, #0c4a6e 54%, #1e3a8a 100%);
+}
+
+body[data-chapter="p-index"] .hero::before {
+  content: "Q = cmΔt   I = U/R   P = UI";
+}
+
+body[data-chapter="p13"] .hero {
+  background:
+    radial-gradient(700px 380px at 84% 10%, rgba(251, 191, 36, 0.42), transparent 65%),
+    radial-gradient(620px 380px at 8% 92%, rgba(239, 68, 68, 0.42), transparent 65%),
+    linear-gradient(135deg, #2a0a05 0%, #9a3412 54%, #b45309 100%);
+}
+
+body[data-chapter="p13"] .hero::before { content: "Q = cmΔt   分子热运动   °C"; }
+
+body[data-chapter="p14"] .hero {
+  background:
+    radial-gradient(700px 380px at 84% 10%, rgba(251, 146, 60, 0.44), transparent 65%),
+    radial-gradient(620px 380px at 8% 92%, rgba(56, 189, 248, 0.32), transparent 65%),
+    linear-gradient(135deg, #101827 0%, #7c2d12 54%, #0f766e 100%);
+}
+
+body[data-chapter="p14"] .hero::before { content: "Q = mq   η = W/Q   W = Pt"; }
+
+body[data-chapter="p15"] .hero {
+  background:
+    radial-gradient(700px 380px at 84% 10%, rgba(34, 211, 238, 0.4), transparent 65%),
+    radial-gradient(620px 380px at 8% 92%, rgba(59, 130, 246, 0.45), transparent 65%),
+    linear-gradient(135deg, #041a2b 0%, #0e7490 52%, #1d4ed8 100%);
+}
+
+body[data-chapter="p15"] .hero::before { content: "I = Q/t   + −   A"; }
+
+body[data-chapter="p16"] .hero {
+  background:
+    radial-gradient(700px 380px at 84% 10%, rgba(45, 212, 191, 0.4), transparent 65%),
+    radial-gradient(620px 380px at 8% 92%, rgba(99, 102, 241, 0.44), transparent 65%),
+    linear-gradient(135deg, #061f2b 0%, #0f766e 52%, #3730a3 100%);
+}
+
+body[data-chapter="p16"] .hero::before { content: "U   V   Ω   R = ρL/S"; }
+
+body[data-chapter="p17"] .hero {
+  background:
+    radial-gradient(700px 380px at 84% 10%, rgba(129, 140, 248, 0.42), transparent 65%),
+    radial-gradient(620px 380px at 8% 92%, rgba(34, 211, 238, 0.36), transparent 65%),
+    linear-gradient(135deg, #0b1027 0%, #4338ca 54%, #0e7490 100%);
+}
+
+body[data-chapter="p17"] .hero::before { content: "I = U/R   R = U/I   I–U 图像"; }
+
+body[data-chapter="p18"] .hero {
+  background:
+    radial-gradient(700px 380px at 84% 10%, rgba(250, 204, 21, 0.44), transparent 65%),
+    radial-gradient(620px 380px at 8% 92%, rgba(244, 114, 182, 0.34), transparent 65%),
+    linear-gradient(135deg, #1a1206 0%, #854d0e 54%, #9d174d 100%);
+}
+
+body[data-chapter="p18"] .hero::before { content: "P = UI   W = Pt   Q = I²Rt"; }
+
+body[data-chapter="p-index"] { --chapter-accent: #06b6d4; --chapter-soft: #ecfeff; --chapter-glow: rgba(6, 182, 212, 0.16); }
+body[data-chapter="p13"] { --chapter-accent: #f59e0b; --chapter-soft: #fff7ed; --chapter-glow: rgba(245, 158, 11, 0.18); }
+body[data-chapter="p14"] { --chapter-accent: #f97316; --chapter-soft: #fff7ed; --chapter-glow: rgba(249, 115, 22, 0.16); }
+body[data-chapter="p15"] { --chapter-accent: #0ea5e9; --chapter-soft: #f0f9ff; --chapter-glow: rgba(14, 165, 233, 0.16); }
+body[data-chapter="p16"] { --chapter-accent: #14b8a6; --chapter-soft: #f0fdfa; --chapter-glow: rgba(20, 184, 166, 0.16); }
+body[data-chapter="p17"] { --chapter-accent: #6366f1; --chapter-soft: #eef2ff; --chapter-glow: rgba(99, 102, 241, 0.16); }
+body[data-chapter="p18"] { --chapter-accent: #eab308; --chapter-soft: #fefce8; --chapter-glow: rgba(234, 179, 8, 0.18); }
+
+.opening {
+  padding-top: 30px;
+}
+
+.opening-card {
+  position: relative;
+  overflow: hidden;
+  padding: 26px 30px 24px;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--chapter-accent, var(--primary));
+  border-radius: 18px;
+  background:
+    radial-gradient(520px 240px at 100% 0, var(--chapter-glow, rgba(37, 99, 235, 0.14)), transparent 72%),
+    linear-gradient(135deg, var(--chapter-soft, #f8fbff), #ffffff 72%);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+}
+
+.opening-card::after {
+  content: "?";
+  position: absolute;
+  right: 18px;
+  bottom: -46px;
+  color: var(--chapter-accent, var(--primary));
+  font-family: Georgia, serif;
+  font-size: 180px;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.opening-kicker {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+  color: var(--chapter-accent, var(--primary));
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.opening-kicker::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.opening-card h2 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 10px;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.opening-card p {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin-bottom: 10px;
+  color: #334155;
+  font-size: 15.5px;
+  line-height: 1.8;
+}
+
+.opening-question {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-top: 4px;
+  padding: 9px 14px;
+  border: 1px dashed var(--chapter-accent, var(--primary));
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.opening-question b {
+  color: var(--chapter-accent, var(--primary));
+}
+
+.chapter-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.chapter-link .kicker {
+  color: var(--primary);
+}
+
+.btn.is-active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.btn.is-active:hover {
+  background: var(--primary-dark);
+}
+
+.formula-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.formula-item {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+}
+
+.formula-item .formula {
+  margin-bottom: 5px;
+  color: var(--primary);
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.formula-item span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.dial-wrap {
+  position: relative;
+}
+
+.mono {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+  .chapter-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .chapter-links,
+  .formula-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-chapter] .hero::before {
+    font-size: clamp(36px, 12vw, 76px);
+  }
+}
+
+@media print {
+  .chapter-links {
+    grid-template-columns: 1fr !important;
+  }
+}
