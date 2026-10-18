@@ -3,21 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>人教版九上数学 · 一元二次方程与二次函数动图指南</title>
+<title>人教版九上数学 · 第21–25章动图指南</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chapters.css">
 </head>
 <body>
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="badge">人教版 · 九年级上册 · 第 21–22 章</div>
+    <div class="badge">人教版 · 九年级上册 · 第 21–25 章</div>
     <h1>一元二次方程 <span class="amp">&</span> 二次函数</h1>
-    <p class="subtitle">把“式子”变成看得见的变化。拖动滑块、点击播放，按自己的节奏一步步学。</p>
+    <p class="subtitle">先精讲一元二次方程与二次函数，再继续旋转、圆、概率。拖动滑块、点击播放，按自己的节奏学。</p>
     <div class="hero-actions">
       <a class="btn btn-light" href="#plan">开始学习</a>
       <a class="btn btn-ghost-light" href="#completing">先看配方法动图</a>
+      <a class="btn btn-ghost-light" href="#more-chapters">第 23–25 章</a>
+      <a class="btn btn-ghost-light" href="kids.html">白话版</a>
     </div>
-    <div class="hero-meta">10 个交互动图 · 8 个生活例子 · 6 道自测题 · 零基础友好 · 离线可用</div>
+    <div class="hero-meta">5 章 · 22 个交互动图 · 26 个生活例子 · 24 道自测题</div>
     <p class="print-only print-note">静态 PDF 版：动图已转为示意图，可按页面顺序阅读。</p>
   </div>
 </header>
@@ -27,6 +30,8 @@
     <a href="#plan">学习路线</a>
     <a href="#ch21">第 21 章</a>
     <a href="#ch22">第 22 章</a>
+    <a href="#more-chapters">第 23–25 章</a>
+    <a href="kids.html">白话版</a>
     <a href="#why">深入原理</a>
     <a href="#daily">生活例子</a>
     <a href="#link">知识串联</a>
@@ -236,7 +241,7 @@
         </div>
         <p>如果 <span class="m">(x − p)(x − q) = 0</span>，那么 <span class="m">x = p</span> 或 <span class="m">x = q</span>。反过来，已知两根，也可以写出方程。</p>
         <div class="tip">拓展：<span class="m">x₁ + x₂ = −b/a</span>，<span class="m">x₁x₂ = c/a</span>。这里 a = 1，所以和是 5，积是 6。</div>
-        <div class="warn">把 q 拖到 2，两个根重合，方程变成 (x − 2)² = 0，此时只有一个根（两个相等实根）。</div>
+        <div class="warn">把 q 拖到 2，两个根重合，方程变成 (x − 2)² = 0。这时是两个相等的实根，通常写成一个根 x = 2。</div>
       </div>
     </div>
   </article>
@@ -473,15 +478,15 @@
         <div class="d-line">ax² + bx + c = 0 <span class="d-note">前提：a ≠ 0</span></div>
         <div class="d-line">x² + (b/a)x + c/a = 0 <span class="d-note">两边同时除以 a</span></div>
         <div class="d-line">x² + (b/a)x = −c/a <span class="d-note">常数项移到右边</span></div>
-        <div class="d-line">x² + (b/a)x + <span class="hl">(b/2a)²</span> = <span class="hl">(b/2a)²</span> − c/a <span class="d-note">两边加上“一次项系数一半的平方”</span></div>
-        <div class="d-line">(x + b/2a)² = (b² − 4ac) / (4a²) <span class="d-note">左边写成完全平方，右边通分</span></div>
-        <div class="d-line">x + b/2a = ±√(b² − 4ac) / (2a) <span class="d-note">两边开平方，别漏 ±</span></div>
+        <div class="d-line">x² + (b/a)x + <span class="hl">(b/(2a))²</span> = <span class="hl">(b/(2a))²</span> − c/a <span class="d-note">两边加上“一次项系数一半的平方”</span></div>
+        <div class="d-line">(x + b/(2a))² = (b² − 4ac) / (4a²) <span class="d-note">左边写成完全平方，右边通分</span></div>
+        <div class="d-line">x + b/(2a) = ±√(b² − 4ac) / (2|a|) <span class="d-note">Δ ≥ 0 时开平方；分母先写 2|a|，别漏 ±</span></div>
         <div class="d-line strong">x = (−b ± √(b² − 4ac)) / (2a)</div>
       </div>
       <div class="explain">
         <p>关键只有一句：<b>把左边配成完全平方</b>。左边一旦变成“某个式子的平方”，右边就是一个常数，直接开平方即可。</p>
-        <p>为什么右边分母是 4a²？因为 (b/2a)² = b²/(4a²)，通分后就是 (b² − 4ac)/(4a²)。</p>
-        <p>为什么最后可以写成 2a 而不是 2|a|？因为前面有 ±，正负号已经把分母的符号“吸收”掉了。</p>
+        <p>为什么右边分母是 4a²？因为 (b/(2a))² = b²/(4a²)，通分后就是 (b² − 4ac)/(4a²)。</p>
+        <p>为什么最后可以写成 2a 而不是 2|a|？严格说，开平方后先得到 2|a|；因为前面有 ±，正负号已经把分母的符号“吸收”掉了，所以最终统一写成 2a。</p>
         <div class="warn">a ≠ 0 是整个过程的前提：否则不能除以 a，方程也不再是二次方程。</div>
       </div>
     </div>
@@ -492,7 +497,7 @@
     <div class="demo-grid">
       <div class="explain">
         <p>配方后得到：</p>
-        <div class="eq">(x + b/2a)² = (b² − 4ac) / (4a²)</div>
+        <div class="eq">(x + b/(2a))² = (b² − 4ac) / (4a²)</div>
         <p>左边是一个平方，永远 ≥ 0；右边分母 4a² 永远 &gt; 0。所以右边的符号完全由 <span class="m">Δ = b² − 4ac</span> 决定。</p>
         <ul class="tight">
           <li>Δ &gt; 0：右边是正数，开平方有两个相反数 → 两个根</li>
@@ -538,8 +543,8 @@
       <div class="derivation">
         <div class="d-line">y = ax² + bx + c</div>
         <div class="d-line">y = a(x² + (b/a)x) + c <span class="d-note">提出二次项系数 a</span></div>
-        <div class="d-line">y = a(x + b/2a)² + c − b²/(4a) <span class="d-note">括号内配成完全平方</span></div>
-        <div class="d-line strong">y = a(x + b/2a)² + (4ac − b²)/(4a)</div>
+        <div class="d-line">y = a(x + b/(2a))² + c − b²/(4a) <span class="d-note">括号内配成完全平方</span></div>
+        <div class="d-line strong">y = a(x + b/(2a))² + (4ac − b²)/(4a)</div>
       </div>
       <div class="explain">
         <p>所以顶点式里的 <span class="m">h = −b/(2a)</span>，<span class="m">k = (4ac − b²)/(4a)</span>。</p>
@@ -738,10 +743,38 @@
   </div>
 </section>
 
+<section id="more-chapters" class="section">
+  <div class="section-head">
+    <span class="section-num">23–25</span>
+    <div>
+      <h2>九上后半程：旋转、圆、概率</h2>
+      <p>三个独立页面，和上面两章同一套风格：动图、生活例子、自测和易错点。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter23.html">
+      <div class="kicker">第 23 章</div>
+      <h4>旋转</h4>
+      <p>旋转三要素、中心对称、坐标中的中心对称、图案设计。</p>
+    </a>
+    <a class="chapter-link" href="chapter24.html">
+      <div class="kicker">第 24 章</div>
+      <h4>圆</h4>
+      <p>垂径定理、圆周角、直线与圆、弧长与扇形、正多边形。</p>
+    </a>
+    <a class="chapter-link" href="chapter25.html">
+      <div class="kicker">第 25 章</div>
+      <h4>概率初步</h4>
+      <p>随机事件、列举法、两枚骰子、频率估计概率。</p>
+    </a>
+  </div>
+  <div class="tip">建议顺序：先学第 23 章旋转，再学第 24 章圆，最后学第 25 章概率。如果公式看得有点累，先看 <a href="kids.html">白话版</a> 把画面建立起来，再回来玩动图。</div>
+</section>
+
 </main>
 
 <footer class="footer">
-  <p>人教版九年级数学上册 · 第 21–22 章互动学习页</p>
+  <p>人教版九年级数学上册 · 第 21–25 章互动学习页</p>
   <p class="muted">用浏览器打开即可，无需联网。建议使用 Chrome、Safari 或 Edge。</p>
 </footer>
 

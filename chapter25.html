@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第25章 概率初步 · 九上数学动图指南</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chapters.css">
+</head>
+<body class="chapter-page" data-chapter="25">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 · 九年级上册 · 第 25 章</div>
+    <h1>概率初步</h1>
+    <p class="subtitle">不确定的世界里，用列举法算概率，用大量重复试验估计概率。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#spinner">先转转盘</a>
+    </div>
+    <div class="hero-meta">3 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="kids.html">白话版</a>
+    <a href="chapter23.html">第23章 旋转</a>
+    <a href="chapter24.html">第24章 圆</a>
+    <a href="chapter25.html" class="active">第25章 概率</a>
+    <a href="#daily">生活例子</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">25</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>随机事件 → 概率的意义 → 列举法 → 列表/树状图 → 频率估计概率。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>三类事件</b>：必然事件、不可能事件、随机事件。</li>
+        <li><b>概率</b>：等可能事件中，P(A) = 所求结果数 ÷ 总结果数。</li>
+        <li><b>列举法</b>：一步试验直接列；两步试验用表格或树状图。</li>
+        <li><b>频率</b>：大量重复试验时，频率会稳定在概率附近。</li>
+        <li><b>应用</b>：抽奖、游戏公平性、天气预报、命中率。</li>
+      </ol>
+      <div class="tip">在等可能试验里，概率不是“猜”，而是把“所有可能结果”数清楚。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 5</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article id="spinner" class="card demo">
+  <div class="card-head"><span class="tag">25.1</span><h3>转盘实验：等可能事件的概率</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasSpinner"></canvas></div>
+      <div class="controls">
+        <button id="spinnerSpin" class="btn small">转一次</button>
+        <button id="spinnerQuick" class="btn small ghost">快速转 100 次</button>
+        <button id="spinnerReset" class="btn small ghost">重置</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>每个颜色的理论概率</span><b>1/4 = 25%</b></div>
+        <div class="row"><span>总次数</span><b id="spinnerTotal">0</b></div>
+        <div class="row"><span>本次结果</span><b id="spinnerLast">还没转</b></div>
+      </div>
+      <p>转盘被平均分成 4 个扇形，指针停在每个颜色上的可能性相同，都是 <span class="m">1/4</span>。</p>
+      <ul class="tight">
+        <li>等可能事件才能直接用“结果数 ÷ 总结果数”。</li>
+        <li>概率是 0 到 1 之间的数：必然事件是 1，不可能事件是 0。</li>
+        <li>转的次数越多，各颜色的频率越接近 25%。</li>
+      </ul>
+      <div class="warn">“转 4 次一定每种颜色各一次”是错的。概率说的是“长期趋势”，不是保证。</div>
+    </div>
+  </div>
+</article>
+
+<article id="dice" class="card demo">
+  <div class="card-head"><span class="tag">25.2</span><h3>两枚骰子：用表格列举所有结果</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasDice"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>和</span><input id="diceSum" type="range" min="2" max="12" step="1" value="7"><output id="diceSumOut">7</output></label>
+      </div>
+      <div class="controls">
+        <button id="diceRoll" class="btn small">掷一次</button>
+        <button id="diceReset" class="btn small ghost">重置</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>选中的和</span><b id="diceSumRead">7</b></div>
+        <div class="row"><span>有几种情况</span><b id="diceWays">6 种</b></div>
+        <div class="row"><span>概率</span><b id="diceProb">6/36 = 1/6</b></div>
+        <div class="row"><span>本次掷出</span><b id="diceLast">还没掷</b></div>
+      </div>
+      <p>两枚骰子一共有 <span class="m">6 × 6 = 36</span> 种等可能结果。表格里的每个格子就是一种结果。</p>
+      <ul class="tight">
+        <li>和是 7 的情况最多，有 6 种：<span class="m">1+6, 2+5, 3+4, 4+3, 5+2, 6+1</span>。</li>
+        <li>和是 2 或 12 的情况最少，各只有 1 种。</li>
+        <li>(1,2) 和 (2,1) 是两种不同的结果，不能合并。</li>
+      </ul>
+      <div class="tip">两步试验用表格最稳：行是第一枚骰子，列是第二枚骰子，格子里写和。</div>
+    </div>
+  </div>
+</article>
+
+<article id="coin" class="card demo">
+  <div class="card-head"><span class="tag">25.3</span><h3>抛硬币：频率如何逼近概率</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasCoin"></canvas></div>
+      <div class="controls">
+        <button id="coinFlip" class="btn small">抛一次</button>
+        <button id="coinQuick100" class="btn small ghost">快速抛 100 次</button>
+        <button id="coinQuick1000" class="btn small ghost">快速抛 1000 次</button>
+        <button id="coinReset" class="btn small ghost">重置</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>总次数</span><b id="coinTotal">0</b></div>
+        <div class="row"><span>正面频率</span><b id="coinHeads">—</b></div>
+        <div class="row"><span>反面频率</span><b id="coinTails">—</b></div>
+        <div class="row"><span>本次结果</span><b id="coinLast">还没抛</b></div>
+      </div>
+      <p>均匀硬币只有正、反两面，理论上正面概率是 <span class="m">1/2</span>。但抛 10 次不一定正好 5 正 5 反。</p>
+      <ul class="tight">
+        <li>频率 = 出现次数 ÷ 总次数，是实验得到的值。</li>
+        <li>概率是理论值；大量重复试验时，频率会稳定在概率附近。</li>
+        <li>试验次数越多，频率通常越接近 0.5。</li>
+      </ul>
+      <div class="warn">频率不等于概率。抛 10 次得到 7 次正面，不代表正面概率变成了 70%。</div>
+    </div>
+  </div>
+</article>
+
+<section id="summary" class="section">
+  <div class="section-head">
+    <span class="section-num">25.4</span>
+    <div>
+      <h2>概率的三种工具</h2>
+      <p>先判断“等可能”，再决定用列举、表格/树状图，还是频率估计。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="table-wrap">
+      <table class="delta-table">
+        <thead><tr><th>工具</th><th>什么时候用</th><th>关键动作</th></tr></thead>
+        <tbody>
+          <tr><td>直接列举</td><td>一步试验，结果不多</td><td>把所有等可能结果列出来，数一数</td></tr>
+          <tr><td>表格 / 树状图</td><td>两步试验，比如掷两枚骰子、抽两次球</td><td>第一步行、第二步行，或按步骤画树</td></tr>
+          <tr><td>频率估计</td><td>结果无法一一列举，或试验次数很多</td><td>做大量重复试验，用频率估计概率</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="eq">P(A) = 事件 A 包含的结果数 ÷ 所有等可能结果数</div>
+    <div class="tip">概率范围：<span class="m">0 ≤ P(A) ≤ 1</span>。必然事件 P = 1，不可能事件 P = 0。</div>
+  </div>
+</section>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>日常里的概率</h2>
+      <p>天气预报、抽奖、游戏、命中率，背后都是概率。</p>
+    </div>
+  </div>
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">天气 · 估计</div>
+      <h4>“明天降水概率 70%”是什么意思？</h4>
+      <p class="scene">这是根据大量历史气象数据估计出来的概率，不是说明天 70% 的时间在下雨。</p>
+      <div class="eq">P(下雨) = 70%</div>
+      <p class="answer">表示在相似气象条件下，约 70% 的情况会下雨。</p>
+      <p class="why">概率不是保证；70% 也不等于“一定下雨”。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">游戏 · 公平</div>
+      <h4>掷骰子比大小公平吗？</h4>
+      <p class="scene">一枚均匀骰子，1～6 点出现的可能性相同。</p>
+      <div class="eq">P(点数大于 3) = 3/6 = 1/2</div>
+      <p class="answer">大于 3 和小于等于 3 的概率都是 1/2，游戏公平。</p>
+      <p class="why">判断公平性，就是比较双方获胜的概率是否相等。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">抽奖 · 列举</div>
+      <h4>10 张奖券里有 2 张中奖</h4>
+      <p class="scene">随机抽一张，每张奖券被抽到的可能性相同。</p>
+      <div class="eq">P(中奖) = 2/10 = 1/5</div>
+      <p class="answer">中奖概率是 20%；不中奖概率是 80%。</p>
+      <p class="why">所有奖券等可能，才能直接用“中奖张数 ÷ 总张数”。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">运动 · 频率</div>
+      <h4>投篮 100 次命中 45 次</h4>
+      <p class="scene">用命中次数除以总次数，得到频率。</p>
+      <div class="eq">频率 = 45/100 = 0.45</div>
+      <p class="answer">可以估计这位球员的命中概率约为 45%。</p>
+      <p class="why">频率是实验值；投篮次数越多，频率越稳定，估计越可靠。</p>
+      <a class="demo-link" href="#coin">对应动图：频率估计 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">骰子 · 表格</div>
+      <h4>两枚骰子，和是 7 的概率最大</h4>
+      <p class="scene">36 种等可能结果中，和为 7 的情况有 6 种。</p>
+      <div class="eq">P(和 = 7) = 6/36 = 1/6</div>
+      <p class="answer">和是 7 的概率约为 16.7%，比和是 2 或 12 更常见。</p>
+      <p class="why">表格能清楚看到每个和对应多少种情况。</p>
+      <a class="demo-link" href="#dice">对应动图：两枚骰子 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">生活 · 公平</div>
+      <h4>用抛硬币决定谁先开球</h4>
+      <p class="scene">硬币正、反两面出现的可能性相同。</p>
+      <div class="eq">P(正面) = P(反面) = 1/2</div>
+      <p class="answer">双方先开球的机会相等，所以公平。</p>
+      <p class="why">比赛里常用抛硬币、猜拳等“等可能”的方式决定先后。</p>
+    </article>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：概率算对了吗？</h2>
+      <p>先自己算，再看解析。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>概率题的错误，往往是“结果没数全”或“把频率当概率”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>把频率当概率</b>：抛 10 次 7 次正面，不代表正面概率是 70%。</li>
+        <li><b>两枚骰子只数了 21 种</b>：(1,2) 和 (2,1) 是两种结果，一共 36 种。</li>
+        <li><b>非等可能也直接除</b>：只有等可能事件才能用“结果数 ÷ 总结果数”。</li>
+        <li><b>概率范围写错</b>：概率一定在 0 到 1 之间，不可能大于 1。</li>
+        <li><b>“有放回/不放回”混了</b>：第二次抽取时，总数和各类球的数量可能已经变了。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>解题三步</h3>
+      <ul class="tight roomy">
+        <li><b>第一步</b>：判断是不是等可能事件。</li>
+        <li><b>第二步</b>：把所有等可能结果列全（表格或树状图）。</li>
+        <li><b>第三步</b>：数出目标结果，做除法，检查是否在 0～1 之间。</li>
+        <li>游戏公平性：比较双方获胜概率是否相等。</li>
+        <li>频率估计：说清“试验次数”和“频率”，不要直接说成概率。</li>
+      </ul>
+      <div class="tip">概率题最稳的习惯：先写“总共有多少种”，再写“符合条件有多少种”。</div>
+    </div>
+  </div>
+</section>
+
+<section id="more" class="section">
+  <div class="section-head">
+    <span class="section-num">→</span>
+    <div>
+      <h2>继续学习</h2>
+      <p>九上数学的五个章节到这里就完整了。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter24.html">
+      <div class="kicker">第 24 章</div>
+      <h4>圆</h4>
+      <p>垂径定理、圆周角、切线与扇形面积。</p>
+    </a>
+    <a class="chapter-link" href="chapter23.html">
+      <div class="kicker">第 23 章</div>
+      <h4>旋转</h4>
+      <p>旋转三要素、中心对称、图案设计。</p>
+    </a>
+    <a class="chapter-link" href="index.html">
+      <div class="kicker">总目录</div>
+      <h4>第 21–22 章</h4>
+      <p>一元二次方程与二次函数。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版九年级数学上册 · 第 25 章 概率初步 · 互动学习页</p>
+  <p class="muted">本页为原创学习指导，不替代教材和课堂。</p>
+</footer>
+
+<script src="chapter-common.js"></script>
+<script src="chapter25.js"></script>
+</body>
+</html>

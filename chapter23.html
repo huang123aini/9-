@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第23章 旋转 · 九上数学动图指南</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chapters.css">
+</head>
+<body class="chapter-page" data-chapter="23">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 · 九年级上册 · 第 23 章</div>
+    <h1>旋转</h1>
+    <p class="subtitle">图形绕着一个点转动，形状和大小都不变；中心对称，就是旋转 180°。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#rotation-lab">先看旋转实验</a>
+    </div>
+    <div class="hero-meta">4 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="kids.html">白话版</a>
+    <a href="chapter23.html" class="active">第23章 旋转</a>
+    <a href="chapter24.html">第24章 圆</a>
+    <a href="chapter25.html">第25章 概率</a>
+    <a href="#daily">生活例子</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">23</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>旋转的三要素 → 旋转的性质 → 中心对称与中心对称图形 → 坐标中的中心对称 → 图案设计。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>旋转三要素</b>：旋转中心、旋转方向、旋转角。</li>
+        <li><b>旋转性质</b>：对应点到旋转中心的距离相等；对应点与中心连线的夹角等于旋转角。</li>
+        <li><b>中心对称</b>：旋转 180° 后与另一个图形重合，对称中心是对应点连线的中点。</li>
+        <li><b>坐标规律</b>：关于原点对称，点 (x, y) 变成 (−x, −y)。</li>
+        <li><b>图案设计</b>：把一个基本图形绕中心依次旋转 360°/n，就能得到旋转对称图案。</li>
+      </ol>
+      <div class="tip">看到“绕点转动”“风车”“钟表”“雪花”，先找旋转中心和旋转角。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 5</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article id="rotation-lab" class="card demo">
+  <div class="card-head"><span class="tag">23.1</span><h3>旋转实验台：绕点 O 转起来</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap square-wrap"><canvas id="canvasRotation"></canvas></div>
+      <div class="legend">
+        <span><i style="background:#2563eb"></i>原图</span>
+        <span><i style="background:#f59e0b"></i>旋转后</span>
+        <span><i style="background:#ef4444"></i>对应点</span>
+      </div>
+      <div class="controls">
+        <label class="control"><span>角度</span><input id="rotAngle" type="range" min="0" max="360" step="1" value="90"><output id="rotAngleOut">90°</output></label>
+      </div>
+      <div class="controls">
+        <button id="rotCCW" class="btn small">逆时针</button>
+        <button id="rotCW" class="btn small ghost">顺时针</button>
+        <button id="rotPlay" class="btn small">播放旋转</button>
+        <button id="rotReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>旋转中心</span><b>O</b></div>
+        <div class="row"><span>旋转角</span><b id="rotAngleRead">90°</b></div>
+        <div class="row"><span>旋转方向</span><b id="rotDirRead">逆时针</b></div>
+        <div class="row"><span>对应点到 O 的距离</span><b id="rotDistRead">OA = OA′ = 2</b></div>
+      </div>
+      <p>旋转的三要素：<b>旋转中心、旋转方向、旋转角</b>。三者确定，旋转后的位置就确定了。</p>
+      <ul class="tight">
+        <li>旋转前后，图形形状、大小都不变，是全等变换。</li>
+        <li>对应点到旋转中心的距离相等：<span class="m">OA = OA′</span>。</li>
+        <li>对应点与中心连线的夹角等于旋转角：<span class="m">∠AOA′ = θ</span>。</li>
+        <li>每一对对应点都可以用同样的方式找到。</li>
+      </ul>
+      <div class="warn">旋转角不是两个图形之间的夹角，而是<b>对应点与旋转中心连线的夹角</b>。</div>
+    </div>
+  </div>
+</article>
+
+<article id="center-symmetry" class="card demo">
+  <div class="card-head"><span class="tag">23.2</span><h3>中心对称：旋转 180° 的特例</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap square-wrap"><canvas id="canvasCenter"></canvas></div>
+      <div class="legend">
+        <span><i style="background:#2563eb"></i>原图</span>
+        <span><i style="background:#7c3aed"></i>旋转中的像</span>
+        <span><i style="background:#ef4444"></i>对称中心 O</span>
+      </div>
+      <div class="controls">
+        <label class="control"><span>角度</span><input id="centerAngle" type="range" min="0" max="180" step="1" value="180"><output id="centerAngleOut">180°</output></label>
+      </div>
+      <div class="controls">
+        <button id="centerPlay" class="btn small">从 0° 转到 180°</button>
+        <button id="centerReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>旋转角</span><b id="centerRead">180°</b></div>
+        <div class="row"><span>对应点关系</span><b id="centerRelation">A、O、A′ 共线，OA = OA′</b></div>
+      </div>
+      <p>把一个图形绕点 O 旋转 <b>180°</b>，如果它能与另一个图形重合，就说这两个图形<b>关于点 O 中心对称</b>，O 叫对称中心。</p>
+      <ul class="tight">
+        <li>对应点的连线都经过对称中心 O。</li>
+        <li>对称中心 O 是对应点连线的中点。</li>
+        <li>中心对称是旋转 180° 的特殊情况，不是轴对称。</li>
+      </ul>
+      <div class="tip">把角度拖到 180°，观察 A、O、A′ 是否在同一条直线上，并且 O 到 A、A′ 的距离相等。</div>
+    </div>
+  </div>
+</article>
+
+<article id="center-figure" class="card">
+  <div class="card-head"><span class="tag">23.2</span><h3>中心对称 vs 中心对称图形</h3></div>
+  <div class="grid-2">
+    <div>
+      <h4>中心对称（两个图形之间）</h4>
+      <p>两个图形绕同一点旋转 180° 后完全重合，就说这两个图形关于这个点中心对称。</p>
+      <div class="eq">图形甲 ↔ 图形乙</div>
+    </div>
+    <div>
+      <h4>中心对称图形（一个图形自身）</h4>
+      <p>一个图形绕某点旋转 180° 后，能与自身重合，这个图形就叫中心对称图形。</p>
+      <div class="eq">图形甲 ↔ 图形甲</div>
+    </div>
+  </div>
+  <div class="tip">常见的中心对称图形：平行四边形、圆、线段、正六边形。注意：等边三角形不是中心对称图形。</div>
+  <div class="warn">“中心对称”说的是两个图形的位置关系；“中心对称图形”说的是一个图形自身的性质，别混在一起。</div>
+</article>
+
+<article id="coord-center" class="card demo">
+  <div class="card-head"><span class="tag">23.2</span><h3>坐标中的中心对称：关于原点对称</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap square-wrap"><canvas id="canvasCoord"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>x</span><input id="coordX" type="range" min="-5" max="5" step="0.5" value="3"><output id="coordXOut">3</output></label>
+        <label class="control"><span>y</span><input id="coordY" type="range" min="-5" max="5" step="0.5" value="2"><output id="coordYOut">2</output></label>
+      </div>
+      <div class="controls"><button id="coordReset" class="btn small ghost">复位</button></div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>点 P</span><b id="coordP">(3, 2)</b></div>
+        <div class="row"><span>关于原点对称的点 P′</span><b id="coordP2">(−3, −2)</b></div>
+      </div>
+      <div class="eq">P(x, y) → P′(−x, −y)</div>
+      <p>关于原点对称，横坐标、纵坐标都变成相反数。注意不是交换 x、y，也不是只变一个符号。</p>
+      <div class="warn">常见错误：把 (−x, −y) 写成 (y, x)，或者只改横坐标。原点对称是“两个符号都变”。</div>
+    </div>
+  </div>
+</article>
+
+<article id="pattern" class="card demo">
+  <div class="card-head"><span class="tag">23.3</span><h3>图案设计：把一个图形转一圈</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap square-wrap"><canvas id="canvasPattern"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>份数</span><input id="patternN" type="range" min="3" max="12" step="1" value="6"><output id="patternNOut">6</output></label>
+      </div>
+      <div class="controls">
+        <button id="patternPlay" class="btn small">逐片旋转</button>
+        <button id="patternReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>每份旋转角</span><b id="patternStep">360° ÷ 6 = 60°</b></div>
+        <div class="row"><span>总份数</span><b id="patternCount">6 份</b></div>
+      </div>
+      <p>把同一个基本图形绕中心 O 依次旋转 <span class="m">360°/n</span>，就能拼成一个旋转对称图案。</p>
+      <ul class="tight">
+        <li>雪花：6 重旋转对称，每 60° 重合一次。</li>
+        <li>风车：4 片叶片，每 90° 重合一次。</li>
+        <li>很多 logo、窗花、齿轮都用这个思路设计。</li>
+      </ul>
+      <div class="tip">把份数改成 3、6、12，观察图案的“重复节奏”怎么变化。</div>
+    </div>
+  </div>
+</article>
+
+<section id="summary" class="section">
+  <div class="section-head">
+    <span class="section-num">23.4</span>
+    <div>
+      <h2>三种变换别混淆</h2>
+      <p>平移、轴对称、旋转都是全等变换；中心对称是旋转 180° 的特例。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="table-wrap">
+      <table class="delta-table">
+        <thead><tr><th>变换</th><th>关键要素</th><th>对应点关系</th><th>坐标规律（常用）</th></tr></thead>
+        <tbody>
+          <tr><td>平移</td><td>方向、距离</td><td>对应点连线平行且相等</td><td>(x, y) → (x + a, y + b)</td></tr>
+          <tr><td>轴对称</td><td>对称轴</td><td>对应点连线被对称轴垂直平分</td><td>关于 y 轴：(−x, y)；关于 x 轴：(x, −y)</td></tr>
+          <tr><td>旋转</td><td>中心、方向、角度</td><td>到中心距离相等，夹角等于旋转角</td><td>关于原点中心对称：(−x, −y)</td></tr>
+          <tr><td>中心对称</td><td>对称中心</td><td>对应点连线经过中心且被平分</td><td>关于原点：(−x, −y)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">判断一种变换，先看“对应点怎么连”：连线平行且相等是平移；被一条直线垂直平分是轴对称；都绕同一个点转是旋转。</div>
+  </div>
+</section>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>日常里的旋转</h2>
+      <p>钟表、风车、摩天轮、雪花、旋转门，都是旋转在生活里的样子。</p>
+    </div>
+  </div>
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">时间 · 角度</div>
+      <h4>钟表的分针和时针</h4>
+      <p class="scene">分针 60 分钟转一圈 360°，所以每分钟转 6°。</p>
+      <div class="eq">20 分钟 → 20 × 6° = 120°</div>
+      <p class="answer">分针 20 分钟转 120°；时针 1 小时转 30°。</p>
+      <p class="why">钟面是旋转的常见模型：旋转中心是表盘中心，方向是顺时针。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">机械 · 风车</div>
+      <h4>四片叶片的风车</h4>
+      <p class="scene">四片叶片均匀分布，相邻两片之间隔 90°。</p>
+      <div class="eq">360° ÷ 4 = 90°</div>
+      <p class="answer">风车转 90° 后，叶片位置与原来重合。</p>
+      <p class="why">这就是旋转对称：转一个角度后，图形与自身重合。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">游乐 · 摩天轮</div>
+      <h4>12 个座舱的摩天轮</h4>
+      <p class="scene">12 个座舱均匀分布在圆周上。</p>
+      <div class="eq">360° ÷ 12 = 30°</div>
+      <p class="answer">相邻座舱相隔 30°；转 30° 后，座舱位置互换。</p>
+      <p class="why">座舱到轮子中心的距离都相等，这正是圆的性质。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">自然 · 雪花</div>
+      <h4>六角雪花的旋转对称</h4>
+      <p class="scene">雪花有 6 个相同的“花瓣”。</p>
+      <div class="eq">360° ÷ 6 = 60°</div>
+      <p class="answer">每转 60°，雪花与自身重合。</p>
+      <p class="why">旋转对称在雪花、花朵、万花筒里非常常见。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">设计 · 图案</div>
+      <h4>用一个基本图形设计窗花</h4>
+      <p class="scene">先画一个花瓣，再绕中心依次旋转复制。</p>
+      <div class="eq">每份旋转 360°/n</div>
+      <p class="answer">n = 8 时，每份转 45°，得到 8 重对称图案。</p>
+      <p class="why">设计图案时，先定“基本图形”和“旋转中心”，再定份数。</p>
+      <a class="demo-link" href="#pattern">对应动图：图案设计 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">建筑 · 旋转门</div>
+      <h4>四翼旋转门</h4>
+      <p class="scene">四扇门均匀分布在一个圆柱空间里。</p>
+      <div class="eq">360° ÷ 4 = 90°</div>
+      <p class="answer">每扇门相隔 90°，转 90° 后位置互换。</p>
+      <p class="why">旋转门、齿轮、风扇都利用“绕中心等角分布”来保持平衡。</p>
+    </article>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：旋转掌握了吗？</h2>
+      <p>先自己选，再看解析。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>这些地方错一次，就在错题本上写一次“错因”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>把中心对称当成轴对称</b>：中心对称是绕点转 180°，不是沿直线翻折。</li>
+        <li><b>旋转角找错</b>：应量对应点与旋转中心连线的夹角，不是两个图形之间的夹角。</li>
+        <li><b>坐标规律写错</b>：关于原点对称是 (x, y) → (−x, −y)，不是 (y, x)。</li>
+        <li><b>以为旋转会改变大小</b>：旋转只改变位置和方向，形状、大小都不变。</li>
+        <li><b>钟表角度算错</b>：分针每分钟 6°，时针每小时 30°，不要混用。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>练习建议</h3>
+      <ul class="tight roomy">
+        <li>先画出旋转中心，再把每个顶点与中心连线。</li>
+        <li>量出旋转角，按同一方向转动每个顶点。</li>
+        <li>检查对应点到中心的距离是否相等。</li>
+        <li>用坐标规律检查 180° 中心对称的结果。</li>
+        <li>自己设计一个 6 重或 8 重旋转对称图案。</li>
+      </ul>
+      <div class="tip">旋转题最稳的做法：先定中心，再定角度和方向，最后逐个顶点找对应点。</div>
+    </div>
+  </div>
+</section>
+
+<section id="more" class="section">
+  <div class="section-head">
+    <span class="section-num">→</span>
+    <div>
+      <h2>继续学习</h2>
+      <p>第 23–25 章是九上数学的后半程，可以按顺序往下看。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter24.html">
+      <div class="kicker">第 24 章</div>
+      <h4>圆</h4>
+      <p>垂径定理、圆周角、切线与扇形面积。</p>
+    </a>
+    <a class="chapter-link" href="chapter25.html">
+      <div class="kicker">第 25 章</div>
+      <h4>概率初步</h4>
+      <p>随机事件、列举法、频率估计概率。</p>
+    </a>
+    <a class="chapter-link" href="index.html">
+      <div class="kicker">总目录</div>
+      <h4>第 21–22 章</h4>
+      <p>一元二次方程与二次函数。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版九年级数学上册 · 第 23 章 旋转 · 互动学习页</p>
+  <p class="muted">本页为原创学习指导，不替代教材和课堂。</p>
+</footer>
+
+<script src="chapter-common.js"></script>
+<script src="chapter23.js"></script>
+</body>
+</html>

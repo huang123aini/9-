@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第24章 圆 · 九上数学动图指南</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chapters.css">
+</head>
+<body class="chapter-page" data-chapter="24">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 · 九年级上册 · 第 24 章</div>
+    <h1>圆</h1>
+    <p class="subtitle">从圆心到切线，圆里的每一段都有关系：弦、弧、圆心角、圆周角、扇形。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#chord">先看垂径定理</a>
+    </div>
+    <div class="hero-meta">5 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="kids.html">白话版</a>
+    <a href="chapter23.html">第23章 旋转</a>
+    <a href="chapter24.html" class="active">第24章 圆</a>
+    <a href="chapter25.html">第25章 概率</a>
+    <a href="#daily">生活例子</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">24</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>圆的性质 → 垂径定理 → 圆周角与圆内接四边形 → 点与圆、直线与圆 → 弧长与扇形 → 正多边形与圆。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>圆的基本元素</b>：圆心、半径、弦、直径、弧、圆心角、圆周角。</li>
+        <li><b>垂径定理</b>：垂直于弦的直径平分弦，也平分弦所对的弧。</li>
+        <li><b>圆周角定理</b>：同弧所对的圆周角等于圆心角的一半。</li>
+        <li><b>位置关系</b>：点与圆、直线与圆，都用“距离 d 和半径 r”比较。</li>
+        <li><b>计算</b>：弧长、扇形面积、正多边形的中心角与边心距。</li>
+      </ol>
+      <div class="tip">圆里最常用的辅助线：连半径、作弦心距、连圆心和切点。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 6</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article id="chord" class="card demo">
+  <div class="card-head"><span class="tag">24.1</span><h3>垂径定理实验台：半径、弦心距、半弦</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap square-wrap"><canvas id="canvasChord"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>d</span><input id="chordD" type="range" min="0" max="3.9" step="0.1" value="2"><output id="chordDOut">2</output></label>
+      </div>
+      <div class="controls">
+        <button id="chordPlay" class="btn small">播放弦的移动</button>
+        <button id="chordReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>半径 r</span><b>4</b></div>
+        <div class="row"><span>弦心距 d</span><b id="chordDRead">2</b></div>
+        <div class="row"><span>半弦长</span><b id="chordHalf">√12 ≈ 3.46</b></div>
+        <div class="row"><span>弦长 AB</span><b id="chordLen">2√12 ≈ 6.93</b></div>
+      </div>
+      <div class="eq" id="chordFormula">r² = d² + (AB/2)²</div>
+      <p>过圆心 O 作弦 AB 的垂线，垂足是 M。因为 <span class="m">OA = OB</span>，所以 <span class="m">AM = MB</span>，这就是<b>垂径定理</b>。</p>
+      <ul class="tight">
+        <li>垂直于弦的直径平分这条弦，并且平分弦所对的两条弧。</li>
+        <li>连接半径 OA，得到直角三角形 OMA。</li>
+        <li>三边关系：<span class="m">r² = d² + (AB/2)²</span>。</li>
+      </ul>
+      <div class="warn">注意：d 是圆心到弦的垂线段长度，不是半径；半弦是 AB/2，不是 AB。</div>
+    </div>
+  </div>
+</article>
+
+<article id="inscribed" class="card demo">
+  <div class="card-head"><span class="tag">24.1</span><h3>圆周角定理：同弧所对的圆周角是圆心角的一半</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap square-wrap"><canvas id="canvasInscribed"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>P 的位置</span><input id="inscribedT" type="range" min="0.1" max="0.9" step="0.01" value="0.5"><output id="inscribedTOut">0.50</output></label>
+      </div>
+      <div class="controls">
+        <button id="inscribedPlay" class="btn small">让 P 动起来</button>
+        <button id="inscribedDiameter" class="btn small ghost">AB 变成直径</button>
+        <button id="inscribedReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>圆心角 ∠AOB</span><b id="inscribedCentral">120°</b></div>
+        <div class="row"><span>圆周角 ∠APB</span><b id="inscribedAngle">60°</b></div>
+        <div class="row"><span>关系</span><b>∠APB = ½ ∠AOB</b></div>
+      </div>
+      <p>圆周角的顶点在圆上，两边都与圆相交。它对着一段弧，这段弧也对着一个圆心角。</p>
+      <ul class="tight">
+        <li>同弧所对的圆周角相等，并且等于圆心角的一半。</li>
+        <li>直径所对的圆周角是直角（90°）。</li>
+        <li>反过来，90° 的圆周角所对的弦是直径。</li>
+      </ul>
+      <div class="tip">移动 P，只要 P 还在同一段弧上，∠APB 就不变。点“AB 变成直径”看 90° 的特例。</div>
+    </div>
+  </div>
+</article>
+
+<article id="line-circle" class="card demo">
+  <div class="card-head"><span class="tag">24.2</span><h3>直线与圆：比较 d 和 r</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap square-wrap"><canvas id="canvasLineCircle"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>距离 d</span><input id="lineD" type="range" min="0" max="5.5" step="0.1" value="2"><output id="lineDOut">2</output></label>
+      </div>
+      <div class="controls">
+        <button id="linePlay" class="btn small">播放 d 的变化</button>
+        <button id="lineReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>半径 r</span><b>3.5</b></div>
+        <div class="row"><span>圆心到直线的距离 d</span><b id="lineDRead">2</b></div>
+        <div class="row"><span>位置关系</span><b id="lineRelation">相交</b></div>
+        <div class="row"><span>公共点个数</span><b id="linePoints">2</b></div>
+      </div>
+      <ul class="tight">
+        <li><b>d &lt; r</b>：直线与圆相交，有两个公共点。</li>
+        <li><b>d = r</b>：直线与圆相切，只有一个公共点，这条线叫切线。</li>
+        <li><b>d &gt; r</b>：直线与圆相离，没有公共点。</li>
+      </ul>
+      <p>切线的性质：圆的切线垂直于过切点的半径；经过半径外端并且垂直于这条半径的直线是圆的切线。</p>
+      <div class="warn">判断位置关系，先找圆心到直线的垂线段 d，再和半径 r 比较，不要凭感觉画。</div>
+    </div>
+  </div>
+</article>
+
+<article id="sector" class="card demo">
+  <div class="card-head"><span class="tag">24.4</span><h3>弧长与扇形面积</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap square-wrap"><canvas id="canvasSector"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>r</span><input id="sectorR" type="range" min="2" max="5" step="0.1" value="4"><output id="sectorROut">4</output></label>
+        <label class="control"><span>θ</span><input id="sectorTheta" type="range" min="30" max="330" step="1" value="120"><output id="sectorThetaOut">120°</output></label>
+      </div>
+      <div class="controls">
+        <button id="sectorPlay" class="btn small">播放角度变化</button>
+        <button id="sectorReset" class="btn small ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>弧长 L</span><b id="sectorArc">8.38</b></div>
+        <div class="row"><span>扇形面积 S</span><b id="sectorArea">16.76</b></div>
+      </div>
+      <div class="eq">L = nπr / 180</div>
+      <div class="eq">S = nπr² / 360 = ½ Lr</div>
+      <p>把圆看成 360° 的扇形。圆心角 n° 的扇形，弧长和面积都占整个圆的 <span class="m">n/360</span>。</p>
+      <ul class="tight">
+        <li>整个圆的周长是 <span class="m">2πr</span>，所以弧长 <span class="m">L = (n/360)·2πr</span>。</li>
+        <li>整个圆的面积是 <span class="m">πr²</span>，所以扇形面积 <span class="m">S = (n/360)·πr²</span>。</li>
+        <li>扇形面积还可以写成 <span class="m">S = ½ Lr</span>。</li>
+      </ul>
+      <div class="tip">公式里的 n 是圆心角的度数，不是弧长，也不是弦长。</div>
+    </div>
+  </div>
+</article>
+
+<article id="polygon" class="card demo">
+  <div class="card-head"><span class="tag">24.3</span><h3>正多边形与圆：中心角、边心距</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap square-wrap"><canvas id="canvasPolygon"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>边数 n</span><input id="polyN" type="range" min="3" max="12" step="1" value="6"><output id="polyNOut">6</output></label>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>中心角</span><b id="polyCentral">60°</b></div>
+        <div class="row"><span>内角</span><b id="polyInterior">120°</b></div>
+        <div class="row"><span>边长</span><b id="polySide">4</b></div>
+        <div class="row"><span>边心距</span><b id="polyApothem">3.46</b></div>
+      </div>
+      <p>正 n 边形的顶点都在同一个圆上，这个圆叫它的外接圆。圆心也是正多边形的中心。</p>
+      <ul class="tight">
+        <li>中心角：<span class="m">360°/n</span>。</li>
+        <li>内角：<span class="m">(n−2)·180°/n</span>。</li>
+        <li>半径 R、边心距 a、半边长 R·sin(π/n) 组成直角三角形：<span class="m">R² = a² + (边长/2)²</span>。</li>
+      </ul>
+      <div class="tip">正六边形的中心角是 60°，可以分成 6 个等边三角形，是正多边形里最特殊的一个。</div>
+    </div>
+  </div>
+</article>
+
+<section id="circle-extra" class="section">
+  <div class="section-head">
+    <span class="section-num">补</span>
+    <div>
+      <h2>教材里还有这些，别漏掉</h2>
+      <p>主页面重点讲了垂径定理、圆周角、切线和扇形；下面这些同样是第 24 章的考点。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <article class="card">
+      <div class="card-head"><span class="tag">24.2</span><h3>点与圆的位置关系</h3></div>
+      <p>设点到圆心的距离为 d，圆的半径为 r：</p>
+      <ul class="tight">
+        <li><b>d &lt; r</b>：点在圆内。</li>
+        <li><b>d = r</b>：点在圆上。</li>
+        <li><b>d &gt; r</b>：点在圆外。</li>
+      </ul>
+      <div class="tip">判断点和圆的位置，只看“点到圆心的距离”和半径的大小关系。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><span class="tag">24.1</span><h3>圆内接四边形</h3></div>
+      <p>四个顶点都在同一个圆上的四边形，叫圆内接四边形。</p>
+      <div class="eq">∠A + ∠C = 180°，∠B + ∠D = 180°</div>
+      <p class="muted small-text">也就是说，圆内接四边形的对角互补；它的一个外角等于与它相对的内角（内对角）。</p>
+      <div class="tip">看到“圆内接四边形”，先想“对角加起来是 180°”。</div>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><span class="tag">24.2</span><h3>切线长定理与三角形的心</h3></div>
+      <p>从圆外一点引圆的两条切线，切线长相等，圆心与该点的连线平分两条切线的夹角。</p>
+      <div class="eq">PA = PB，∠APO = ∠BPO</div>
+      <p class="muted small-text">三角形的内切圆圆心是三条角平分线的交点，叫内心；外接圆圆心是三边垂直平分线的交点，叫外心。</p>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><span class="tag">24.4</span><h3>圆锥的侧面展开图</h3></div>
+      <p>圆锥的侧面展开后是一个扇形：扇形的半径是母线 l，弧长是底面圆的周长 2πr。</p>
+      <div class="eq">S侧 = πrl</div>
+      <div class="eq small-eq">S全 = πrl + πr²</div>
+      <div class="tip">先找母线 l 和底面半径 r，再套公式；不要和扇形面积公式混用。</div>
+    </article>
+  </div>
+</section>
+
+<section id="summary" class="section">
+  <div class="section-head">
+    <span class="section-num">24.5</span>
+    <div>
+      <h2>公式与定理一张表</h2>
+      <p>圆里的计算，先把图上的线段和角对应到这些关系。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="table-wrap">
+      <table class="delta-table">
+        <thead><tr><th>内容</th><th>公式 / 结论</th><th>使用场景</th></tr></thead>
+        <tbody>
+          <tr><td>垂径定理</td><td><span class="m">r² = d² + (AB/2)²</span></td><td>已知半径、弦心距、弦长中的两个求第三个</td></tr>
+          <tr><td>圆周角定理</td><td><span class="m">∠APB = ½∠AOB</span></td><td>同弧所对的圆周角与圆心角</td></tr>
+          <tr><td>直径所对圆周角</td><td><span class="m">∠APB = 90°</span></td><td>看到直径，想到直角</td></tr>
+          <tr><td>点与圆的位置</td><td><span class="m">d &lt; r</span>、<span class="m">d = r</span>、<span class="m">d &gt; r</span></td><td>圆内、圆上、圆外</td></tr>
+          <tr><td>圆内接四边形</td><td>对角互补，<span class="m">∠A + ∠C = 180°</span></td><td>圆内接四边形求角</td></tr>
+          <tr><td>切线性质</td><td>切线 ⊥ 过切点的半径</td><td>证明垂直、求切线长</td></tr>
+          <tr><td>切线长定理</td><td><span class="m">PA = PB</span>，<span class="m">PO</span> 平分 <span class="m">∠APB</span></td><td>从圆外一点引两条切线</td></tr>
+          <tr><td>弧长</td><td><span class="m">L = nπr / 180</span></td><td>已知圆心角和半径</td></tr>
+          <tr><td>扇形面积</td><td><span class="m">S = nπr² / 360 = ½Lr</span></td><td>披萨、扇形统计图、扇形铁皮</td></tr>
+          <tr><td>圆锥侧面积</td><td><span class="m">S侧 = πrl</span></td><td>母线 l、底面半径 r</td></tr>
+          <tr><td>正多边形</td><td>中心角 <span class="m">360°/n</span>，内角 <span class="m">(n−2)180°/n</span></td><td>正多边形与圆</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">做题顺序：先连半径或作弦心距，把圆的问题变成直角三角形或等腰三角形的问题。</div>
+  </div>
+</section>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>日常里的圆</h2>
+      <p>车轮、井盖、披萨、拱桥、摩天轮，圆的性质就在身边。</p>
+    </div>
+  </div>
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">生活 · 井盖</div>
+      <h4>井盖为什么做成圆形？</h4>
+      <p class="scene">圆的每一条直径都相等，边缘到圆心的距离都相等。</p>
+      <div class="eq">d = 2r（所有方向都一样）</div>
+      <p class="answer">圆形井盖无论怎么转，都不会掉进井口。</p>
+      <p class="why">正方形井盖沿对角线方向可能掉下去；圆的“等宽”性质让它更安全。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">美食 · 扇形</div>
+      <h4>12 寸披萨切成 8 块</h4>
+      <p class="scene">每块是一个扇形，圆心角是 360° ÷ 8 = 45°。</p>
+      <div class="eq">S = 45/360 × πr² = 1/8 πr²</div>
+      <p class="answer">每块面积是整个披萨的 1/8。</p>
+      <p class="why">扇形面积与圆心角成正比：角度翻倍，面积也翻倍。</p>
+      <a class="demo-link" href="#sector">对应动图：扇形面积 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">建筑 · 拱桥</div>
+      <h4>拱桥的半径怎么求？</h4>
+      <p class="scene">桥拱跨度 20 m，拱高 4 m。设半径 r，则 <span class="m">r² = (r−4)² + 10²</span>。</p>
+      <div class="eq">r² = r² − 8r + 16 + 100</div>
+      <div class="eq">8r = 116 → r = 14.5 m</div>
+      <p class="answer">拱桥所在圆的半径是 14.5 m。</p>
+      <p class="why">这是垂径定理的典型应用：半径、弦心距、半弦组成直角三角形。</p>
+      <a class="demo-link" href="#chord">对应动图：垂径定理 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">游乐 · 摩天轮</div>
+      <h4>12 个座舱的摩天轮</h4>
+      <p class="scene">座舱均匀分布在圆周上。</p>
+      <div class="eq">360° ÷ 12 = 30°</div>
+      <p class="answer">相邻座舱与圆心连线的夹角是 30°。</p>
+      <p class="why">座舱到圆心的距离都等于半径，转起来才平稳。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">运动 · 中圈</div>
+      <h4>篮球场的中圈</h4>
+      <p class="scene">中圈是一个圆，开球时双方球员站在圈外。</p>
+      <div class="eq">C = 2πr</div>
+      <p class="answer">知道半径就能算周长；知道周长也能反求半径。</p>
+      <p class="why">圆上的点到圆心距离相等，所以中圈对双方是公平的。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">机械 · 齿轮</div>
+      <h4>齿轮的齿为什么均匀分布？</h4>
+      <p class="scene">齿轮的齿绕中心等角分布，才能平稳啮合。</p>
+      <div class="eq">每个齿的中心角 = 360°/齿数</div>
+      <p class="answer">齿数越多，每个齿对应的中心角越小。</p>
+      <p class="why">这和正多边形的中心角是同一个道理。</p>
+      <a class="demo-link" href="#polygon">对应动图：正多边形 →</a>
+    </article>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：圆的计算过关了吗？</h2>
+      <p>先自己算，再看解析。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>圆里的错误，多半是“把线段认错了”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>把弦心距当半径</b>：d 是圆心到弦的垂线段，r 是半径。</li>
+        <li><b>半弦写成整弦</b>：勾股关系里用的是 AB/2，不是 AB。</li>
+        <li><b>圆周角顶点不在圆上</b>：顶点必须在圆上，两边都要与圆相交。</li>
+        <li><b>看到垂直就说是切线</b>：还要经过半径外端。</li>
+        <li><b>弧长公式用错角</b>：n 是圆心角的度数，不是弦长，也不是圆周角。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>辅助线口诀</h3>
+      <ul class="tight roomy">
+        <li>有弦，作弦心距；连半径，出直角三角形。</li>
+        <li>有直径，想直角；有直角，想直径。</li>
+        <li>有切线，连圆心和切点，得垂直。</li>
+        <li>有正多边形，连中心和顶点，得中心角。</li>
+        <li>求弧长、扇形面积，先找圆心角和半径。</li>
+      </ul>
+      <div class="tip">圆的问题，先画图，再把已知量标到图上，最后找直角三角形或等腰三角形。</div>
+    </div>
+  </div>
+</section>
+
+<section id="more" class="section">
+  <div class="section-head">
+    <span class="section-num">→</span>
+    <div>
+      <h2>继续学习</h2>
+      <p>看完圆，再去看概率；也可以回到旋转复习。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter25.html">
+      <div class="kicker">第 25 章</div>
+      <h4>概率初步</h4>
+      <p>随机事件、列举法、频率估计概率。</p>
+    </a>
+    <a class="chapter-link" href="chapter23.html">
+      <div class="kicker">第 23 章</div>
+      <h4>旋转</h4>
+      <p>旋转三要素、中心对称、图案设计。</p>
+    </a>
+    <a class="chapter-link" href="index.html">
+      <div class="kicker">总目录</div>
+      <h4>第 21–22 章</h4>
+      <p>一元二次方程与二次函数。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版九年级数学上册 · 第 24 章 圆 · 互动学习页</p>
+  <p class="muted">本页为原创学习指导，不替代教材和课堂。</p>
+</footer>
+
+<script src="chapter-common.js"></script>
+<script src="chapter24.js"></script>
+</body>
+</html>
