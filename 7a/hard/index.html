@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高级难度 · 七上数学完整指南</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chapters.css">
+</head>
+<body class="level-page hard">
+
+<header class="hero level-hero hard">
+  <div class="hero-inner">
+    <div class="badge">人教版 2024 新版 · 七年级上册 · 高级难度</div>
+    <h1>七上数学 · 高级完整指南</h1>
+    <p class="subtitle">高级不是超纲，而是把同一章的知识综合起来：分类讨论、整体代入、数形结合，专攻综合题和压轴题。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="../medium/">回到中级</a>
+      <a class="btn btn-ghost-light" href="../index.html">回到初级</a>
+    </div>
+    <div class="hero-meta">6 章 · 综合模型 · 分类讨论 · 压轴题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="高级难度章节导航">
+  <div class="nav-inner">
+    <a href="#h1">1 有理数</a>
+    <a href="#h2">2 有理数运算</a>
+    <a href="#h3">3 代数式</a>
+    <a href="#h4">4 整式加减</a>
+    <a href="#h5">5 一元一次方程</a>
+    <a href="#h6">6 几何图形初步</a>
+  </div>
+</nav>
+
+<div class="level-bar">
+  <div class="level-bar-inner">
+    <span>难度：</span>
+    <a href="../index.html">初级</a>
+    <a href="../medium/">中级</a>
+    <a class="active hard" href="./">高级</a>
+  </div>
+</div>
+
+<main>
+
+<section id="h1" class="section">
+  <div class="section-head">
+    <span class="section-num">1</span>
+    <div>
+      <h2>有理数</h2>
+      <p>高级目标：把绝对值看成距离，处理非负性、分类讨论和最小值问题。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">核心模型</span><h3>绝对值与距离</h3></div>
+    <ul class="tight">
+      <li><b>距离模型：</b><span class="m">|a − b|</span> 是数轴上 a、b 两点之间的距离。</li>
+      <li><b>非负性：</b><span class="m">|a| ≥ 0</span>；若 <span class="m">|a| + |b| = 0</span>，则 <span class="m">a = b = 0</span>。</li>
+      <li><b>符号化简：</b>先判断绝对值里面式子的正负，再去绝对值符号。</li>
+      <li><b>最小值：</b><span class="m">|x − a| + |x − b|</span> 的最小值是 a、b 两点之间的距离。</li>
+      <li><b>分类讨论：</b>点的位置不确定时，按原点左右、线段内外分情况。</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>压轴题的切入口</h3></div>
+    <ol class="big-list">
+      <li><b>先翻译成距离：</b>看到 <span class="m">|x − a|</span>，先想“x 到 a 的距离”。</li>
+      <li><b>再画数轴：</b>把已知点和未知点标出来，观察哪一段距离最短。</li>
+      <li><b>最后分类：</b>绝对值里面符号不确定时，按正负分两种情况。</li>
+    </ol>
+    <div class="tip">非负性题先令每一部分等于 0，再解出字母；最值题先找“中间区域”。</div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道综合题</h3></div>
+    <p><b>例 1（综合）：</b>求 <span class="m">|x − 1| + |x + 3|</span> 的最小值。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>|x − 1| 是 x 到 1 的距离，|x + 3| 是 x 到 −3 的距离。</li>
+        <li>点 x 在 −3 与 1 之间时，两段距离之和最小。</li>
+        <li>最小值就是 1 与 −3 之间的距离：1 − (−3) = 4。</li>
+        <li>所以最小值是 4，此时 −3 ≤ x ≤ 1。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（压轴）：</b>已知 <span class="m">|a| = 3</span>，<span class="m">|b| = 2</span>，且 <span class="m">|a − b| = b − a</span>，求 a + b。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>|a − b| = b − a 说明 a − b ≤ 0，即 a ≤ b。</li>
+        <li>a = ±3，b = ±2；要满足 a ≤ b，a 只能取 −3。</li>
+        <li>b 可以取 2 或 −2。</li>
+        <li>a + b = −3 + 2 = −1，或 a + b = −3 + (−2) = −5。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（提高）：</b>若 <span class="m">|a − 2| + |b + 3| = 0</span>，求 a − b。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>绝对值都大于等于 0，两个非负数相加等于 0，只能各自为 0。</li>
+        <li>所以 a − 2 = 0，b + 3 = 0。</li>
+        <li>a = 2，b = −3，因此 a − b = 2 − (−3) = 5。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>把 |a − b| 写成 a − b；非负性题只让一部分为 0；最值题忘记“中间区域”；分类讨论漏掉端点。</div>
+</section>
+
+<section id="h2" class="section">
+  <div class="section-head">
+    <span class="section-num">2</span>
+    <div>
+      <h2>有理数的运算</h2>
+      <p>高级目标：处理符号讨论、巧算、乘方规律和科学记数法的逆向问题。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">核心模型</span><h3>符号与巧算</h3></div>
+    <ul class="tight">
+      <li><b>符号讨论：</b>含字母的乘方，先分底数为正、为负、为 0。</li>
+      <li><b>分组巧算：</b>把相邻项分组，让每组结果相同或抵消。</li>
+      <li><b>凑整：</b>利用相反数、倒数、分配律把计算变简单。</li>
+      <li><b>幂的规律：</b>负数的幂符号交替，偶次为正、奇次为负。</li>
+      <li><b>科学记数法逆向：</b>整数位数 = n + 1，反过来可由位数求 n。</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>压轴题的切入口</h3></div>
+    <ol class="big-list">
+      <li><b>先观察结构：</b>有没有相反数、倒数、相同因数可以凑整？</li>
+      <li><b>再分组：</b>项数很多时，两两分组或三三分组，找每组的结果。</li>
+      <li><b>最后定符号：</b>先算绝对值，再数负因数个数，确定最终符号。</li>
+    </ol>
+    <div class="tip">巧算不是背技巧，而是先观察“哪些项能凑成 0、1 或整十整百”。</div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道综合题</h3></div>
+    <p><b>例 1（综合）：</b>计算 <span class="m">1 − 2 + 3 − 4 + … + 99 − 100</span>。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>把相邻两项分组：(1 − 2) + (3 − 4) + … + (99 − 100)。</li>
+        <li>每组都是 −1，一共有 50 组。</li>
+        <li>所以结果是 50 × (−1) = −50。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（压轴）：</b>已知 a、b 互为相反数，c、d 互为倒数，<span class="m">|m| = 2</span>，求 <span class="m">a + b + cd + m²</span>。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>a、b 互为相反数，所以 a + b = 0。</li>
+        <li>c、d 互为倒数，所以 cd = 1。</li>
+        <li>|m| = 2，所以 m² = 4。</li>
+        <li>原式 = 0 + 1 + 4 = 5。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（提高）：</b>一个数用科学记数法表示为 <span class="m">2.5 × 10ⁿ</span>，且原数是 8 位数，求 n。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>科学记数法的原数整数位数 = n + 1。</li>
+        <li>原数是 8 位数，所以 n + 1 = 8。</li>
+        <li>解得 n = 7，原数是 25000000。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>分组后符号写错；把 (−2)² 与 −2² 混淆；负因数个数数错；科学记数法的指数与位数搞反。</div>
+</section>
+
+<section id="h3" class="section">
+  <div class="section-head">
+    <span class="section-num">3</span>
+    <div>
+      <h2>代数式</h2>
+      <p>高级目标：从图形规律中抽象出含 n 的式子，用整体代入求值，理解公式的来源。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">核心模型</span><h3>规律与整体</h3></div>
+    <ul class="tight">
+      <li><b>图形规律：</b>先数前三个，找“每次增加多少”，再写成 <span class="m">an + b</span>。</li>
+      <li><b>整体代入：</b>不求出单个字母，直接把已知整体换进去。</li>
+      <li><b>公式变形：</b>把几何公式中的量用字母表示，再代入求值。</li>
+      <li><b>数列规律：</b>平方数、三角形数、奇数和，都可以用含 n 的式子表示。</li>
+      <li><b>分类讨论：</b>含绝对值或位置不确定时，先分情况再列式。</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>压轴题的切入口</h3></div>
+    <ol class="big-list">
+      <li><b>先数具体：</b>n = 1、2、3 时各是多少，列成表格。</li>
+      <li><b>再找增量：</b>每次增加的是常数，还是一次式？</li>
+      <li><b>最后验证：</b>把 n = 4 代进去，看是否符合图形。</li>
+    </ol>
+    <div class="tip">规律题不要急着写答案，先用 n = 1、2、3 验证；不符合就调整。</div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道综合题</h3></div>
+    <p><b>例 1（综合）：</b>用含 n 的式子表示 <span class="m">1 + 3 + 5 + … + (2n − 1)</span>，并验证 n = 10 时的结果。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>n = 1：1 = 1²；n = 2：1 + 3 = 4 = 2²；n = 3：1 + 3 + 5 = 9 = 3²。</li>
+        <li>规律：前 n 个奇数之和等于 n²。</li>
+        <li>当 n = 10 时，1 + 3 + … + 19 = 10² = 100。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（压轴）：</b>已知 <span class="m">x² + x = 3</span>，求 <span class="m">2x² + 2x + 1</span> 的值。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>把 x² + x 看成一个整体。</li>
+        <li>2x² + 2x + 1 = 2(x² + x) + 1。</li>
+        <li>代入 x² + x = 3：2 × 3 + 1 = 7。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（提高）：</b>用含 n 的式子表示 <span class="m">1 + 2 + 3 + … + n</span>，并求 n = 10 时的值。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>n = 1：1；n = 2：1 + 2 = 3；n = 3：1 + 2 + 3 = 6。</li>
+        <li>规律：1 + 2 + … + n = n(n + 1)/2。</li>
+        <li>当 n = 10 时，10 × 11 ÷ 2 = 55。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>规律题的 n 从 0 还是 1 开始搞错；整体代入时漏乘系数；括号漏写；公式变形时代错位置。</div>
+</section>
+
+<section id="h4" class="section">
+  <div class="section-head">
+    <span class="section-num">4</span>
+    <div>
+      <h2>整式的加减</h2>
+      <p>高级目标：处理“与某字母无关”、整式减法、看错符号和整体代入。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">核心模型</span><h3>无关项与整体</h3></div>
+    <ul class="tight">
+      <li><b>无关项：</b>合并后令某字母的系数为 0，求出参数。</li>
+      <li><b>整式减法：</b>减去一个多项式，等于加上它的相反数，每一项都变号。</li>
+      <li><b>看错符号：</b>把“减去”看成“加上”，结果会整体反号。</li>
+      <li><b>整体代入：</b>把 <span class="m">x² + x</span> 或 <span class="m">a + b</span> 看成一个整体。</li>
+      <li><b>多项式加减：</b>先加括号，再去括号，注意每一项都要处理。</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>压轴题的切入口</h3></div>
+    <ol class="big-list">
+      <li><b>先合并：</b>把含同一字母的项合并，写成 <span class="m">Ax² + Bx + C</span>。</li>
+      <li><b>再令系数为 0：</b>“与 x 无关”就是 x²、x 的系数都为 0。</li>
+      <li><b>最后检验：</b>把参数代回，确认结果确实不含该字母。</li>
+    </ol>
+    <div class="tip">整式减法最容易漏变号，做完后逐项检查第二项的符号。</div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道综合题</h3></div>
+    <p><b>例 1（综合）：</b>若多项式 <span class="m">(2x² + ax − y + 6) − (2bx² − 3x + 5y − 1)</span> 的值与 x 无关，求 a、b。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>去括号合并： (2 − 2b)x² + (a + 3)x − 6y + 7。</li>
+        <li>要与 x 无关，x² 和 x 的系数都必须为 0。</li>
+        <li>2 − 2b = 0，所以 b = 1；a + 3 = 0，所以 a = −3。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（压轴）：</b>已知 <span class="m">A = 3x² − 2x + 1</span>，<span class="m">B = 2x² + x − 3</span>，求 <span class="m">A − 2B</span>。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>先算 2B = 4x² + 2x − 6。</li>
+        <li>A − 2B = (3x² − 2x + 1) − (4x² + 2x − 6)。</li>
+        <li>去括号：3x² − 2x + 1 − 4x² − 2x + 6。</li>
+        <li>合并：−x² − 4x + 7。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（提高）：</b>某同学把“加上 <span class="m">2x² − 3x + 1</span>”看成了“减去”，得到 <span class="m">x² + 2x − 4</span>，求正确结果。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>设原多项式为 A，则 A − (2x² − 3x + 1) = x² + 2x − 4。</li>
+        <li>所以 A = x² + 2x − 4 + 2x² − 3x + 1 = 3x² − x − 3。</li>
+        <li>正确结果 = A + (2x² − 3x + 1)。</li>
+        <li>= (3x² − x − 3) + (2x² − 3x + 1) = 5x² − 4x − 2。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>与 x 无关只令一项为 0；整式减法漏变号；看错符号问题不先求原多项式；代入整体时漏乘系数。</div>
+</section>
+
+<section id="h5" class="section">
+  <div class="section-head">
+    <span class="section-num">5</span>
+    <div>
+      <h2>一元一次方程</h2>
+      <p>高级目标：含参方程、解的整数性、方案选择和分段计费。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">核心模型</span><h3>参数与方案</h3></div>
+    <ul class="tight">
+      <li><b>含参方程：</b>先化成 <span class="m">ax = b</span>，再讨论 a 是否为 0。</li>
+      <li><b>解的条件：</b>已知解，先代入；解是整数，先用参数表示解。</li>
+      <li><b>方案选择：</b>两种方案分别列式，令它们相等求临界点，再分情况。</li>
+      <li><b>分段计费：</b>先判断落在哪一段，再列方程。</li>
+      <li><b>检验：</b>解出的结果要符合实际意义。</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>压轴题的切入口</h3></div>
+    <ol class="big-list">
+      <li><b>先表示解：</b>把方程化成 <span class="m">x = …</span> 的形式，再看条件。</li>
+      <li><b>再分类：</b>参数出现在系数或分母上时，先确定不能取的值。</li>
+      <li><b>最后比较：</b>方案题先求临界点，再比较临界点两侧。</li>
+    </ol>
+    <div class="tip">含参方程先问：未知数的系数能为 0 吗？分母能为 0 吗？</div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道综合题</h3></div>
+    <p><b>例 1（综合）：</b>若 <span class="m">x = 2</span> 是方程 <span class="m">3x − (m − 1) = 5</span> 的解，求 m。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>把 x = 2 代入：3 × 2 − (m − 1) = 5。</li>
+        <li>6 − m + 1 = 5，即 7 − m = 5。</li>
+        <li>解得 m = 2。</li>
+        <li>检验：3 × 2 − (2 − 1) = 6 − 1 = 5，成立。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（压轴）：</b>话费方案 A：月租 30 元，每分钟 0.2 元；方案 B：无月租，每分钟 0.4 元。通话多少分钟时两种方案费用相同？</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>设通话 x 分钟，A 费用 30 + 0.2x，B 费用 0.4x。</li>
+        <li>令它们相等：30 + 0.2x = 0.4x。</li>
+        <li>移项得 30 = 0.2x，所以 x = 150。</li>
+        <li>此时费用都是 60 元；少于 150 分钟选 B，多于 150 分钟选 A。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（提高）：</b>若关于 x 的方程 <span class="m">(m − 2)x = 5</span> 的解是正整数，求整数 m。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>m ≠ 2 时，x = 5/(m − 2)。</li>
+        <li>要使 x 是正整数，m − 2 必须是 5 的正因数：1 或 5。</li>
+        <li>m − 2 = 1 得 m = 3；m − 2 = 5 得 m = 7。</li>
+        <li>所以 m = 3 或 7。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>含参方程忘记讨论系数为 0；代入解时符号出错；方案题不写临界点；整数解漏掉负因数或分母条件。</div>
+</section>
+
+<section id="h6" class="section">
+  <div class="section-head">
+    <span class="section-num">6</span>
+    <div>
+      <h2>几何图形初步</h2>
+      <p>高级目标：分类讨论点的位置、处理动点与中点、解决钟面角和折叠问题。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">核心模型</span><h3>位置与分类</h3></div>
+    <ul class="tight">
+      <li><b>分类讨论：</b>点在线段上还是延长线上；射线在角内部还是外部。</li>
+      <li><b>动点：</b>设运动时间为 t，用含 t 的式子表示线段长度，再列方程。</li>
+      <li><b>中点：</b>多个中点时，先分别表示一半，再用和差。</li>
+      <li><b>钟面角：</b>分针每分钟 6°，时针每分钟 0.5°。</li>
+      <li><b>折叠：</b>折叠前后对应线段、对应角相等。</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>压轴题的切入口</h3></div>
+    <ol class="big-list">
+      <li><b>先画图：</b>把已知点和未知点都画出来，标清位置关系。</li>
+      <li><b>再分类：</b>位置不确定时，先列出所有可能的位置。</li>
+      <li><b>最后计算：</b>用线段和差、角平分线、中点关系列式。</li>
+    </ol>
+    <div class="tip">几何压轴题不怕难，就怕漏情况。先问一句：点还有没有别的位置？</div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道综合题</h3></div>
+    <p><b>例 1（综合）：</b>点 C 在直线 AB 上，AB = 5，BC = 3，求 AC 的长度。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>C 可能在线段 AB 上，此时 AC = AB − BC = 5 − 3 = 2。</li>
+        <li>C 也可能在 AB 的延长线上，此时 AC = AB + BC = 5 + 3 = 8。</li>
+        <li>所以要分类讨论，AC = 2 或 8。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（压轴）：</b>线段 AB = 10，点 C 在线段 AB 上，AC = 4，M、N 分别是 AC、BC 的中点，求 MN。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>AC = 4，BC = 10 − 4 = 6。</li>
+        <li>M 是 AC 中点，所以 MC = 4 ÷ 2 = 2。</li>
+        <li>N 是 BC 中点，所以 CN = 6 ÷ 2 = 3。</li>
+        <li>MN = MC + CN = 2 + 3 = 5。</li>
+        <li>发现：MN 恰好等于 AB 的一半。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（提高）：</b>3 点 30 分，钟面上时针与分针的夹角是多少度？</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>分针指向 6，是 180°。</li>
+        <li>时针在 3 和 4 的正中间，3.5 × 30° = 105°。</li>
+        <li>夹角 = 180° − 105° = 75°。</li>
+        <li>钟面每大格 30°，分针每分钟 6°，时针每分钟 0.5°。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>只画一种位置；把直线当线段；多个中点时和差关系搞错；钟面角忘记时针也在走；折叠题漏掉对应角。</div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版 2024 新版七年级数学上册 · 高级难度完整指南</p>
+  <p class="muted">先会走，再学跑；高级题也是由基础方法拼起来的。</p>
+</footer>
+
+</body>
+</html>

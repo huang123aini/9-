@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第5章 一元一次方程 · 七上数学学习路径</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chapters.css">
+</head>
+<body class="chapter-page" data-chapter="5">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 2024 新版 · 七年级上册 · 第 5 章</div>
+    <h1>一元一次方程</h1>
+    <p class="subtitle">把未知数放进等式，用“两边同时做同样的事”把它解出来，再用它解决实际问题。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#balance">先看天平</a>
+    </div>
+    <div class="hero-meta">4 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="index.html#bookmap">全书地图</a>
+    <a href="chapter4.html">第4章 整式加减</a>
+    <a href="chapter5.html" class="active">第5章 一元一次方程</a>
+    <a href="chapter6.html">第6章 几何图形</a>
+    <a href="#daily">生活例子</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<div class="level-bar">
+  <div class="level-bar-inner">
+    <span>难度：</span>
+    <a href="index.html">初级</a>
+    <a href="medium/">中级</a>
+    <a href="hard/">高级</a>
+  </div>
+</div>
+
+<main>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">5</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>方程与等式性质 → 移项与合并 → 去括号 → 去分母 → 实际问题与检验。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>方程：</b>含有未知数的等式；使等式成立的未知数的值叫方程的解。</li>
+        <li><b>等式性质：</b>两边同加、同减、同乘、同除以一个不为 0 的数，等式仍成立。</li>
+        <li><b>解方程五步：</b>去分母 → 去括号 → 移项 → 合并同类项 → 系数化为 1。</li>
+        <li><b>应用题：</b>设未知数 → 找等量关系 → 列方程 → 解方程 → 检验并写答。</li>
+        <li><b>检验：</b>把解代回原方程，左右两边相等才算对。</li>
+      </ol>
+      <div class="tip">解方程不是“变魔术”，每一步都要说得出根据：等式性质，还是分配律？</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 6</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article class="card quick">
+  <div class="card-head"><span class="tag">白话速览</span><h3>先用一句话看懂本章</h3></div>
+  <p class="quick-line">一句话：<b>天平两边同时做同样的事，平衡不变。</b> 方程就是天平，解方程就是不断简化，直到 x 单独站在一边。</p>
+  <div class="grid-2">
+    <div class="quick-box">
+      <h4>你只要抓住 3 件事</h4>
+      <ol class="big-list">
+        <li><b>等式性质：</b>两边同时加减同一个数，或同时乘除同一个不为 0 的数，等式仍成立。</li>
+        <li><b>移项变号：</b>把一项从等号一边移到另一边，符号要变。</li>
+        <li><b>去分母：</b>两边同乘所有分母的最小公倍数，不含分母的项也要乘。</li>
+      </ol>
+    </div>
+    <div class="quick-box">
+      <h4>最容易踩的坑</h4>
+      <p>移项忘记变号；去分母漏乘整数项；去括号漏乘；系数化为 1 时除反。</p>
+      <details class="quick-task">
+        <summary>3 分钟小任务：解 2x + 3 = 11 与 3(x − 2) = 2x + 1（点开看答案）</summary>
+        <div class="quick-answer">2x + 3 = 11，移项得 2x = 8，所以 x = 4。3(x − 2) = 2x + 1，去括号得 3x − 6 = 2x + 1，移项得 x = 7。</div>
+      </details>
+    </div>
+  </div>
+</article>
+
+<article class="card level-up">
+  <div class="card-head"><span class="tag">难度进阶</span><h3>中等难度版 / 高等难度版</h3></div>
+  <p class="lead">基础看懂了，再用这两版往上走：中等版练解方程与常规应用题，高等版练方案选择和含参问题。</p>
+  <div class="grid-2">
+    <div class="quick-box level-medium">
+      <h4>中等难度版 · 会做常规题</h4>
+      <h5>重点方法</h5>
+      <ul class="tight">
+        <li><b>解方程：</b>按五步走，去分母时每一项都乘，去括号时每一项都乘。</li>
+        <li><b>移项：</b>含未知数的项移到左边，常数项移到右边，移哪一项哪一项变号。</li>
+        <li><b>行程：</b>相遇用“路程和 = 速度和 × 时间”；追及用“路程差 = 速度差 × 时间”。</li>
+        <li><b>销售：</b>利润 = 售价 − 成本；总利润 = 单件利润 × 数量。</li>
+        <li><b>工程：</b>把总工作量看成 1，工作效率 = 1 ÷ 单独完成时间。</li>
+      </ul>
+      <h5>典型题</h5>
+      <p>解方程 <span class="m">3(x − 2) = 2x + 1</span>。</p>
+      <details class="quick-task">
+        <summary>看答案</summary>
+        <div class="quick-answer">去括号：3x − 6 = 2x + 1。移项：3x − 2x = 1 + 6。合并：x = 7。检验：左边 3 × (7 − 2) = 15，右边 2 × 7 + 1 = 15，成立。</div>
+      </details>
+    </div>
+    <div class="quick-box level-hard">
+      <h4>高等难度版 · 冲击压轴题</h4>
+      <h5>综合模型</h5>
+      <ul class="tight">
+        <li><b>方案选择：</b>两种收费方式分别列式，令它们相等求临界点，再分情况讨论。</li>
+        <li><b>分段计费：</b>不同区间单价不同，先判断落在哪一段，再列方程。</li>
+        <li><b>含参方程：</b>先化成 <span class="m">ax = b</span>，再讨论 a 是否为 0。</li>
+        <li><b>绝对值方程：</b><span class="m">|x − a| = b</span> 要分 x ≥ a 和 x &lt; a 两种情况。</li>
+        <li><b>配套问题：</b>先找“数量之间的倍数关系”，再列方程。</li>
+      </ul>
+      <h5>挑战题</h5>
+      <p>话费方案 A：月租 30 元，每分钟 0.2 元；方案 B：无月租，每分钟 0.4 元。通话多少分钟时两种方案费用相同？</p>
+      <details class="quick-task">
+        <summary>看答案</summary>
+        <div class="quick-answer">设通话 x 分钟。方案 A 费用 30 + 0.2x，方案 B 费用 0.4x。令它们相等：30 + 0.2x = 0.4x，解得 x = 150，费用都是 60 元。少于 150 分钟选 B，多于 150 分钟选 A。</div>
+      </details>
+    </div>
+  </div>
+</article>
+
+<article id="balance" class="card demo">
+  <div class="card-head"><span class="tag">5.1.2</span><h3>天平实验：两边同时做同样的事</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasBalance"></canvas></div>
+      <div class="step-kicker" id="balanceStepNum" style="margin-top:10px">第 1 / 4 步</div>
+      <h4 id="balanceTitle" class="step-title">原来的方程</h4>
+      <p id="balanceText" class="step-text">左边是 2 个 x 和 3 个 1，右边是 11 个 1，天平平衡。</p>
+      <div class="step-nav">
+        <button id="balancePrev" class="btn small ghost">上一步</button>
+        <button id="balanceNext" class="btn small">下一步</button>
+        <button id="balanceAuto" class="btn small ghost">自动播放</button>
+      </div>
+      <div class="step-dots" id="balanceDots"></div>
+    </div>
+    <div class="explain">
+      <div class="eq" id="balanceEq">2x + 3 = 11</div>
+      <div class="readout">
+        <div class="row"><span>当前操作</span><b id="balanceOp">观察天平</b></div>
+        <div class="row"><span>方程</span><b id="balanceRead">2x + 3 = 11</b></div>
+      </div>
+      <div class="eq-line" data-min-step="0">2x + 3 = 11</div>
+      <div class="eq-line" data-min-step="1">2x + 3 − 3 = 11 − 3</div>
+      <div class="eq-line" data-min-step="1">2x = 8</div>
+      <div class="eq-line" data-min-step="2">2x ÷ 2 = 8 ÷ 2</div>
+      <div class="eq-line strong" data-min-step="2">x = 4</div>
+      <p>等式性质：两边同时加、减、乘、除同一个数（除数不为 0），等式仍然成立。</p>
+      <div class="tip">第 4 步是检验：把 x = 4 代回原方程，左边 2 × 4 + 3 = 11，右边也是 11。</div>
+    </div>
+  </div>
+</article>
+
+<article id="transposition" class="card demo">
+  <div class="card-head"><span class="tag">5.2.1</span><h3>移项：过桥就要变号</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap">
+        <div class="equation-stage">
+          <div class="eq-board" id="transEq"></div>
+          <div class="step-nav" style="margin-top:16px">
+            <button id="transPrev" class="btn small ghost">上一步</button>
+            <button id="transNext" class="btn small">下一步</button>
+            <button id="transAuto" class="btn small ghost">自动播放</button>
+          </div>
+          <div class="step-dots" id="transDots"></div>
+        </div>
+      </div>
+      <div class="step-kicker" id="transStepNum" style="margin-top:10px">第 1 / 4 步</div>
+      <h4 id="transTitle" class="step-title">先看原方程</h4>
+      <p id="transText" class="step-text">未知数在两边都有，先把含 x 的项移到左边，常数项移到右边。</p>
+    </div>
+    <div class="explain">
+      <div class="eq-line" data-min-step="0">5x − 2 = 3x + 6</div>
+      <div class="eq-line" data-min-step="1">5x − 3x = 6 + 2</div>
+      <div class="eq-line" data-min-step="2">2x = 8</div>
+      <div class="eq-line strong" data-min-step="3">x = 4</div>
+      <p>移项的依据是等式性质：两边同时减去 3x，再同时加上 2。</p>
+      <ul class="tight">
+        <li>把 3x 从右边移到左边，变成 −3x。</li>
+        <li>把 −2 从左边移到右边，变成 +2。</li>
+        <li>没有移动的项不变号。</li>
+      </ul>
+      <div class="warn">移项必须变号；只在等号同一边交换位置，不用变号。</div>
+    </div>
+  </div>
+</article>
+
+<article id="fractions" class="card demo">
+  <div class="card-head"><span class="tag">5.2.3</span><h3>去分母：每一项都要乘最小公倍数</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap">
+        <div class="equation-stage">
+          <div class="eq-board" id="fracEq"></div>
+          <div class="step-nav" style="margin-top:16px">
+            <button id="fracPrev" class="btn small ghost">上一步</button>
+            <button id="fracNext" class="btn small">下一步</button>
+            <button id="fracAuto" class="btn small ghost">自动播放</button>
+          </div>
+          <div class="step-dots" id="fracDots"></div>
+        </div>
+      </div>
+      <div class="step-kicker" id="fracStepNum" style="margin-top:10px">第 1 / 6 步</div>
+      <h4 id="fracTitle" class="step-title">先看原方程</h4>
+      <p id="fracText" class="step-text">分母是 2 和 3，最小公倍数是 6。两边每一项都要乘 6。</p>
+    </div>
+    <div class="explain">
+      <div class="eq-line" data-min-step="0">(x + 1)/2 − (2x − 1)/3 = 1</div>
+      <div class="eq-line" data-min-step="1">3(x + 1) − 2(2x − 1) = 6</div>
+      <div class="eq-line" data-min-step="2">3x + 3 − 4x + 2 = 6</div>
+      <div class="eq-line" data-min-step="3">−x + 5 = 6</div>
+      <div class="eq-line" data-min-step="4">−x = 1</div>
+      <div class="eq-line strong" data-min-step="5">x = −1</div>
+      <div class="tip">去分母时，分子是多项式要加括号；不含分母的项也要乘 6，不能漏掉右边的 1。</div>
+      <div class="warn">去分母是“两边同乘”，不是“把分母直接删掉”。</div>
+    </div>
+  </div>
+</article>
+
+<article id="travel" class="card demo">
+  <div class="card-head"><span class="tag">5.3</span><h3>相遇问题：两个人什么时候碰面？</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasTravel"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>距离 D</span><input id="travelD" type="range" min="20" max="100" step="5" value="60"><output id="travelDOut">60 km</output></label>
+        <label class="control"><span>速度 v₁</span><input id="travelV1" type="range" min="10" max="60" step="5" value="20"><output id="travelV1Out">20 km/h</output></label>
+        <label class="control"><span>速度 v₂</span><input id="travelV2" type="range" min="10" max="60" step="5" value="40"><output id="travelV2Out">40 km/h</output></label>
+      </div>
+      <div class="controls">
+        <button id="travelPlay" class="btn">播放相遇过程</button>
+        <button id="travelReset" class="btn ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="eq" id="travelEq">(20 + 40)t = 60</div>
+      <div class="readout">
+        <div class="row"><span>相遇时间</span><b id="travelTime">1 小时</b></div>
+        <div class="row"><span>当前时间</span><b id="travelNow">0 小时</b></div>
+        <div class="row"><span>两人间距</span><b id="travelGap">60 km</b></div>
+      </div>
+      <p>相向而行时，两人每小时靠近的距离是速度和：<span class="m">v₁ + v₂</span>。设 t 小时后相遇：</p>
+      <div class="eq">(v₁ + v₂)t = D</div>
+      <p>所以 <span class="m">t = D ÷ (v₁ + v₂)</span>。画一条线段图，标出两人的出发点，等量关系就清楚了。</p>
+      <ul class="tight">
+        <li>相遇：路程和 = 速度和 × 时间。</li>
+        <li>追及：路程差 = 速度差 × 时间。</li>
+        <li>单位要统一：km 配 h，m 配 s。</li>
+      </ul>
+      <div class="tip">拖动速度，观察相遇时间怎么变：速度和越大，相遇越快。</div>
+    </div>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-head"><span class="tag">总结</span><h3>解方程五步与应用题五步</h3></div>
+  <div class="table-wrap">
+    <table class="delta-table">
+      <thead><tr><th>解方程</th><th>动作</th><th>依据</th></tr></thead>
+      <tbody>
+        <tr><td>1. 去分母</td><td>两边乘所有分母的最小公倍数</td><td>等式性质</td></tr>
+        <tr><td>2. 去括号</td><td>括号外的数乘括号内每一项</td><td>分配律</td></tr>
+        <tr><td>3. 移项</td><td>含未知数的项移到左边，常数移到右边</td><td>等式性质</td></tr>
+        <tr><td>4. 合并</td><td>合并同类项，化成 ax = b</td><td>合并同类项</td></tr>
+        <tr><td>5. 系数化 1</td><td>两边除以 a，得到 x = b/a</td><td>等式性质</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="center muted">应用题五步：设未知数 → 找等量关系 → 列方程 → 解方程 → 检验并写答。</p>
+</article>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>生活里的一元一次方程</h2>
+      <p>先找“谁和谁相等”，再把未知数设成 x，方程就出来了。</p>
+    </div>
+  </div>
+
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">年龄 · 方程</div>
+      <h4>爸爸 38 岁，儿子 10 岁，几年后爸爸是儿子的 3 倍？</h4>
+      <p class="scene">设 x 年后。</p>
+      <div class="eq">38 + x = 3(10 + x)</div>
+      <p class="answer">x = 4，4 年后。</p>
+      <p class="why">两个人增加的年龄相同，这是年龄问题的关键。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">行程 · 相遇</div>
+      <h4>两地相距 60 km，两人相向而行</h4>
+      <p class="scene">速度分别是 20 km/h 和 40 km/h。</p>
+      <div class="eq">(20 + 40)t = 60</div>
+      <p class="answer">t = 1 小时。</p>
+      <p class="why">相遇问题用“路程和 = 速度和 × 时间”。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">销售 · 利润</div>
+      <h4>一件商品进价 80 元，标价 x 元，打八折后利润 16 元</h4>
+      <p class="scene">利润 = 售价 − 进价。</p>
+      <div class="eq">0.8x − 80 = 16</div>
+      <p class="answer">x = 120，标价 120 元。</p>
+      <p class="why">打八折就是乘 0.8；利润是售价减去进价。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">配套 · 数量</div>
+      <h4>一张桌子配 4 把椅子，现有 12 张桌子</h4>
+      <p class="scene">设需要 x 把椅子。</p>
+      <div class="eq">x = 4 × 12</div>
+      <p class="answer">需要 48 把椅子。</p>
+      <p class="why">配套问题先找“1 张桌子配 4 把椅子”的倍数关系。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">工程 · 效率</div>
+      <h4>一项工程甲单独做 10 天完成，乙单独做 15 天完成</h4>
+      <p class="scene">把总工作量看成 1，甲的效率是 1/10，乙是 1/15。</p>
+      <div class="eq">(1/10 + 1/15)x = 1</div>
+      <p class="answer">x = 6，合作 6 天完成。</p>
+      <p class="why">工程问题：工作量 = 工作效率 × 时间。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">方案 · 比较</div>
+      <h4>两种话费方案，通话多少分钟费用相同？</h4>
+      <p class="scene">A：月租 30 元 + 0.2 元/分钟；B：0.4 元/分钟。</p>
+      <div class="eq">30 + 0.2x = 0.4x</div>
+      <p class="answer">x = 150，费用都是 60 元。</p>
+      <p class="why">先求临界点，再分“少于 150 分钟”和“多于 150 分钟”讨论。</p>
+    </article>
+  </div>
+
+  <div class="tip">解完方程一定要回到实际情境检验：人数不能是小数，时间不能为负，长度不能为负。</div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：本章掌握了吗？</h2>
+      <p>先自己选，再看解析。解方程题要写检验。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>解方程的错误，几乎都能在“根据”上找到原因。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>六个高频错误</h3>
+      <ol class="big-list">
+        <li><b>移项不变号：</b>从左边移到右边，符号要变。</li>
+        <li><b>去分母漏乘：</b>不含分母的项也要乘最小公倍数。</li>
+        <li><b>去括号漏乘：</b>括号外的数要乘括号内每一项。</li>
+        <li><b>去分母不加括号：</b>分子是多项式时，乘完后要加括号。</li>
+        <li><b>系数化 1 除反：</b>2x = 8 两边除以 2，得 x = 4。</li>
+        <li><b>应用题不检验：</b>解出的 x 要符合实际意义。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>每天 25 分钟怎么练</h3>
+      <ul class="tight roomy">
+        <li>用 5 分钟看一个动图，复述每一步的根据。</li>
+        <li>用 15 分钟做 4 道解方程题，必须写“移项”“合并”等步骤。</li>
+        <li>用 5 分钟把解代回原方程检验。</li>
+        <li>应用题至少画一条线段图或写一句“等量关系”。</li>
+      </ul>
+      <div class="tip">下一章换个频道：从“算”转到“画”，学习线段和角。</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">下一站</span>
+    <div>
+      <h2>从方程到图形</h2>
+      <p>第 6 章开始研究线段、角，以及它们的和差倍分关系。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter4.html">
+      <div class="kicker">上一章</div>
+      <h4>整式的加减</h4>
+      <p>同类项、去括号、化简求值。</p>
+    </a>
+    <a class="chapter-link" href="chapter6.html">
+      <div class="kicker">第 6 章</div>
+      <h4>几何图形初步</h4>
+      <p>立体与平面、线段、角、余角与补角。</p>
+    </a>
+    <a class="chapter-link" href="index.html">
+      <div class="kicker">返回</div>
+      <h4>总目录</h4>
+      <p>回到六章学习路径，查看第 1–2 章动图。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版 2024 新版七年级数学上册 · 第 5 章 一元一次方程</p>
+  <p class="muted">用浏览器打开即可，无需联网。</p>
+</footer>
+
+<script src="chapter-common.js"></script>
+<script src="chapter5.js"></script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第6章 几何图形初步 · 七上数学学习路径</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chapters.css">
+</head>
+<body class="chapter-page" data-chapter="6">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 2024 新版 · 七年级上册 · 第 6 章</div>
+    <h1>几何图形初步</h1>
+    <p class="subtitle">从实物到图形：认识立体图形与平面图形，学会用线段和角描述位置与大小。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#nets">先看正方体展开图</a>
+    </div>
+    <div class="hero-meta">4 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="index.html#bookmap">全书地图</a>
+    <a href="chapter4.html">第4章 整式加减</a>
+    <a href="chapter5.html">第5章 一元一次方程</a>
+    <a href="chapter6.html" class="active">第6章 几何图形</a>
+    <a href="#daily">生活例子</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<div class="level-bar">
+  <div class="level-bar-inner">
+    <span>难度：</span>
+    <a href="index.html">初级</a>
+    <a href="medium/">中级</a>
+    <a href="hard/">高级</a>
+  </div>
+</div>
+
+<main>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">6</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>立体图形与平面图形 → 点、线、面、体 → 直线、射线、线段 → 线段的中点 → 角 → 角的比较与运算 → 余角和补角。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>图形分类：</b>立体图形与平面图形；立体图形的表面可以展开成平面图形。</li>
+        <li><b>点线面体：</b>点动成线，线动成面，面动成体。</li>
+        <li><b>线段：</b>两点之间线段最短；两点之间线段的长度叫两点间的距离。</li>
+        <li><b>中点：</b>把线段分成两条相等线段的点，<span class="m">AM = MB = AB ÷ 2</span>。</li>
+        <li><b>角：</b>度、分、秒换算；角平分线；余角与补角。</li>
+      </ol>
+      <div class="tip">几何题先画图，把已知标在图上，再写“因为……所以……”。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 6</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article class="card quick">
+  <div class="card-head"><span class="tag">白话速览</span><h3>先用一句话看懂本章</h3></div>
+  <p class="quick-line">一句话：<b>把实物画成图形，再用线段和角量一量。</b> 立体图形看展开图，平面图形看位置和大小。</p>
+  <div class="grid-2">
+    <div class="quick-box">
+      <h4>你只要抓住 3 件事</h4>
+      <ol class="big-list">
+        <li><b>立体与平面：</b>正方体、圆柱、圆锥是立体图形；长方形、圆、三角形是平面图形。</li>
+        <li><b>线段与中点：</b>两点确定一条直线；中点把线段分成相等的两段。</li>
+        <li><b>角与余补角：</b>直角 = 90°，平角 = 180°；两角之和为 90° 叫互余，为 180° 叫互补。</li>
+      </ol>
+    </div>
+    <div class="quick-box">
+      <h4>最容易踩的坑</h4>
+      <p>直线不能度量长度；射线只有一个端点；余角和补角容易混；度分秒是 60 进制。</p>
+      <details class="quick-task">
+        <summary>3 分钟小任务：AB = 10，M 是中点，求 AM；一个角是 30°，求它的余角和补角（点开看答案）</summary>
+        <div class="quick-answer">AM = 10 ÷ 2 = 5。余角 = 90° − 30° = 60°，补角 = 180° − 30° = 150°。</div>
+      </details>
+    </div>
+  </div>
+</article>
+
+<article class="card level-up">
+  <div class="card-head"><span class="tag">难度进阶</span><h3>中等难度版 / 高等难度版</h3></div>
+  <p class="lead">基础看懂了，再用这两版往上走：中等版练线段与角的基本计算，高等版练分类讨论和钟面角。</p>
+  <div class="grid-2">
+    <div class="quick-box level-medium">
+      <h4>中等难度版 · 会做常规题</h4>
+      <h5>重点方法</h5>
+      <ul class="tight">
+        <li><b>展开图：</b>正方体有 11 种展开图，常见的有 1-4-1、2-3-1、2-2-2、3-3。</li>
+        <li><b>线段：</b>中点把线段平分；线段的和差用“拼接”或“相减”表示。</li>
+        <li><b>角：</b>1° = 60′，1′ = 60″；角的和差看射线位置。</li>
+        <li><b>角平分线：</b>把角分成两个相等的角，<span class="m">∠AOC = ∠COB = ∠AOB ÷ 2</span>。</li>
+        <li><b>余补角：</b>互余两角和 90°，互补两角和 180°。</li>
+      </ul>
+      <h5>典型题</h5>
+      <p>线段 AB = 12，C 是 AB 的中点，D 在 CB 上，CD = 3，求 AD。</p>
+      <details class="quick-task">
+        <summary>看答案</summary>
+        <div class="quick-answer">AC = AB ÷ 2 = 6。D 在 CB 上，CD = 3，所以 AD = AC + CD = 6 + 3 = 9。</div>
+      </details>
+    </div>
+    <div class="quick-box level-hard">
+      <h4>高等难度版 · 冲击压轴题</h4>
+      <h5>综合模型</h5>
+      <ul class="tight">
+        <li><b>分类讨论：</b>点在线段上还是延长线上；射线在角内部还是外部。</li>
+        <li><b>钟面角：</b>分针每分钟 6°，时针每分钟 0.5°。</li>
+        <li><b>动点问题：</b>设运动时间为 t，用含 t 的式子表示线段长度，再列方程。</li>
+        <li><b>折叠与展开：</b>折叠前后对应线段、对应角相等。</li>
+        <li><b>余补角性质：</b>同角或等角的余角相等；同角或等角的补角相等。</li>
+      </ul>
+      <h5>挑战题</h5>
+      <p>3 点 30 分，钟面上时针与分针的夹角是多少度？</p>
+      <details class="quick-task">
+        <summary>看答案</summary>
+        <div class="quick-answer">分针指向 6，是 180°；时针在 3 和 4 的正中间，是 3.5 × 30° = 105°。夹角 = 180° − 105° = 75°。</div>
+      </details>
+    </div>
+  </div>
+</article>
+
+<article id="nets" class="card demo">
+  <div class="card-head"><span class="tag">6.1.1</span><h3>正方体展开图：能不能折回去？</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasNets"></canvas></div>
+      <div class="controls">
+        <button class="btn small preset net-btn active" data-net="0">1-4-1</button>
+        <button class="btn small ghost preset net-btn" data-net="1">2-3-1</button>
+        <button class="btn small ghost preset net-btn" data-net="2">2-2-2</button>
+        <button class="btn small ghost preset net-btn" data-net="3">3-3</button>
+        <button class="btn small ghost preset net-btn" data-net="4">6 个一排</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="eq" id="netType">1-4-1 型</div>
+      <div class="readout">
+        <div class="row"><span>面的个数</span><b id="netFaces">6 个</b></div>
+        <div class="row"><span>能否折成正方体</span><b id="netValid" class="badge-pos">能</b></div>
+      </div>
+      <p>正方体有 6 个面、12 条棱、8 个顶点。展开图必须能折回 6 个面，不能重叠，也不能少面。</p>
+      <ul class="tight">
+        <li>1-4-1：中间一排 4 个，上下各 1 个。</li>
+        <li>2-3-1：中间一排 3 个，两侧分别 2 个和 1 个。</li>
+        <li>2-2-2：像楼梯一样错开。</li>
+        <li>3-3：两排各 3 个，错开排列。</li>
+      </ul>
+      <div class="warn">“6 个正方形排成一排”不能折成正方体，因为首尾会重叠，侧面也围不起来。</div>
+    </div>
+  </div>
+</article>
+
+<article id="segment" class="card demo">
+  <div class="card-head"><span class="tag">6.2.2</span><h3>线段中点：把一条线段分成两半</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasSegment"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>点 A</span><input id="segA" type="range" min="0" max="10" step="1" value="1"><output id="segAOut">1</output></label>
+        <label class="control"><span>点 B</span><input id="segB" type="range" min="2" max="12" step="1" value="9"><output id="segBOut">9</output></label>
+      </div>
+      <div class="controls">
+        <button id="segPlay" class="btn">播放点 B 的移动</button>
+        <button id="segReset" class="btn ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="eq" id="segEq">AB = 8，AM = MB = 4</div>
+      <div class="readout">
+        <div class="row"><span>中点 M</span><b id="segM">5</b></div>
+        <div class="row"><span>AM</span><b id="segAM">4</b></div>
+        <div class="row"><span>MB</span><b id="segMB">4</b></div>
+      </div>
+      <p>如果点 M 把线段 AB 分成相等的两条线段 AM 和 MB，那么 M 叫线段 AB 的中点。</p>
+      <div class="eq">AM = MB = AB ÷ 2</div>
+      <div class="eq">AB = 2AM = 2MB</div>
+      <ul class="tight">
+        <li>两点之间，线段最短。</li>
+        <li>两点之间线段的长度，叫两点间的距离。</li>
+        <li>直线可以向两端无限延伸，不能度量长度；线段可以度量。</li>
+      </ul>
+      <div class="tip">如果题目说“点 C 在直线 AB 上”，要注意 C 可能在线段 AB 上，也可能在延长线上，需要分类讨论。</div>
+    </div>
+  </div>
+</article>
+
+<article id="angle-sum" class="card demo">
+  <div class="card-head"><span class="tag">6.3.2</span><h3>角的和差：两个角拼成一个大角</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap square-wrap"><canvas id="canvasAngleSum"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>∠AOC</span><input id="angA" type="range" min="10" max="120" step="1" value="35"><output id="angAOut">35°</output></label>
+        <label class="control"><span>∠COB</span><input id="angB" type="range" min="10" max="120" step="1" value="45"><output id="angBOut">45°</output></label>
+      </div>
+      <div class="controls">
+        <button id="angPlay" class="btn">播放 ∠COB 的变化</button>
+        <button id="angReset" class="btn ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="eq" id="angEq">∠AOB = 35° + 45° = 80°</div>
+      <div class="readout">
+        <div class="row"><span>∠AOC</span><b id="angARead">35°</b></div>
+        <div class="row"><span>∠COB</span><b id="angBRead">45°</b></div>
+        <div class="row"><span>∠AOB 的类型</span><b id="angKind">锐角</b></div>
+      </div>
+      <p>射线 OC 在 ∠AOB 的内部时，<span class="m">∠AOB = ∠AOC + ∠COB</span>。这就是角的和。</p>
+      <ul class="tight">
+        <li>小于 90° 的角叫锐角；等于 90° 的叫直角；大于 90° 小于 180° 的叫钝角。</li>
+        <li>1° = 60′，1′ = 60″，度分秒是 60 进制。</li>
+        <li>角平分线把角分成两个相等的角。</li>
+      </ul>
+      <div class="tip">拖动两个角，观察 ∠AOB 什么时候变成直角、钝角或平角。</div>
+    </div>
+  </div>
+</article>
+
+<article id="comp-supp" class="card demo">
+  <div class="card-head"><span class="tag">6.3.3</span><h3>余角与补角：凑成 90° 和 180°</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap square-wrap"><canvas id="canvasCompSupp"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>∠AOB</span><input id="compX" type="range" min="0" max="90" step="1" value="35"><output id="compXOut">35°</output></label>
+      </div>
+      <div class="controls">
+        <button id="compPlay" class="btn">播放角的变化</button>
+        <button id="compReset" class="btn ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="eq" id="compEq">余角：90° − 35° = 55°</div>
+      <div class="eq" id="suppEq">补角：180° − 35° = 145°</div>
+      <div class="readout">
+        <div class="row"><span>∠AOB</span><b id="compXRead">35°</b></div>
+        <div class="row"><span>余角</span><b id="compRead">55°</b></div>
+        <div class="row"><span>补角</span><b id="suppRead">145°</b></div>
+      </div>
+      <p>两个角的和等于 90°，就说这两个角互为余角；和等于 180°，就说互为补角。</p>
+      <ul class="tight">
+        <li>同角或等角的余角相等。</li>
+        <li>同角或等角的补角相等。</li>
+        <li>余角和补角都是“两个角”的关系，不是单独一个角的属性。</li>
+      </ul>
+      <div class="warn">不要把余角当成“剩下的角”，也不要把补角和“补集”混为一谈。抓住“和为 90° / 180°”。</div>
+    </div>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-head"><span class="tag">总结</span><h3>线段与角的常用关系</h3></div>
+  <div class="table-wrap">
+    <table class="delta-table">
+      <thead><tr><th>对象</th><th>关系</th><th>易错点</th></tr></thead>
+      <tbody>
+        <tr><td>线段中点</td><td><span class="m">AM = MB = AB ÷ 2</span></td><td>点在延长线上时要分类讨论</td></tr>
+        <tr><td>线段和差</td><td><span class="m">AB = AC + CB</span></td><td>点不在线段上时不能直接相加</td></tr>
+        <tr><td>角平分线</td><td><span class="m">∠AOC = ∠COB = ∠AOB ÷ 2</span></td><td>射线要在角内部</td></tr>
+        <tr><td>角的和差</td><td><span class="m">∠AOB = ∠AOC + ∠COB</span></td><td>OC 要在 ∠AOB 内部</td></tr>
+        <tr><td>余角</td><td><span class="m">∠1 + ∠2 = 90°</span></td><td>两个角，不是 90° 本身</td></tr>
+        <tr><td>补角</td><td><span class="m">∠1 + ∠2 = 180°</span></td><td>两个角，不是 180° 本身</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip">几何计算题先画图，再把已知条件标在图上；能写“因为……所以……”就不要跳步。</div>
+</article>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>生活里的几何</h2>
+      <p>包装盒、钟表、折纸、地图，都是线段和角的现实版本。</p>
+    </div>
+  </div>
+
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">包装 · 展开图</div>
+      <h4>正方体纸盒沿棱剪开</h4>
+      <p class="scene">要得到一个完整的展开图。</p>
+      <div class="eq">6 个面必须连在一起，不能重叠</div>
+      <p class="answer">常见展开图有 1-4-1、2-3-1、2-2-2、3-3。</p>
+      <p class="why">展开图是立体图形与平面图形之间的桥梁。</p>
+      <a class="demo-link" href="#nets">对应动图：展开图 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">路线 · 线段</div>
+      <h4>从学校到家，走直路最近</h4>
+      <p class="scene">两点之间，线段最短。</p>
+      <div class="eq">AC + CB &gt; AB（C 不在 AB 上）</div>
+      <p class="answer">直接走 AB 最短。</p>
+      <p class="why">这是“两点之间线段最短”的生活版本。</p>
+      <a class="demo-link" href="#segment">对应动图：线段中点 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">钟表 · 角</div>
+      <h4>3 点整，时针与分针的夹角</h4>
+      <p class="scene">分针指向 12，时针指向 3。</p>
+      <div class="eq">3 × 30° = 90°</div>
+      <p class="answer">夹角是 90°，正好是直角。</p>
+      <p class="why">钟面 12 大格，每格 30°。</p>
+      <a class="demo-link" href="#angle-sum">对应动图：角的和差 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">折叠 · 对应角</div>
+      <h4>把一张长方形纸沿对角线折过去</h4>
+      <p class="scene">折叠前后，重合的角相等。</p>
+      <div class="eq">∠1 = ∠2</div>
+      <p class="answer">折痕就是对称轴。</p>
+      <p class="why">折叠问题抓住“对应边相等、对应角相等”。</p>
+      <a class="demo-link" href="#comp-supp">对应动图：余角补角 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">地图 · 方向</div>
+      <h4>从 A 点看 B 点在北偏东 30°</h4>
+      <p class="scene">方向角从正北或正南开始量。</p>
+      <div class="eq">北偏东 30°</div>
+      <p class="answer">与正北方向成 30° 角。</p>
+      <p class="why">方向角先定基准方向，再量角度。</p>
+      <a class="demo-link" href="#angle-sum">对应动图：角的和差 →</a>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">设计 · 对称</div>
+      <h4>设计一个轴对称的窗花</h4>
+      <p class="scene">先画一半，再沿对称轴翻折。</p>
+      <div class="eq">对称轴两侧的对应点到轴的距离相等</div>
+      <p class="answer">对折后两边完全重合。</p>
+      <p class="why">轴对称和中心对称会在后续章节继续学习。</p>
+      <a class="demo-link" href="#nets">对应动图：图形展开 →</a>
+    </article>
+  </div>
+
+  <div class="tip">几何不是“看图猜答案”，而是“用已知条件推出来”。每一步都写理由。</div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：本章掌握了吗？</h2>
+      <p>先自己选，再看解析。几何题要看清“在什么位置”。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>几何的丢分，常常不是不会，而是“看漏了一种位置”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>六个高频错误</h3>
+      <ol class="big-list">
+        <li><b>直线量长度：</b>直线向两端无限延伸，不能度量。</li>
+        <li><b>射线端点：</b>射线只有一个端点，方向不能反。</li>
+        <li><b>中点漏情况：</b>点可能在延长线上，要分类讨论。</li>
+        <li><b>余补角混淆：</b>余角和 90°，补角和 180°。</li>
+        <li><b>度分秒算错：</b>1° = 60′，不是 100′。</li>
+        <li><b>不画图：</b>位置关系不清，列式就容易错。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>每天 20 分钟怎么练</h3>
+      <ul class="tight roomy">
+        <li>用 5 分钟画 3 个图形，标出已知和未知。</li>
+        <li>用 10 分钟做 4 道线段或角的计算题。</li>
+        <li>用 5 分钟检查：有没有漏掉另一种位置？</li>
+        <li>把“分类讨论”的题单独整理，写清两种情况。</li>
+      </ul>
+      <div class="tip">七上几何是入门，重点是画图、标注、说理，不急着刷难题。</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">完成</span>
+    <div>
+      <h2>七上六章走完了</h2>
+      <p>回到总目录，用“知识串联”把数、式、方程和图形连起来。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter5.html">
+      <div class="kicker">上一章</div>
+      <h4>一元一次方程</h4>
+      <p>等式性质、移项、去分母、实际问题。</p>
+    </a>
+    <a class="chapter-link" href="index.html#link">
+      <div class="kicker">复习</div>
+      <h4>知识串联</h4>
+      <p>文字、代数式、方程、图形，四种说法对上号。</p>
+    </a>
+    <a class="chapter-link" href="index.html#quiz">
+      <div class="kicker">检测</div>
+      <h4>总自测</h4>
+      <p>8 道题覆盖六章，检查整体掌握情况。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版 2024 新版七年级数学上册 · 第 6 章 几何图形初步</p>
+  <p class="muted">用浏览器打开即可，无需联网。</p>
+</footer>
+
+<script src="chapter-common.js"></script>
+<script src="chapter6.js"></script>
+</body>
+</html>
