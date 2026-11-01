@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3章 代数式 · 七上数学学习路径</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chapters.css">
+</head>
+<body class="chapter-page" data-chapter="3">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 2024 新版 · 七年级上册 · 第 3 章</div>
+    <h1>代数式</h1>
+    <p class="subtitle">用字母把“会变的数”写下来：一句关系变成一个式子，代入一个数就能算出结果。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#matchstick">先看火柴棒规律</a>
+    </div>
+    <div class="hero-meta">3 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="index.html#bookmap">全书地图</a>
+    <a href="index.html#ch2">第2章 有理数运算</a>
+    <a href="chapter3.html" class="active">第3章 代数式</a>
+    <a href="chapter4.html">第4章 整式加减</a>
+    <a href="chapter5.html">第5章 一元一次方程</a>
+    <a href="chapter6.html">第6章 几何图形</a>
+    <a href="#daily">生活例子</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">3</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>用字母表示数 → 规范地写代数式 → 把文字翻译成式子 → 代入求值 → 用式子发现规律。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>字母表示数：</b>字母可以表示任意数，也可以表示变化的量。</li>
+        <li><b>书写规范：</b>a×b 写成 ab，1×a 写成 a，a÷b 写成分数。</li>
+        <li><b>列代数式：</b>先找关键词“多、少、倍、分、和、差、积、商”。</li>
+        <li><b>求值：</b>先代入，再按“乘方 → 乘除 → 加减”的顺序计算。</li>
+        <li><b>规律探究：</b>从具体数字出发，用含 n 的式子表示第 n 个图形。</li>
+      </ol>
+      <div class="tip">看到“每个”“一共”“剩余”“比……多”，先想：谁是变量，谁是常量，它们之间是什么运算。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 5</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article class="card quick">
+  <div class="card-head"><span class="tag">白话速览</span><h3>先用一句话看懂本章</h3></div>
+  <p class="quick-line">一句话：<b>字母是“会变的数”。</b> 用 n 表示正方形个数，就能用 3n + 1 表示火柴棒的根数。</p>
+  <div class="grid-2">
+    <div class="quick-box">
+      <h4>你只要抓住 3 件事</h4>
+      <ol class="big-list">
+        <li><b>字母能表示数：</b>单价 a 元、边长 x cm、速度 v km/h，都可以用字母代替。</li>
+        <li><b>式子会“说话”：</b><span class="m">2x + 3</span> 表示“x 的 2 倍再加 3”。</li>
+        <li><b>求值有顺序：</b>先代入，再算乘方，最后算乘除和加减；负数代入要加括号。</li>
+      </ol>
+    </div>
+    <div class="quick-box">
+      <h4>最容易踩的坑</h4>
+      <p>a×b 写成 ab，不写 a·b；1×a 写成 a，不写 1a；a÷3 写成 a/3，不用除号。</p>
+      <details class="quick-task">
+        <summary>3 分钟小任务：用含 n 的式子表示“比 n 的 2 倍少 3”，并求 n = 5 时的值（点开看答案）</summary>
+        <div class="quick-answer">式子是 2n − 3。当 n = 5 时，2 × 5 − 3 = 10 − 3 = 7。</div>
+      </details>
+    </div>
+  </div>
+</article>
+
+<article class="card level-up">
+  <div class="card-head"><span class="tag">难度进阶</span><h3>中等难度版 / 高等难度版</h3></div>
+  <p class="lead">基础看懂了，再用这两版往上走：中等版练列式与求值，高等版练规律和整体代入。</p>
+  <div class="grid-2">
+    <div class="quick-box level-medium">
+      <h4>中等难度版 · 会做常规题</h4>
+      <h5>重点方法</h5>
+      <ul class="tight">
+        <li><b>列式：</b>先设字母，再按“先乘除后加减”的关系写式子，必要时加括号。</li>
+        <li><b>书写：</b>数字写在字母前面；带分数写成假分数；除法写成分数线。</li>
+        <li><b>求值：</b>把字母换成数，负数加括号，再按运算顺序计算。</li>
+        <li><b>整体代入：</b>已知 <span class="m">x² + x = 3</span>，求 <span class="m">2x² + 2x + 1</span> 时，把 <span class="m">x² + x</span> 看成一个整体。</li>
+        <li><b>几何应用：</b>周长、面积、体积公式都是用字母表示的代数式。</li>
+      </ul>
+      <h5>典型题</h5>
+      <p>当 <span class="m">x = −2</span> 时，求 <span class="m">3x² − 2x + 1</span> 的值。</p>
+      <details class="quick-task">
+        <summary>看答案</summary>
+        <div class="quick-answer">先代入：3 × (−2)² − 2 × (−2) + 1 = 3 × 4 + 4 + 1 = 12 + 4 + 1 = 17。</div>
+      </details>
+    </div>
+    <div class="quick-box level-hard">
+      <h4>高等难度版 · 冲击压轴题</h4>
+      <h5>综合模型</h5>
+      <ul class="tight">
+        <li><b>图形规律：</b>先数前三个，找“每次增加多少”，再写成 <span class="m">an + b</span>。</li>
+        <li><b>整体代入：</b>不求出单个字母，直接把已知整体换进去。</li>
+        <li><b>含绝对值：</b>先判断字母的取值范围，再化简。</li>
+        <li><b>方案比较：</b>两种收费方式分别列式，再比较大小。</li>
+        <li><b>探索规律：</b>平方数、三角形数、奇数和，都可以用含 n 的式子表示。</li>
+      </ul>
+      <h5>挑战题</h5>
+      <p>用含 n 的式子表示 <span class="m">1 + 3 + 5 + … + (2n − 1)</span>，并验证 n = 10 时的结果。</p>
+      <details class="quick-task">
+        <summary>看答案</summary>
+        <div class="quick-answer">前 n 个奇数之和等于 n²。当 n = 10 时，1 + 3 + 5 + … + 19 = 10² = 100。</div>
+      </details>
+    </div>
+  </div>
+</article>
+
+<article id="matchstick" class="card demo">
+  <div class="card-head"><span class="tag">3.1</span><h3>火柴棒规律：每多一个正方形，多几根？</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasMatch"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>正方形个数 n</span><input id="matchN" type="range" min="1" max="8" step="1" value="3"><output id="matchNOut">3</output></label>
+      </div>
+      <div class="controls">
+        <button id="matchPlay" class="btn">逐个增加</button>
+        <button id="matchReset" class="btn ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="eq" id="matchExpr">3 × 3 + 1 = 10 根</div>
+      <div class="readout">
+        <div class="row"><span>正方形个数</span><b id="matchCount">3 个</b></div>
+        <div class="row"><span>火柴棒根数</span><b id="matchSticks">10 根</b></div>
+        <div class="row"><span>规律</span><b>3n + 1</b></div>
+      </div>
+      <p>第 1 个正方形用 4 根；以后每多一个正方形，只需要再添 3 根（右、上、下）。</p>
+      <div class="eq-line on">4 + 3(n − 1)</div>
+      <div class="eq-line strong on">= 3n + 1</div>
+      <p>也可以这样想：n 个正方形单独摆需要 4n 根，但相邻的边重合了 n − 1 条，所以是 4n − (n − 1) = 3n + 1。</p>
+      <div class="tip">先数具体数，再找“每次增加多少”，最后写成含 n 的式子。这是所有规律题的通用路径。</div>
+    </div>
+  </div>
+</article>
+
+<article id="rectangle-expr" class="card demo">
+  <div class="card-head"><span class="tag">3.2</span><h3>用字母表示长方形的周长和面积</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasRectExpr"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>长 a</span><input id="rectA" type="range" min="1" max="10" step="1" value="6"><output id="rectAOut">6</output></label>
+        <label class="control"><span>宽 b</span><input id="rectB" type="range" min="1" max="8" step="1" value="3"><output id="rectBOut">3</output></label>
+      </div>
+      <div class="controls">
+        <button id="rectPlay" class="btn">播放宽的变化</button>
+        <button id="rectReset" class="btn ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="eq" id="rectExprP">周长 = 2(a + b) = 18</div>
+      <div class="eq" id="rectExprA">面积 = ab = 18</div>
+      <div class="readout">
+        <div class="row"><span>长</span><b id="rectARead">6</b></div>
+        <div class="row"><span>宽</span><b id="rectBRead">3</b></div>
+      </div>
+      <p>周长和面积都是用字母表示的代数式：<span class="m">C = 2(a + b)</span>，<span class="m">S = ab</span>。</p>
+      <ul class="tight">
+        <li>周长是一次式，面积是二次式（a 与 b 相乘）。</li>
+        <li>数字与字母相乘，数字写在前面：<span class="m">2a</span>，不是 <span class="m">a2</span>。</li>
+        <li>不同类的量不能合并：<span class="m">2a + 2b</span> 不能写成 <span class="m">4ab</span>。</li>
+      </ul>
+      <div class="tip">把 a、b 换成具体的数，就能求出周长和面积；这就是“代数式求值”的几何版本。</div>
+    </div>
+  </div>
+</article>
+
+<article id="value" class="card demo">
+  <div class="card-head"><span class="tag">3.3</span><h3>代数式求值：先代入，再按顺序算</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap"><canvas id="canvasValue"></canvas></div>
+      <div class="controls">
+        <label class="control"><span>x</span><input id="valueX" type="range" min="-3" max="3" step="1" value="-2"><output id="valueXOut">−2</output></label>
+      </div>
+      <div class="controls">
+        <button id="valuePlay" class="btn">播放 x 的变化</button>
+        <button id="valueReset" class="btn ghost">复位</button>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="eq" id="valueExpr">2x² − 3x + 1</div>
+      <div class="eq small-eq" id="valueSub">= 2 × (−2)² − 3 × (−2) + 1</div>
+      <div class="readout">
+        <div class="row"><span>当前 x</span><b id="valueXRead">−2</b></div>
+        <div class="row"><span>代数式的值</span><b id="valueResult">15</b></div>
+      </div>
+      <p>求值三步：<b>代入 → 按顺序计算 → 写结果</b>。代入负数时一定要加括号，否则乘方会算错。</p>
+      <ul class="tight">
+        <li>先算乘方，再算乘除，最后算加减。</li>
+        <li><span class="m">2 × (−2)² = 2 × 4 = 8</span>，不是 <span class="m">(2 × −2)²</span>。</li>
+        <li>同一个代数式，x 取不同的值，结果也不同。</li>
+      </ul>
+      <div class="warn">看到 <span class="m">−x²</span>，先算 x²，再取相反数；看到 <span class="m">(−x)²</span>，先把 −x 看成底数。</div>
+    </div>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-head"><span class="tag">总结</span><h3>列代数式的四句口诀</h3></div>
+  <div class="table-wrap">
+    <table class="delta-table">
+      <thead><tr><th>文字关键词</th><th>运算</th><th>例子</th></tr></thead>
+      <tbody>
+        <tr><td>多、少、增加、减少</td><td>加、减</td><td>比 x 多 3：<span class="m">x + 3</span></td></tr>
+        <tr><td>倍、几分之几</td><td>乘、除</td><td>x 的 2 倍：<span class="m">2x</span></td></tr>
+        <tr><td>和、差、积、商</td><td>四种运算</td><td>a 与 b 的积：<span class="m">ab</span></td></tr>
+        <tr><td>先……再……</td><td>注意括号</td><td>x 与 3 的和的 2 倍：<span class="m">2(x + 3)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip">列式前先写一句“谁等于谁”，再动笔。括号是代数式里的“优先级开关”。</div>
+</article>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>生活里的代数式</h2>
+      <p>只要一个量会变，就可以用字母表示它，再把关系写成式子。</p>
+    </div>
+  </div>
+
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">购物 · 总价</div>
+      <h4>买 3 本笔记本和 2 支笔</h4>
+      <p class="scene">笔记本每本 a 元，笔每支 b 元。</p>
+      <div class="eq">3a + 2b</div>
+      <p class="answer">总价是 (3a + 2b) 元。</p>
+      <p class="why">3a 和 2b 不是同类项，不能合并成 5ab。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">几何 · 周长</div>
+      <h4>长比宽多 3 cm 的长方形</h4>
+      <p class="scene">设宽为 x cm，长就是 (x + 3) cm。</p>
+      <div class="eq">周长 = 2[x + (x + 3)] = 4x + 6</div>
+      <p class="answer">周长是 (4x + 6) cm。</p>
+      <p class="why">先用 x 表示长，再代入周长公式，最后去括号、合并。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">行程 · 路程</div>
+      <h4>速度 v km/h，行驶 t 小时</h4>
+      <p class="scene">路程 = 速度 × 时间。</p>
+      <div class="eq">s = vt</div>
+      <p class="answer">行驶的路程是 vt km。</p>
+      <p class="why">v、t、s 都是字母，但它们表示不同的量，不能随意相加。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">规律 · 图形</div>
+      <h4>用小棒摆三角形</h4>
+      <p class="scene">第 1 个三角形用 3 根，以后每多一个增加 2 根。</p>
+      <div class="eq">第 n 个：3 + 2(n − 1) = 2n + 1</div>
+      <p class="answer">第 n 个图形用 (2n + 1) 根小棒。</p>
+      <p class="why">先数 n = 1、2、3 的情况，再找每次增加的量。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">折扣 · 价格</div>
+      <h4>原价 x 元，打八折</h4>
+      <p class="scene">八折就是原价的 80%。</p>
+      <div class="eq">0.8x</div>
+      <p class="answer">折后价是 0.8x 元。</p>
+      <p class="why">百分数、小数和分数可以互相转化，列式时选最方便的形式。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">年龄 · 关系</div>
+      <h4>小明今年 m 岁，爸爸比他大 28 岁</h4>
+      <p class="scene">爸爸的年龄 = 小明的年龄 + 28。</p>
+      <div class="eq">m + 28</div>
+      <p class="answer">爸爸今年 (m + 28) 岁。</p>
+      <p class="why">5 年后，小明 m + 5 岁，爸爸 m + 33 岁，两人仍然相差 28 岁。</p>
+    </article>
+  </div>
+
+  <div class="tip">生活中的代数式，重点不是算出唯一答案，而是把“关系”写清楚。关系写对了，代入任何数都能算。</div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：本章掌握了吗？</h2>
+      <p>先自己选，再看解析。重点看“错在哪一步”。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>代数式的错误，多半不是不会算，而是关系写反了、括号漏了。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>顺序写反：</b>“比 x 少 3”是 x − 3，不是 3 − x。</li>
+        <li><b>漏括号：</b>“x 与 3 的和的 2 倍”是 2(x + 3)，不是 2x + 3。</li>
+        <li><b>书写不规范：</b>a × 3 写成 3a，不写 a3；1 × a 写成 a。</li>
+        <li><b>代入不加括号：</b>x = −2 时，x² 要写成 (−2)²。</li>
+        <li><b>不同类合并：</b>3a + 2b 不能合并，它们表示不同的量。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>每天 20 分钟怎么练</h3>
+      <ul class="tight roomy">
+        <li>用 5 分钟把 5 句中文翻译成代数式。</li>
+        <li>用 10 分钟做 6 道求值题，必须写出代入那一步。</li>
+        <li>用 5 分钟检查：括号、符号、运算顺序。</li>
+        <li>把容易写反的句子记在错题本上，例如“少 3”和“3 少”。</li>
+      </ul>
+      <div class="tip">下一章会把代数式进一步整理成“整式”，同类项和去括号就是从这里长出来的。</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">下一站</span>
+    <div>
+      <h2>从代数式到整式</h2>
+      <p>第 4 章会把式子分类，并学会合并同类项、去括号。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter4.html">
+      <div class="kicker">第 4 章</div>
+      <h4>整式的加减</h4>
+      <p>单项式、多项式、同类项、去括号、化简求值。</p>
+    </a>
+    <a class="chapter-link" href="chapter5.html">
+      <div class="kicker">第 5 章</div>
+      <h4>一元一次方程</h4>
+      <p>用等式性质解方程，用方程解决实际问题。</p>
+    </a>
+    <a class="chapter-link" href="index.html">
+      <div class="kicker">返回</div>
+      <h4>总目录</h4>
+      <p>回到六章学习路径，查看第 1–2 章的动图与自测。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版 2024 新版七年级数学上册 · 第 3 章 代数式</p>
+  <p class="muted">用浏览器打开即可，无需联网。</p>
+</footer>
+
+<script src="chapter-common.js"></script>
+<script src="chapter3.js"></script>
+</body>
+</html>
