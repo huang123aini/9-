@@ -290,6 +290,12 @@ body[data-chapter="25"] .hero {
   .bookmap-down { display: none; }
 }
 
+.card,
+.quick-answer,
+.quick-box {
+  overflow-wrap: anywhere;
+}
+
 .quick {
   border-left: 6px solid var(--accent);
   background: linear-gradient(135deg, #ffffff 0%, #fffdf5 100%);

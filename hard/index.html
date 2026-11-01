@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>高等难度目录 · 九上数学</title>
+<title>高级难度 · 九上数学完整指南</title>
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../chapters.css">
 </head>
@@ -11,121 +11,388 @@
 
 <header class="hero level-hero hard">
   <div class="hero-inner">
-    <div class="badge">人教版 · 九年级上册 · 高等难度</div>
-    <h1>高等难度目录</h1>
-    <p class="subtitle">高等版不是超纲，而是把同一章的知识综合起来：分类讨论、构造辅助线、跨章节联动，专攻综合题和压轴题。</p>
+    <div class="badge">人教版 · 九年级上册 · 高级难度</div>
+    <h1>九上数学 · 高级完整指南</h1>
+    <p class="subtitle">高级不是超纲，而是把同一章的知识综合起来：分类讨论、构造辅助线、跨章节联动，专攻综合题和压轴题。</p>
     <div class="hero-actions">
-      <a class="btn btn-light" href="../medium/">回到中等目录</a>
-      <a class="btn btn-ghost-light" href="../index.html">回到初等目录</a>
+      <a class="btn btn-light" href="../medium/">回到中级</a>
+      <a class="btn btn-ghost-light" href="../index.html">回到初级</a>
     </div>
     <div class="hero-meta">5 章 · 综合模型 · 分类讨论 · 压轴题</div>
   </div>
 </header>
 
-<nav class="nav" aria-label="高等难度导航">
+<nav class="nav" aria-label="高级难度章节导航">
   <div class="nav-inner">
-    <a href="../index.html">初等目录</a>
-    <a href="../medium/">中等目录</a>
-    <a href="./" class="active">高等目录</a>
-    <a href="../index.html#ch21-hard">第21章</a>
-    <a href="../index.html#ch22-hard">第22章</a>
-    <a href="../chapter23.html#ch23-hard">第23章</a>
-    <a href="../chapter24.html#ch24-hard">第24章</a>
-    <a href="../chapter25.html#ch25-hard">第25章</a>
+    <a href="#h21">21 方程</a>
+    <a href="#h22">22 函数</a>
+    <a href="#h23">23 旋转</a>
+    <a href="#h24">24 圆</a>
+    <a href="#h25">25 概率</a>
   </div>
 </nav>
 
 <div class="level-bar">
   <div class="level-bar-inner">
-    <span>难度目录：</span>
-    <a href="../index.html">初等</a>
-    <a href="../medium/">中等</a>
-    <a class="active hard" href="./">高等</a>
+    <span>难度：</span>
+    <a href="../index.html">初级</a>
+    <a href="../medium/">中级</a>
+    <a class="active hard" href="./">高级</a>
   </div>
 </div>
 
 <main>
 
-<section class="section">
+<section id="h21" class="section">
   <div class="section-head">
-    <span class="section-num">高</span>
+    <span class="section-num">21</span>
     <div>
-      <h2>按章节进入高等难度</h2>
-      <p>每一章都给出综合模型和一道挑战题。先自己想，再看解析；看不懂就退回中等版补方法。</p>
+      <h2>一元二次方程</h2>
+      <p>高级目标：处理根的分布、含参讨论、整数根和构造新方程。</p>
     </div>
   </div>
-  <div class="level-list">
-    <a class="level-item" href="../index.html#ch21-hard">
-      <span class="level-num">21</span>
-      <div>
-        <h3>一元二次方程</h3>
-        <p>根的分布 · 含参讨论 · 整数根 · 构造新方程</p>
-      </div>
-      <span class="level-go">进入 →</span>
-    </a>
-    <a class="level-item" href="../index.html#ch22-hard">
-      <span class="level-num">22</span>
-      <div>
-        <h3>二次函数</h3>
-        <p>区间最值 · 含参抛物线 · 抛物线与几何 · 绝对值图象</p>
-      </div>
-      <span class="level-go">进入 →</span>
-    </a>
-    <a class="level-item" href="../chapter23.html#ch23-hard">
-      <span class="level-num">23</span>
-      <div>
-        <h3>旋转</h3>
-        <p>旋转构造全等 · 半角模型 · 旋转最值 · 坐标旋转</p>
-      </div>
-      <span class="level-go">进入 →</span>
-    </a>
-    <a class="level-item" href="../chapter24.html#ch24-hard">
-      <span class="level-num">24</span>
-      <div>
-        <h3>圆</h3>
-        <p>圆与三角形 · 隐圆 · 切线综合 · 阴影面积</p>
-      </div>
-      <span class="level-go">进入 →</span>
-    </a>
-    <a class="level-item" href="../chapter25.html#ch25-hard">
-      <span class="level-num">25</span>
-      <div>
-        <h3>概率初步</h3>
-        <p>三步试验 · 不放回 · 跨章节综合 · 游戏设计</p>
-      </div>
-      <span class="level-go">进入 →</span>
-    </a>
-  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">核心模型</span><h3>根与参数</h3></div>
+    <ul class="tight">
+      <li><b>两正根：</b>Δ ≥ 0，x₁+x₂ &gt; 0，x₁x₂ &gt; 0。</li>
+      <li><b>两负根：</b>Δ ≥ 0，x₁+x₂ &lt; 0，x₁x₂ &gt; 0。</li>
+      <li><b>异号根：</b>x₁x₂ &lt; 0（此时 Δ &gt; 0 自动成立）。</li>
+      <li><b>两根都大于 k：</b>令 t = x−k，转化为 t 的两个正根；或结合对称轴和端点函数值。</li>
+      <li><b>构造方程：</b>以 x₁+1、x₂+1 或 1/x₁、1/x₂ 为根，先求它们的和与积。</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>含参问题的顺序</h3></div>
+    <ol class="big-list">
+      <li>先看二次项系数：等于 0 时是一次方程，不等于 0 才是二次方程。</li>
+      <li>再算 Δ，判断有没有实根。</li>
+      <li>最后用韦达定理或求根公式，结合题目对根的限制列不等式。</li>
+    </ol>
+    <div class="tip">含参题最怕漏情况：二次项系数、Δ、根的正负，一层一层分。</div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道综合题</h3></div>
+    <p><b>例 1（综合）：</b>已知方程 <span class="m">x² − 2(m+1)x + m² + 5 = 0</span> 的两根 x₁、x₂ 满足 x₁² + x₂² = 18，求 m。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>先保证有实根：Δ = 4(m²+2m+1) − 4(m²+5) = 8m − 16 = 8(m−2)，所以 m ≥ 2。</li>
+        <li>韦达定理：x₁+x₂ = 2(m+1)，x₁x₂ = m²+5。</li>
+        <li>x₁²+x₂² = 4(m+1)² − 2(m²+5) = 2m²+8m−6。</li>
+        <li>令 2m²+8m−6 = 18，得 m²+4m−12=0，即 (m+6)(m−2)=0。</li>
+        <li>结合 m ≥ 2，只取 m=2。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（压轴）：</b>关于 x 的方程 <span class="m">(m−1)x² − 2mx + m + 1 = 0</span> 有两个不相等的正根，求 m 的取值范围。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>方程是二次方程，先要求 m ≠ 1。</li>
+        <li>Δ = 4m² − 4(m−1)(m+1) = 4 &gt; 0，所以总有两个不等实根。</li>
+        <li>两根为 1 和 (m+1)/(m−1)。</li>
+        <li>两根都为正：1 &gt; 0 已满足，只需 (m+1)/(m−1) &gt; 0。</li>
+        <li>解得 m &lt; −1 或 m &gt; 1。</li>
+        <li>所以 m ∈ (−∞,−1) ∪ (1,+∞)。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（提高）：</b>已知方程 <span class="m">x² − 3x + m = 0</span> 的两根 x₁、x₂ 满足 x₁² − x₂² = 3，求 m。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>由韦达定理：x₁+x₂ = 3，x₁x₂ = m。</li>
+        <li>分解：x₁²−x₂² = (x₁−x₂)(x₁+x₂) = 3(x₁−x₂) = 3。</li>
+        <li>所以 x₁−x₂ = 1。</li>
+        <li>联立 x₁+x₂=3、x₁−x₂=1，得 x₁=2，x₂=1。</li>
+        <li>所以 m = x₁x₂ = 2。检验：Δ = 9 − 8 = 1 &gt; 0。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>忘记 Δ ≥ 0；二次项系数为 0 时仍当二次方程；根的分布只写韦达不写 Δ；构造方程时漏掉根的和与积。</div>
 </section>
 
-<section class="section">
-  <div class="grid-2">
-    <div class="card">
-      <h3>高等版怎么用</h3>
-      <ol class="big-list">
-        <li><b>先中等，再高等：</b>常规题步骤不熟，直接做高等题会很痛苦。</li>
-        <li><b>先想 5 分钟：</b>挑战题不要立刻看答案，先写你能想到的条件。</li>
-        <li><b>看完答案要复述：</b>用自己的话讲清楚“为什么想到这一步”。</li>
-      </ol>
-      <div class="tip">高等版的重点不是答案，而是“看到什么条件，想到什么模型”。</div>
-    </div>
-    <div class="card">
-      <h3>卡住了怎么办</h3>
-      <p>先回到中等版，把对应的方法清单重新看一遍；再回到高等题，只写第一步。</p>
-      <p class="muted small-text">如果一道题想了 15 分钟还没有方向，可以看提示，但不要直接抄完整答案。</p>
-      <div class="hero-actions" style="margin-top:12px">
-        <a class="btn" href="../medium/">回到中等目录</a>
-        <a class="btn ghost" href="../index.html">回到初等目录</a>
-      </div>
+<section id="h22" class="section">
+  <div class="section-head">
+    <span class="section-num">22</span>
+    <div>
+      <h2>二次函数</h2>
+      <p>高级目标：区间最值、含参抛物线、抛物线与几何综合。</p>
     </div>
   </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">核心模型</span><h3>抛物线综合</h3></div>
+    <ul class="tight">
+      <li><b>区间最值：</b>看对称轴是否在区间内，分“轴在区间左、内、右”三种情况。</li>
+      <li><b>含参抛物线：</b>恒过定点、顶点轨迹、判别式与交点个数。</li>
+      <li><b>抛物线与几何：</b>面积最大、线段和最小、存在性问题。</li>
+      <li><b>绝对值图象：</b><span class="m">y = |ax²+bx+c|</span> 把 x 轴下方部分翻折到上方。</li>
+      <li><b>数形结合：</b>方程的根 ↔ 交点横坐标；不等式解集 ↔ 图象位置。</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>压轴题的切入口</h3></div>
+    <ol class="big-list">
+      <li><b>先配方：</b>把对称轴和顶点找出来，再讨论区间。</li>
+      <li><b>再画图：</b>标出交点、顶点、对称轴，把几何条件翻译成坐标。</li>
+      <li><b>最后分类：</b>参数影响开口、对称轴或区间位置时，逐一讨论。</li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道综合题</h3></div>
+    <p><b>例 1（综合）：</b>已知二次函数 <span class="m">y = x² − 2ax + 3</span> 在区间 [0,2] 上的最小值为 −1，求 a。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>配方：y = (x−a)² + 3−a²，对称轴 x=a。</li>
+        <li>a &lt; 0 时，最小值在 x=0 处，y=3，不等于 −1，舍去。</li>
+        <li>0 ≤ a ≤ 2 时，最小值在顶点处：3−a² = −1，a²=4，a=2。</li>
+        <li>a &gt; 2 时，最小值在 x=2 处：7−4a = −1，a=2，不符合 a &gt; 2。</li>
+        <li>所以 a=2。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（压轴）：</b>抛物线 <span class="m">y = x² − 2x − 3</span> 与 x 轴交于 A、B（A 在左），与 y 轴交于 C。在对称轴上求一点 P，使 PA + PC 最小，求 P 的坐标。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>A(−1,0)，B(3,0)，C(0,−3)，对称轴 x=1。</li>
+        <li>因为 A、B 关于对称轴对称，所以 PA=PB，PA+PC=PB+PC。</li>
+        <li>当 B、P、C 三点共线时，PB+PC 最短。</li>
+        <li>直线 BC：y=x−3，令 x=1，得 y=−2。</li>
+        <li>所以 P(1,−2)。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（提高）：</b>抛物线 <span class="m">y = x² − 2x − 3</span> 与 x 轴交于 A、B，在抛物线上找一点 P，使 △PAB 的面积为 8，求 P 的坐标。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>A(−1,0)，B(3,0)，所以 AB=4。</li>
+        <li>面积 S = ½×AB×|y| = 2|y| = 8，所以 |y|=4，y=4 或 y=−4。</li>
+        <li>当 y=4：x²−2x−3=4，即 x²−2x−7=0，x=1±2√2。</li>
+        <li>当 y=−4：x²−2x−3=−4，即 x²−2x+1=0，x=1。</li>
+        <li>所以 P 有三个：(1+2√2,4)、(1−2√2,4)、(1,−4)。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>区间最值不分类；忽略自变量范围；把顶点坐标符号写错；面积问题忘记纵坐标可能为负，要加绝对值。</div>
+</section>
+
+<section id="h23" class="section">
+  <div class="section-head">
+    <span class="section-num">23</span>
+    <div>
+      <h2>旋转</h2>
+      <p>高级目标：用旋转构造全等、处理半角模型和旋转最值。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">核心模型</span><h3>旋转构造</h3></div>
+    <ul class="tight">
+      <li><b>手拉手模型：</b>两个等边三角形或正方形共顶点，旋转后得到全等三角形。</li>
+      <li><b>半角模型：</b>正方形中 ∠EAF=45°，旋转 90° 把 BE、DF 拼成一条线段。</li>
+      <li><b>旋转最值：</b>把分散线段转移到一起，用“两点之间线段最短”。</li>
+      <li><b>等边三角形旋转：</b>旋转 60° 常能得到新的等边三角形。</li>
+      <li><b>坐标旋转：</b>关于原点对称是基本型，绕任意点旋转可先平移再旋转。</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>怎么想到旋转</h3></div>
+    <ol class="big-list">
+      <li>看到“共顶点、等长边、特殊角（60°、90°）”，先想旋转。</li>
+      <li>确定旋转中心、旋转角和旋转方向，把分散的线段搬到一起。</li>
+      <li>旋转后找全等三角形，把要证的线段或角转化。</li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道综合题</h3></div>
+    <p><b>例 1（综合）：</b>△ABC 和 △ADE 都是等边三角形，共顶点 A，且按同一方向排列。连接 BD、CE，求证 BD=CE。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>把 △ABD 绕点 A 旋转 60°，方向与 ∠BAC 相同。</li>
+        <li>AB=AC，∠BAC=60°，所以 B 旋转后落在 C。</li>
+        <li>AD=AE，∠DAE=60°，所以 D 旋转后落在 E。</li>
+        <li>线段 BD 旋转后变成 CE，旋转不改变长度，所以 BD=CE。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（压轴）：</b>正方形 ABCD 的边长为 4，E、F 分别在 BC、CD 上，∠EAF=45°，求 △CEF 的周长。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>把 △ABE 绕 A 顺时针旋转 90° 到 △ADG，则 BE=DG，AE=AG。</li>
+        <li>∠BAD=90°，∠EAF=45°，所以 ∠BAE+∠DAF=45°；又 ∠DAG=∠BAE，所以 ∠GAF=45°。</li>
+        <li>△AEF 与 △AGF 中：AE=AG，AF 公共，∠EAF=∠GAF，所以全等（SAS）。</li>
+        <li>EF=GF=DG+DF=BE+DF。</li>
+        <li>周长 = CE+CF+EF = (BC−BE)+(CD−DF)+(BE+DF)=BC+CD=8。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（提高）：</b>等边 △ABC 的边长为 4，D 是 BC 上一动点，将 △ABD 绕 A 逆时针旋转 60° 得到 △ACE，求 DE 的最小值。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>旋转 60° 后，AD=AE，∠DAE=60°，所以 △ADE 是等边三角形。</li>
+        <li>因此 DE=AD，求 DE 的最小值就是求 AD 的最小值。</li>
+        <li>D 在 BC 上运动，AD 最短时 D 是 BC 的中点，AD 是等边三角形的高。</li>
+        <li>高 = 4×√3/2 = 2√3，所以 DE 的最小值是 2√3。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>旋转方向搞反；对应点找错；旋转后忘记说明三点共线；只写结论不写全等理由。</div>
+</section>
+
+<section id="h24" class="section">
+  <div class="section-head">
+    <span class="section-num">24</span>
+    <div>
+      <h2>圆</h2>
+      <p>高级目标：圆与三角形综合、隐圆、切线综合、面积最值。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">核心模型</span><h3>圆与综合题</h3></div>
+    <ul class="tight">
+      <li><b>圆与三角形：</b>外心是垂直平分线交点，内心是角平分线交点；直角三角形内切圆半径 <span class="m">r=(a+b−c)/2</span>。</li>
+      <li><b>隐圆：</b>定弦定角、直角所对的斜边为直径、四点共圆。</li>
+      <li><b>切线综合：</b>连半径、作垂直、勾股、相似、三角函数。</li>
+      <li><b>面积最值：</b>定弦定角时，等腰三角形面积最大。</li>
+      <li><b>阴影面积：</b>割补、等积变换、扇形组合。</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>压轴题的切入口</h3></div>
+    <ol class="big-list">
+      <li>先连半径、作弦心距，把圆的问题变成直角三角形。</li>
+      <li>看到定弦定角，先找隐圆；看到切线，连切点半径。</li>
+      <li>求最值时，先确定动点轨迹，再找特殊位置（中点、垂直）。</li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道综合题</h3></div>
+    <p><b>例 1（综合）：</b>在 Rt△ABC 中，∠C=90°，AC=3，BC=4，求外接圆半径 R 和内切圆半径 r。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>斜边 AB=√(3²+4²)=5。</li>
+        <li>直角三角形外接圆直径是斜边，所以 R=5/2=2.5。</li>
+        <li>内切圆半径 r=(a+b−c)/2=(3+4−5)/2=1。</li>
+        <li>检验：面积=6，半周长=6，r=面积/半周长=1。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（压轴）：</b>在 △ABC 中，AB=4，∠ACB=60°，求 △ABC 面积的最大值。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>C 在以 AB 为弦的圆上运动，∠ACB=60° 固定。</li>
+        <li>当 CA=CB 时，C 在弧的中点，到 AB 的距离最大。</li>
+        <li>外接圆半径 R=(AB/2)/sin60°=4/√3。</li>
+        <li>圆心到 AB 的距离 = R cos60° = 2/√3。</li>
+        <li>最大高 = R+2/√3 = 2√3。</li>
+        <li>面积最大值 = ½×4×2√3 = 4√3。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（提高）：</b>在等腰 △ABC 中，AB=AC=5，BC=6，求它的外接圆半径。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>作 AD⊥BC 于 D。因为 AB=AC，所以 D 是 BC 中点，BD=3。</li>
+        <li>AD=√(5²−3²)=4。</li>
+        <li>设外心 O 在 AD 上，半径为 R，则 OA=OB=R，OD=|4−R|。</li>
+        <li>在 Rt△OBD 中：R² = 3² + (4−R)²。</li>
+        <li>展开：R² = 9 + 16 − 8R + R²，所以 8R=25，R=25/8。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>把内心和外心混在一起；隐圆找不到；面积最大时忘记说明等腰；切线证明漏掉“经过半径外端”。</div>
+</section>
+
+<section id="h25" class="section">
+  <div class="section-head">
+    <span class="section-num">25</span>
+    <div>
+      <h2>概率初步</h2>
+      <p>高级目标：多步试验、不放回、跨章节综合、游戏公平性。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">核心模型</span><h3>概率综合</h3></div>
+    <ul class="tight">
+      <li><b>多步试验：</b>树状图分步，注意有序与无序的统一。</li>
+      <li><b>不放回：</b>总数递减，第二次的概率要基于第一次的结果。</li>
+      <li><b>跨章节综合：</b>与方程、函数、几何图形结合。</li>
+      <li><b>游戏公平：</b>比较双方获胜概率是否相等。</li>
+      <li><b>几何概率：</b>用面积比表示概率（拓展）。</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>压轴题的切入口</h3></div>
+    <ol class="big-list">
+      <li>先确定试验分几步，画树状图或表格。</li>
+      <li>把“至少”“至多”转化为对立事件，减少计算。</li>
+      <li>综合题先翻译成概率条件，再回到方程或函数。</li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道综合题</h3></div>
+    <p><b>例 1（综合）：</b>从 −2、−1、0、1、2 中随机取一个数作为 a，从 −1、0、1 中随机取一个数作为 b，求二次函数 <span class="m">y=ax²+bx+1</span> 的图象开口向下且与 x 轴有两个交点的概率。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>共有 5×3=15 种等可能结果。</li>
+        <li>开口向下要求 a &lt; 0，所以 a=−2 或 −1，共 2 种。</li>
+        <li>Δ=b²−4a；当 a=−2 或 −1 时，Δ 都大于 0。</li>
+        <li>每种 a 有 3 种 b，所以有利结果 2×3=6 种。</li>
+        <li>P=6/15=2/5。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（压轴）：</b>袋中有 3 个红球、2 个白球，甲先摸，乙后摸，摸后不放回，先摸到红球者获胜。这个游戏公平吗？</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>甲第一次摸红球的概率是 3/5，甲胜。</li>
+        <li>甲摸白球（2/5）后，乙摸红球的概率是 3/4，乙胜。</li>
+        <li>两人都摸白球的概率是 2/5×1/4=1/10，此时只剩红球，甲胜。</li>
+        <li>P(甲胜)=3/5+1/10=7/10，P(乙胜)=2/5×3/4=3/10。</li>
+        <li>概率不相等，游戏不公平，对甲有利。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（提高）：</b>连续抛一枚均匀硬币三次，求至少两次正面向上的概率。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>三次抛硬币共有 2×2×2=8 种等可能结果。</li>
+        <li>至少两次正面包括：恰好两次正面、三次正面。</li>
+        <li>恰好两次正面：正正反、正反正、反正正，共 3 种。</li>
+        <li>三次正面：正正正，1 种。</li>
+        <li>所以 P=(3+1)/8=1/2。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>有序和无序混用；不放回时忘记减少总数；把频率当概率；跨章节题忘记先翻译条件。</div>
 </section>
 
 </main>
 
 <footer class="footer">
-  <p>人教版九年级数学上册 · 高等难度目录</p>
-  <p class="muted">先会走，再学跑；高等题也是由基础方法拼起来的。</p>
+  <p>人教版九年级数学上册 · 高级难度完整指南</p>
+  <p class="muted">先会走，再学跑；高级题也是由基础方法拼起来的。</p>
 </footer>
 
 </body>
