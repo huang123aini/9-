@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4章 整式的加减 · 七上数学学习路径</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="chapters.css">
+</head>
+<body class="chapter-page" data-chapter="4">
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">人教版 2024 新版 · 七年级上册 · 第 4 章</div>
+    <h1>整式的加减</h1>
+    <p class="subtitle">把代数式分类：单项式、多项式；再把同类项合并，把括号去掉，化到最简。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#goals">学习目标</a>
+      <a class="btn btn-ghost-light" href="#like-terms">先看同类项</a>
+    </div>
+    <div class="hero-meta">3 个交互动图 · 6 个生活例子 · 6 道自测题</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="章节导航">
+  <div class="nav-inner">
+    <a href="index.html">总目录</a>
+    <a href="index.html#bookmap">全书地图</a>
+    <a href="chapter3.html">第3章 代数式</a>
+    <a href="chapter4.html" class="active">第4章 整式加减</a>
+    <a href="chapter5.html">第5章 一元一次方程</a>
+    <a href="chapter6.html">第6章 几何图形</a>
+    <a href="#daily">生活例子</a>
+    <a href="#quiz">自测</a>
+    <a href="#mistakes">易错点</a>
+  </div>
+</nav>
+
+<div class="level-bar">
+  <div class="level-bar-inner">
+    <span>难度：</span>
+    <a href="index.html">初级</a>
+    <a href="medium/">中级</a>
+    <a href="hard/">高级</a>
+  </div>
+</div>
+
+<main>
+
+<section id="goals" class="section">
+  <div class="section-head">
+    <span class="section-num">4</span>
+    <div>
+      <h2>本章地图</h2>
+      <p>单项式与多项式 → 同类项 → 去括号 → 合并同类项 → 整式加减与化简求值。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>先抓住这条主线</h3>
+      <ol class="big-list">
+        <li><b>整式的分类：</b>单项式是数与字母的积（单独一个数或字母也是单项式）；几个单项式的和叫多项式。</li>
+        <li><b>次数：</b>单项式看所有字母指数的和；多项式看次数最高的项。</li>
+        <li><b>同类项：</b>所含字母相同，并且相同字母的指数也相同。</li>
+        <li><b>合并同类项：</b>系数相加，字母和指数不变。</li>
+        <li><b>去括号：</b>括号前是正号，直接去；括号前是负号，括号里每一项都变号。</li>
+      </ol>
+      <div class="tip">看到长式子，先标同类项，再去括号，最后合并。顺序乱了就容易丢负号。</div>
+    </div>
+    <div class="card">
+      <h3>学习目标</h3>
+      <div class="progress" aria-hidden="true"><div id="goalBar"></div></div>
+      <div id="goalCount" class="muted small-text">0 / 5</div>
+      <div id="goalList" class="goal-list"></div>
+    </div>
+  </div>
+</section>
+
+<article class="card quick">
+  <div class="card-head"><span class="tag">白话速览</span><h3>先用一句话看懂本章</h3></div>
+  <p class="quick-line">一句话：<b>同类项才能合并，括号前有负号就全员变号。</b> 合并时只加系数，字母部分照抄。</p>
+  <div class="grid-2">
+    <div class="quick-box">
+      <h4>你只要抓住 3 件事</h4>
+      <ol class="big-list">
+        <li><b>同类项：</b>3x 与 −5x 是同类项；3x 与 3x² 不是，因为指数不同。</li>
+        <li><b>合并：</b>3x + 2x = 5x；系数相加，字母和指数不变。</li>
+        <li><b>去括号：</b>a − (b − c) = a − b + c；括号前是负号，里面每一项都变号。</li>
+      </ol>
+    </div>
+    <div class="quick-box">
+      <h4>最容易踩的坑</h4>
+      <p>3a + 2b 不能合并；2(x + 3) = 2x + 6，不是 2x + 3；去括号只变第一项。</p>
+      <details class="quick-task">
+        <summary>3 分钟小任务：化简 3x + 2y − x + 4y 与 2(x + 3) − (x − 1)（点开看答案）</summary>
+        <div class="quick-answer">3x + 2y − x + 4y = 2x + 6y；2(x + 3) − (x − 1) = 2x + 6 − x + 1 = x + 7。</div>
+      </details>
+    </div>
+  </div>
+</article>
+
+<article class="card level-up">
+  <div class="card-head"><span class="tag">难度进阶</span><h3>中等难度版 / 高等难度版</h3></div>
+  <p class="lead">基础看懂了，再用这两版往上走：中等版练化简求值，高等版练“与某字母无关”和整体思想。</p>
+  <div class="grid-2">
+    <div class="quick-box level-medium">
+      <h4>中等难度版 · 会做常规题</h4>
+      <h5>重点方法</h5>
+      <ul class="tight">
+        <li><b>识别：</b>单项式的系数包括前面的符号；多项式的项也包括符号。</li>
+        <li><b>同类项：</b>字母相同、相同字母的指数相同，与系数无关。</li>
+        <li><b>合并：</b>系数相加，字母和指数不变；系数为 0 时，这一项消失。</li>
+        <li><b>去括号：</b>括号前是负号，括号里每一项都变号；有系数时先分配。</li>
+        <li><b>化简求值：</b>先化简到最简，再代入数值，能减少计算量。</li>
+      </ul>
+      <h5>典型题</h5>
+      <p>化简 <span class="m">3(2x² − xy) − 2(3x² − 2xy)</span>。</p>
+      <details class="quick-task">
+        <summary>看答案</summary>
+        <div class="quick-answer">去括号：6x² − 3xy − 6x² + 4xy。合并同类项：x² 项抵消，xy 项是 −3xy + 4xy = xy。所以结果是 xy。</div>
+      </details>
+    </div>
+    <div class="quick-box level-hard">
+      <h4>高等难度版 · 冲击压轴题</h4>
+      <h5>综合模型</h5>
+      <ul class="tight">
+        <li><b>无关项：</b>合并后令某字母的系数为 0，求出参数。</li>
+        <li><b>整体代入：</b>把 <span class="m">x² + x</span> 或 <span class="m">a + b</span> 看成一个整体。</li>
+        <li><b>看错符号：</b>把“减去一个多项式”写成“加上”，结果会整体反号。</li>
+        <li><b>多项式加减：</b>先加括号，再去括号，注意每一项都要处理。</li>
+        <li><b>规律探究：</b>用整式表示图形面积、周长，再化简。</li>
+      </ul>
+      <h5>挑战题</h5>
+      <p>若多项式 <span class="m">(2x² + ax − y + 6) − (2bx² − 3x + 5y − 1)</span> 的值与 x 无关，求 a、b。</p>
+      <details class="quick-task">
+        <summary>看答案</summary>
+        <div class="quick-answer">先去括号合并： (2 − 2b)x² + (a + 3)x − 6y + 7。要与 x 无关，x² 和 x 的系数都必须为 0：2 − 2b = 0，所以 b = 1；a + 3 = 0，所以 a = −3。</div>
+      </details>
+    </div>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-head"><span class="tag">4.1</span><h3>先认清：单项式与多项式</h3></div>
+  <div class="grid-3">
+    <div class="mini"><b>3x²</b><span>单项式：系数 3，次数 2</span></div>
+    <div class="mini"><b>−2xy</b><span>单项式：系数 −2，次数 2</span></div>
+    <div class="mini"><b>3x² − 2x + 5</b><span>多项式：三项，最高次是 2</span></div>
+  </div>
+  <div class="table-wrap" style="margin-top:14px">
+    <table class="delta-table">
+      <thead><tr><th>名称</th><th>关键点</th><th>例子</th></tr></thead>
+      <tbody>
+        <tr><td>单项式</td><td>数与字母的积；单独一个数或字母也是单项式</td><td><span class="m">3x²</span> 的系数是 3，次数是 2</td></tr>
+        <tr><td>多项式</td><td>几个单项式的和；每一项都包括前面的符号</td><td><span class="m">3x² − 2x + 5</span> 有三项</td></tr>
+        <tr><td>整式</td><td>单项式和多项式统称整式</td><td><span class="m">3x²</span>、<span class="m">x + 1</span> 都是整式</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip">判断次数：单项式看所有字母指数的和；多项式看次数最高的项。系数要带上符号。</div>
+</article>
+
+<article id="like-terms" class="card demo">
+  <div class="card-head"><span class="tag">4.2</span><h3>同类项分拣机：同款的才能放一起</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap">
+        <div id="likeTermsBoard" class="term-board"></div>
+      </div>
+      <div class="controls">
+        <label class="control"><span>a</span><input id="likeA" type="range" min="-5" max="5" step="1" value="3"><output id="likeAOut">3</output></label>
+        <label class="control"><span>b</span><input id="likeB" type="range" min="-5" max="5" step="1" value="2"><output id="likeBOut">2</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>c</span><input id="likeC" type="range" min="-5" max="5" step="1" value="-1"><output id="likeCOut">−1</output></label>
+        <label class="control"><span>d</span><input id="likeD" type="range" min="-5" max="5" step="1" value="4"><output id="likeDOut">4</output></label>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="eq" id="likeExpr">3x + 2y − x + 4y</div>
+      <div class="eq" id="likeResult">= 2x + 6y</div>
+      <div class="readout">
+        <div class="row"><span>x 的系数</span><b id="likeX">3 + (−1) = 2</b></div>
+        <div class="row"><span>y 的系数</span><b id="likeY">2 + 4 = 6</b></div>
+      </div>
+      <p>同类项必须同时满足：<b>字母相同</b>，并且<b>相同字母的指数也相同</b>。</p>
+      <ul class="tight">
+        <li>3x 与 −x 是同类项；3x 与 3x² 不是。</li>
+        <li>2y 与 4y 是同类项；2y 与 2xy 不是。</li>
+        <li>合并时只把系数相加，字母和指数照抄。</li>
+      </ul>
+      <div class="tip">把系数拖到 0，看看对应的项是不是消失了。系数为 0 的项通常不写。</div>
+    </div>
+  </div>
+</article>
+
+<article id="brackets" class="card demo">
+  <div class="card-head"><span class="tag">4.2</span><h3>去括号：括号前的数要乘每一项</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap">
+        <div class="equation-stage">
+          <div class="term-row" id="bracketChips"></div>
+          <div class="eq-board" id="bracketEq">3(x + 2) − 2(x − 1)</div>
+          <div class="step-nav" style="margin-top:16px">
+            <button id="bracketPrev" class="btn small ghost">上一步</button>
+            <button id="bracketNext" class="btn small">下一步</button>
+            <button id="bracketAuto" class="btn small ghost">自动播放</button>
+          </div>
+          <div class="step-dots" id="bracketDots"></div>
+        </div>
+      </div>
+      <div class="step-kicker" id="bracketStepNum">第 1 / 5 步</div>
+      <h4 id="bracketTitle" class="step-title">先看原式</h4>
+      <p id="bracketText" class="step-text">两个括号，前面分别是 3 和 −2。去括号时，要把外面的数乘到括号里的每一项。</p>
+    </div>
+    <div class="explain">
+      <h5>每一步在做什么</h5>
+      <div class="eq-line" data-min-step="0">3(x + 2) − 2(x − 1)</div>
+      <div class="eq-line" data-min-step="1">3x + 6 − 2(x − 1)</div>
+      <div class="eq-line" data-min-step="2">3x + 6 − 2x + 2</div>
+      <div class="eq-line" data-min-step="3">(3x − 2x) + (6 + 2)</div>
+      <div class="eq-line strong" data-min-step="4">x + 8</div>
+      <div class="tip">括号前是 −2，乘括号里的 −1 时，负负得正，所以最后是 +2。</div>
+      <div class="warn">去括号两步检查：外面乘了几项？括号前是负号吗？</div>
+    </div>
+  </div>
+</article>
+
+<article id="poly-add" class="card demo">
+  <div class="card-head"><span class="tag">4.2</span><h3>整式加减竖式：同类项对齐再算</h3></div>
+  <div class="demo-grid">
+    <div>
+      <div class="canvas-wrap">
+        <div class="equation-stage" style="text-align:left">
+          <div class="table-wrap" style="margin:0">
+            <table class="delta-table" id="polyTable"></table>
+          </div>
+          <div class="controls" style="margin-top:14px">
+            <button id="polyAdd" class="btn small">P + Q</button>
+            <button id="polySub" class="btn small ghost">P − Q</button>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <label class="control"><span>P 的 a</span><input id="polyA" type="range" min="-3" max="3" step="1" value="3"><output id="polyAOut">3</output></label>
+        <label class="control"><span>P 的 b</span><input id="polyB" type="range" min="-3" max="3" step="1" value="-2"><output id="polyBOut">−2</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>P 的 c</span><input id="polyC" type="range" min="-5" max="5" step="1" value="5"><output id="polyCOut">5</output></label>
+        <label class="control"><span>Q 的 d</span><input id="polyD" type="range" min="-3" max="3" step="1" value="1"><output id="polyDOut">1</output></label>
+      </div>
+      <div class="controls">
+        <label class="control"><span>Q 的 e</span><input id="polyE" type="range" min="-3" max="3" step="1" value="4"><output id="polyEOut">4</output></label>
+        <label class="control"><span>Q 的 f</span><input id="polyF" type="range" min="-5" max="5" step="1" value="-3"><output id="polyFOut">−3</output></label>
+      </div>
+    </div>
+    <div class="explain">
+      <div class="readout">
+        <div class="row"><span>当前运算</span><b id="polyOpRead">P + Q</b></div>
+        <div class="row"><span>结果</span><b id="polyResult">4x² + 2x + 2</b></div>
+      </div>
+      <p>整式加减的实质：<b>去括号 → 合并同类项</b>。竖式只是把同类项对齐，避免漏项。</p>
+      <ul class="tight">
+        <li>加法：直接把同类项的系数相加。</li>
+        <li>减法：先把减号后面的多项式每一项都变号，再相加。</li>
+        <li>缺项要补 0，例如没有 x 项就写 0x。</li>
+      </ul>
+      <div class="warn">P − Q 中，Q 的每一项都要变号，不是只变第一项。</div>
+      <div class="tip">把 Q 的系数拖成 0，观察结果里对应的项如何消失。</div>
+    </div>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card-head"><span class="tag">总结</span><h3>整式加减的三步流程</h3></div>
+  <div class="table-wrap">
+    <table class="delta-table">
+      <thead><tr><th>步骤</th><th>动作</th><th>检查点</th></tr></thead>
+      <tbody>
+        <tr><td>1. 去括号</td><td>括号前的数乘每一项；括号前是负号，每一项变号</td><td>有没有漏乘？符号有没有全变？</td></tr>
+        <tr><td>2. 找同类项</td><td>字母相同、指数相同</td><td>3x 与 3x² 不是同类项</td></tr>
+        <tr><td>3. 合并</td><td>系数相加，字母和指数不变</td><td>系数为 0 的项要消失</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip">化简求值题先化简再代入，不要一上来就把数代进去算。</div>
+</article>
+
+<section id="daily" class="section">
+  <div class="section-head">
+    <span class="section-num">用</span>
+    <div>
+      <h2>生活里的整式</h2>
+      <p>周长、面积、总价、剩余量，写成式子以后都要“合并同类项”。</p>
+    </div>
+  </div>
+
+  <div class="example-grid">
+    <article class="example">
+      <div class="example-kicker">购物 · 总价</div>
+      <h4>买 3 本笔记本和 2 支笔，再退掉 1 本笔记本</h4>
+      <p class="scene">笔记本每本 a 元，笔每支 b 元。</p>
+      <div class="eq">3a + 2b − a = 2a + 2b</div>
+      <p class="answer">实际总价是 (2a + 2b) 元。</p>
+      <p class="why">3a 与 −a 是同类项，合并得 2a；2b 没有同类项，照抄。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">几何 · 周长</div>
+      <h4>长是 2x + 1，宽是 x − 3 的长方形</h4>
+      <p class="scene">周长 = 2[(2x + 1) + (x − 3)]。</p>
+      <div class="eq">= 2(3x − 2) = 6x − 4</div>
+      <p class="answer">周长是 (6x − 4)。</p>
+      <p class="why">先合并括号里的同类项，再把 2 乘进去。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">面积 · 拼接</div>
+      <h4>两个长方形拼在一起</h4>
+      <p class="scene">左边面积 3x，右边面积 2x，拼成一个长条。</p>
+      <div class="eq">3x + 2x = 5x</div>
+      <p class="answer">总面积是 5x。</p>
+      <p class="why">形状不同，但只要表示的是同一个量（面积），就可以合并。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">剩余 · 减法</div>
+      <h4>原有 5a + 3 元，花掉 a − 1 元</h4>
+      <p class="scene">剩余 = 原有 − 花掉。</p>
+      <div class="eq">(5a + 3) − (a − 1) = 5a + 3 − a + 1 = 4a + 4</div>
+      <p class="answer">还剩 (4a + 4) 元。</p>
+      <p class="why">减去一个多项式，要把括号里每一项都变号。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">速度 · 路程</div>
+      <h4>先骑 2 小时，再骑 3 小时</h4>
+      <p class="scene">速度是 v km/h。</p>
+      <div class="eq">2v + 3v = 5v</div>
+      <p class="answer">总路程是 5v km。</p>
+      <p class="why">2v 与 3v 是同类项，合并后表示“一共骑了 5 小时”。</p>
+    </article>
+
+    <article class="example">
+      <div class="example-kicker">数字 · 表示</div>
+      <h4>一个两位数，十位数字是 a，个位数字是 b</h4>
+      <p class="scene">两位数的值 = 十位数字 × 10 + 个位数字。</p>
+      <div class="eq">10a + b</div>
+      <p class="answer">这个两位数是 (10a + b)。</p>
+      <p class="why">a、b 是数字，a 不能为 0；10a 与 b 不是同类项，不能继续合并。</p>
+    </article>
+  </div>
+
+  <div class="tip">应用题列式后，先化简再代入；化简后的式子往往能直接看出“每增加 1 会变化多少”。</div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="section-head">
+    <span class="section-num">Q</span>
+    <div>
+      <h2>自测：本章掌握了吗？</h2>
+      <p>先自己选，再看解析。重点检查符号和括号。</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="quiz-top">
+      <span id="quizScore">答对 0 / 6</span>
+      <button id="quizReset" class="btn ghost small">重新做</button>
+    </div>
+    <div id="quizList"></div>
+  </div>
+</section>
+
+<section id="mistakes" class="section">
+  <div class="section-head">
+    <span class="section-num">!</span>
+    <div>
+      <h2>高频易错点</h2>
+      <p>整式加减的丢分，八成集中在“漏乘”和“漏变号”。</p>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>五个高频错误</h3>
+      <ol class="big-list">
+        <li><b>乱合并：</b>3a + 2b 不能合并成 5ab。</li>
+        <li><b>指数看错：</b>3x 与 3x² 不是同类项。</li>
+        <li><b>漏乘：</b>2(x + 3) = 2x + 6，不是 2x + 3。</li>
+        <li><b>漏变号：</b>a − (b − c) = a − b + c。</li>
+        <li><b>减法整体变号：</b>P − Q 中，Q 的每一项都要变号。</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>每天 20 分钟怎么练</h3>
+      <ul class="tight roomy">
+        <li>用 5 分钟做 5 道同类项判断题。</li>
+        <li>用 10 分钟做 5 道化简题，每题标出“去括号”和“合并”两步。</li>
+        <li>用 5 分钟检查符号：括号前是负号吗？每一项都乘了吗？</li>
+        <li>把错题按“漏乘 / 漏变号 / 乱合并”分类。</li>
+      </ul>
+      <div class="tip">下一章用整式表示等量关系，整式加减就是解方程的基本功。</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="section-num">下一站</span>
+    <div>
+      <h2>从整式到方程</h2>
+      <p>第 5 章会把整式放进等式里，用等式性质求出未知数。</p>
+    </div>
+  </div>
+  <div class="chapter-links">
+    <a class="chapter-link" href="chapter3.html">
+      <div class="kicker">上一章</div>
+      <h4>代数式</h4>
+      <p>用字母表示数、列式、求值。</p>
+    </a>
+    <a class="chapter-link" href="chapter5.html">
+      <div class="kicker">第 5 章</div>
+      <h4>一元一次方程</h4>
+      <p>等式性质、移项、去分母、实际问题。</p>
+    </a>
+    <a class="chapter-link" href="chapter6.html">
+      <div class="kicker">第 6 章</div>
+      <h4>几何图形初步</h4>
+      <p>线段、角、余角与补角。</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版 2024 新版七年级数学上册 · 第 4 章 整式的加减</p>
+  <p class="muted">用浏览器打开即可，无需联网。</p>
+</footer>
+
+<script src="chapter-common.js"></script>
+<script src="chapter4.js"></script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中级难度 · 七上数学完整指南</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../chapters.css">
+</head>
+<body class="level-page medium">
+
+<header class="hero level-hero medium">
+  <div class="hero-inner">
+    <div class="badge">人教版 2024 新版 · 七年级上册 · 中级难度</div>
+    <h1>七上数学 · 中级完整指南</h1>
+    <p class="subtitle">把第 1–6 章按“知识清单 → 方法 → 例题 → 易错点”完整走一遍。目标不是刷难题，而是把常规题做稳、步骤写规范。</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="../index.html">回到初级</a>
+      <a class="btn btn-ghost-light" href="../hard/">切换到高级</a>
+    </div>
+    <div class="hero-meta">6 章 · 知识清单 · 方法讲解 · 18 道例题 · 易错点</div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="中级难度章节导航">
+  <div class="nav-inner">
+    <a href="#m1">1 有理数</a>
+    <a href="#m2">2 有理数运算</a>
+    <a href="#m3">3 代数式</a>
+    <a href="#m4">4 整式加减</a>
+    <a href="#m5">5 一元一次方程</a>
+    <a href="#m6">6 几何图形初步</a>
+  </div>
+</nav>
+
+<div class="level-bar">
+  <div class="level-bar-inner">
+    <span>难度：</span>
+    <a href="../index.html">初级</a>
+    <a class="active" href="./">中级</a>
+    <a href="../hard/">高级</a>
+  </div>
+</div>
+
+<main>
+
+<section id="m1" class="section">
+  <div class="section-head">
+    <span class="section-num">1</span>
+    <div>
+      <h2>有理数</h2>
+      <p>中级目标：会画数轴、会化简符号、会用绝对值比较大小、会处理简单的距离问题。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">知识清单</span><h3>先把工具摆齐</h3></div>
+    <div class="grid-2">
+      <div>
+        <ul class="tight">
+          <li><b>分类：</b>有理数包括正有理数、0、负有理数；整数和分数统称有理数。</li>
+          <li><b>数轴：</b>原点、正方向、单位长度，三要素缺一不可。</li>
+          <li><b>相反数：</b><span class="m">a + (−a) = 0</span>；0 的相反数是 0。</li>
+          <li><b>绝对值：</b>数轴上点到原点的距离，<span class="m">|a| ≥ 0</span>。</li>
+          <li><b>比较大小：</b>数轴上右边的数总比左边的大；两个负数，绝对值大的反而小。</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eq">|a| = a（a ≥ 0）<br>|a| = −a（a &lt; 0）</div>
+        <div class="tip">判断符号先问三句话：正负号是什么？绝对值是多少？它在数轴的哪一边？</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>常规题的固定动作</h3></div>
+    <ol class="big-list">
+      <li><b>画数轴：</b>先定原点、正方向和单位长度，再描点；距离原点几个单位，绝对值就是几。</li>
+      <li><b>化简符号：</b>先定符号，再去括号；<span class="m">−(−a) = a</span>，<span class="m">−|a|</span> 先算绝对值再取相反数。</li>
+      <li><b>比较大小：</b>能画数轴就画数轴；两个负数比较，先算绝对值。</li>
+      <li><b>绝对值方程：</b><span class="m">|x − a| = b</span>（b &gt; 0）表示到 a 的距离是 b，通常有两个解。</li>
+      <li><b>分类讨论：</b>点的位置不确定时，按“在原点左边 / 右边”或“在线段上 / 延长线上”分情况。</li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道题，从符号到距离</h3></div>
+    <p><b>例 1（基础）：</b>化简 <span class="m">−(−3)</span>、<span class="m">−|−5|</span>、<span class="m">|−2/3|</span>。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>−(−3) 表示 −3 的相反数，结果是 3。</li>
+        <li>先算 |−5| = 5，再取相反数，所以 −|−5| = −5。</li>
+        <li>|−2/3| 表示 −2/3 到原点的距离，结果是 2/3。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（提高）：</b>已知 <span class="m">|a| = 3</span>，<span class="m">|b| = 2</span>，且 <span class="m">a &lt; b</span>，求 a、b。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>由 |a| = 3 得 a = 3 或 −3；由 |b| = 2 得 b = 2 或 −2。</li>
+        <li>要满足 a &lt; b，a 只能取 −3。</li>
+        <li>b 可以取 2 或 −2，都满足 −3 &lt; −2 和 −3 &lt; 2。</li>
+        <li>所以 (a, b) = (−3, 2) 或 (−3, −2)。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（应用）：</b>数轴上到 2 的距离是 5 的点表示什么数？</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>设这个点表示的数为 x，则 |x − 2| = 5。</li>
+        <li>到 2 的距离是 5，可能在 2 的右边，也可能在左边。</li>
+        <li>右边：x = 2 + 5 = 7；左边：x = 2 − 5 = −3。</li>
+        <li>所以答案是 7 或 −3。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>0 既不是正数也不是负数；−a 不一定是负数；绝对值等于 3 的数是 ±3；两个负数比较，绝对值大的反而小；距离问题不要漏掉另一个方向。</div>
+</section>
+
+<section id="m2" class="section">
+  <div class="section-head">
+    <span class="section-num">2</span>
+    <div>
+      <h2>有理数的运算</h2>
+      <p>中级目标：先定符号再算数，混合运算不跳步，乘方和科学记数法不混淆。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">知识清单</span><h3>五种运算与顺序</h3></div>
+    <div class="grid-2">
+      <div>
+        <ul class="tight">
+          <li><b>加法：</b>同号相加取相同符号，绝对值相加；异号相加取绝对值大的符号。</li>
+          <li><b>减法：</b><span class="m">a − b = a + (−b)</span>。</li>
+          <li><b>乘法：</b>同号得正，异号得负；任何数乘 0 都得 0。</li>
+          <li><b>除法：</b>除以一个不为 0 的数，等于乘它的倒数。</li>
+          <li><b>乘方：</b>负数的偶次幂为正，奇次幂为负。</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eq">先乘方 → 再乘除 → 最后加减<br>有括号先算括号里面</div>
+        <div class="tip">科学记数法：<span class="m">a × 10ⁿ</span>，其中 <span class="m">1 ≤ |a| &lt; 10</span>，n 是正整数。</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>常规题的固定动作</h3></div>
+    <ol class="big-list">
+      <li><b>先定符号：</b>加减看方向，乘除看符号，乘方看指数的奇偶。</li>
+      <li><b>减法变加法：</b>减去一个数，先写成加上它的相反数，再按加法法则算。</li>
+      <li><b>乘方看清底数：</b><span class="m">−2² = −4</span>，<span class="m">(−2)² = 4</span>。</li>
+      <li><b>混合运算：</b>先乘方，再乘除，最后加减；同级运算从左到右。</li>
+      <li><b>科学记数法：</b>先确定 a 和 n，再还原或比较；指数大的数更大。</li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道题，从计算到记数</h3></div>
+    <p><b>例 1（基础）：</b>计算 <span class="m">−7 + 3 − (−5)</span>。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>先算 −7 + 3 = −4。</li>
+        <li>减去 −5 等于加上 5：−4 + 5 = 1。</li>
+        <li>所以原式 = 1。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（提高）：</b>计算 <span class="m">−2² + (−3)² − (−4)</span>。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>先算乘方：−2² = −4（底数是 2），(−3)² = 9。</li>
+        <li>原式 = −4 + 9 − (−4)。</li>
+        <li>减去 −4 等于加 4：−4 + 9 + 4 = 9。</li>
+        <li>所以原式 = 9。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（应用）：</b>地球到太阳的距离约 <span class="m">1.5 × 10⁸ km</span>，写成原数；<span class="m">3.20 × 10⁴</span> 精确到哪一位？</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>1.5 × 10⁸ = 1.5 × 100000000 = 150000000 km。</li>
+        <li>3.20 × 10⁴ = 32000，最后一位 0 在百位，所以精确到百位。</li>
+        <li>科学记数法的整数位数 = n + 1；1.5 × 10⁸ 是 9 位数。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>−2² 与 (−2)² 混淆；减去负数忘记变加；0 不能作除数；混合运算顺序乱；科学记数法的指数与整数位数搞反。</div>
+</section>
+
+<section id="m3" class="section">
+  <div class="section-head">
+    <span class="section-num">3</span>
+    <div>
+      <h2>代数式</h2>
+      <p>中级目标：会把文字关系写成代数式，会规范书写，会代入求值。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">知识清单</span><h3>字母表示数与求值</h3></div>
+    <div class="grid-2">
+      <div>
+        <ul class="tight">
+          <li><b>字母表示数：</b>字母可以表示任意数，也可以表示变化的量。</li>
+          <li><b>书写规范：</b><span class="m">a × b = ab</span>，<span class="m">1 × a = a</span>，<span class="m">a ÷ 3 = a/3</span>。</li>
+          <li><b>列式关键词：</b>多、少、倍、分、和、差、积、商。</li>
+          <li><b>求值：</b>先代入，再按“乘方 → 乘除 → 加减”的顺序计算。</li>
+          <li><b>整体代入：</b>把 <span class="m">x² + x</span> 看成一个整体，不单独求 x。</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eq">2x² − 3x + 1<br>x = −2 时，值为 15</div>
+        <div class="tip">代入负数要加括号；先乘方，再乘除，最后加减。</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>常规题的固定动作</h3></div>
+    <ol class="big-list">
+      <li><b>先找关系：</b>先写一句“谁等于谁”，再把未知量用字母表示。</li>
+      <li><b>注意括号：</b>“x 与 3 的和的 2 倍”是 <span class="m">2(x + 3)</span>，不是 <span class="m">2x + 3</span>。</li>
+      <li><b>代入求值：</b>把字母换成数，负数加括号，再按顺序算。</li>
+      <li><b>整体代入：</b>已知 <span class="m">x² + x = 3</span>，求 <span class="m">2x² + 2x + 1</span> 时，直接整体替换。</li>
+      <li><b>检查书写：</b>数字写在字母前面，除法写成分数，带分数写成假分数。</li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道题，从列式到求值</h3></div>
+    <p><b>例 1（基础）：</b>用含 n 的式子表示“比 n 的 2 倍少 3”，并求 n = 5 时的值。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>n 的 2 倍是 2n，再少 3，所以式子是 2n − 3。</li>
+        <li>当 n = 5 时，2 × 5 − 3 = 10 − 3 = 7。</li>
+        <li>注意“少 3”是在 2n 的基础上减 3，不是 3 − 2n。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（提高）：</b>当 <span class="m">x = −2</span> 时，求 <span class="m">3x² − 2x + 1</span> 的值。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>代入：3 × (−2)² − 2 × (−2) + 1。</li>
+        <li>先算乘方：(−2)² = 4，所以 3 × 4 = 12。</li>
+        <li>再算乘法：−2 × (−2) = 4。</li>
+        <li>原式 = 12 + 4 + 1 = 17。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（应用）：</b>用小棒摆正方形，第 1 个用 4 根，以后每多一个多用 3 根。第 n 个图形用多少根？n = 10 时呢？</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>第 1 个 4 根，以后每多一个加 3 根，所以是 4 + 3(n − 1)。</li>
+        <li>化简：4 + 3n − 3 = 3n + 1。</li>
+        <li>当 n = 10 时，3 × 10 + 1 = 31 根。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>“少 3”写成 3 − 2n；漏括号；代入负数不加括号；先加减后乘方；不同类的量强行合并。</div>
+</section>
+
+<section id="m4" class="section">
+  <div class="section-head">
+    <span class="section-num">4</span>
+    <div>
+      <h2>整式的加减</h2>
+      <p>中级目标：会认同类项、会合并、会去括号，能把整式化简到最简。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">知识清单</span><h3>整式与同类项</h3></div>
+    <div class="grid-2">
+      <div>
+        <ul class="tight">
+          <li><b>单项式：</b>数与字母的积；系数包括符号。</li>
+          <li><b>多项式：</b>几个单项式的和；每一项包括前面的符号。</li>
+          <li><b>同类项：</b>字母相同，并且相同字母的指数也相同。</li>
+          <li><b>合并：</b>系数相加，字母和指数不变。</li>
+          <li><b>去括号：</b>括号前是负号，括号里每一项都变号。</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eq">3x + 2x = 5x<br>a − (b − c) = a − b + c</div>
+        <div class="tip">3a + 2b 不能合并；3x 与 3x² 不是同类项。</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>常规题的固定动作</h3></div>
+    <ol class="big-list">
+      <li><b>先去括号：</b>括号外的数乘括号内每一项；括号前是负号，每一项都变号。</li>
+      <li><b>再找同类项：</b>字母相同、指数相同，与系数无关。</li>
+      <li><b>合并：</b>系数相加，字母和指数照抄；系数为 0 的项消失。</li>
+      <li><b>化简求值：</b>先化简到最简，再代入数值。</li>
+      <li><b>检查：</b>有没有漏乘？符号有没有全变？</li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道题，从合并到化简</h3></div>
+    <p><b>例 1（基础）：</b>合并同类项 <span class="m">3a + 2b − a + 4b</span>。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>a 的同类项：3a − a = 2a。</li>
+        <li>b 的同类项：2b + 4b = 6b。</li>
+        <li>所以结果是 2a + 6b。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（提高）：</b>化简 <span class="m">2(x + 3) − (x − 1)</span>。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>去括号：2(x + 3) = 2x + 6；−(x − 1) = −x + 1。</li>
+        <li>原式 = 2x + 6 − x + 1。</li>
+        <li>合并：2x − x = x，6 + 1 = 7。</li>
+        <li>所以结果是 x + 7。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（应用）：</b>化简 <span class="m">3(2x² − xy) − 2(3x² − 2xy)</span>。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>去括号：6x² − 3xy − 6x² + 4xy。</li>
+        <li>x² 项：6x² − 6x² = 0。</li>
+        <li>xy 项：−3xy + 4xy = xy。</li>
+        <li>所以结果是 xy。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>把 3a + 2b 合成 5ab；2(x + 3) 只乘第一项；去括号只变第一项；P − Q 中 Q 的项没有全变号。</div>
+</section>
+
+<section id="m5" class="section">
+  <div class="section-head">
+    <span class="section-num">5</span>
+    <div>
+      <h2>一元一次方程</h2>
+      <p>中级目标：五步解方程不跳步，应用题会找等量关系并检验。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">知识清单</span><h3>方程与等式性质</h3></div>
+    <div class="grid-2">
+      <div>
+        <ul class="tight">
+          <li><b>方程：</b>含有未知数的等式；使等式成立的未知数的值叫解。</li>
+          <li><b>等式性质：</b>两边同加、同减、同乘、同除以一个不为 0 的数，等式仍成立。</li>
+          <li><b>解方程五步：</b>去分母 → 去括号 → 移项 → 合并 → 系数化为 1。</li>
+          <li><b>应用题五步：</b>设未知数 → 找等量关系 → 列方程 → 解 → 检验并写答。</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eq">2x + 3 = 11<br>2x = 8 → x = 4</div>
+        <div class="tip">移项要变号；去分母时，不含分母的项也要乘最小公倍数。</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>常规题的固定动作</h3></div>
+    <ol class="big-list">
+      <li><b>去分母：</b>两边乘所有分母的最小公倍数，分子是多项式要加括号。</li>
+      <li><b>去括号：</b>括号外的数乘括号内每一项。</li>
+      <li><b>移项：</b>含未知数的项移到左边，常数项移到右边，移哪一项哪一项变号。</li>
+      <li><b>合并：</b>化成 <span class="m">ax = b</span>，再两边除以 a。</li>
+      <li><b>检验：</b>把解代回原方程，左右两边相等才算对。</li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道题，从解方程到应用</h3></div>
+    <p><b>例 1（基础）：</b>解方程 <span class="m">2x + 3 = 11</span>。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>移项：2x = 11 − 3 = 8。</li>
+        <li>系数化为 1：x = 8 ÷ 2 = 4。</li>
+        <li>检验：左边 2 × 4 + 3 = 11，右边也是 11。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（提高）：</b>解方程 <span class="m">(x + 1)/2 − (2x − 1)/3 = 1</span>。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>分母 2、3 的最小公倍数是 6，两边每一项都乘 6。</li>
+        <li>3(x + 1) − 2(2x − 1) = 6。</li>
+        <li>去括号：3x + 3 − 4x + 2 = 6，合并得 −x + 5 = 6。</li>
+        <li>移项：−x = 1，所以 x = −1。</li>
+        <li>检验：左边 (0)/2 − (−3)/3 = 1，成立。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（应用）：</b>爸爸今年 38 岁，儿子 10 岁，几年后爸爸的年龄是儿子的 3 倍？</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>设 x 年后，爸爸 38 + x 岁，儿子 10 + x 岁。</li>
+        <li>等量关系：38 + x = 3(10 + x)。</li>
+        <li>去括号：38 + x = 30 + 3x。</li>
+        <li>移项合并：8 = 2x，所以 x = 4。</li>
+        <li>4 年后爸爸 42 岁，儿子 14 岁，42 = 3 × 14，符合题意。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>移项不变号；去分母漏乘整数项；去括号漏乘；系数化 1 时除反；应用题不检验。</div>
+</section>
+
+<section id="m6" class="section">
+  <div class="section-head">
+    <span class="section-num">6</span>
+    <div>
+      <h2>几何图形初步</h2>
+      <p>中级目标：会画线段和角，会用中点、角平分线、余角补角做计算。</p>
+    </div>
+  </div>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">知识清单</span><h3>线段与角</h3></div>
+    <div class="grid-2">
+      <div>
+        <ul class="tight">
+          <li><b>图形：</b>立体图形与平面图形；立体图形的表面可以展开成平面图形。</li>
+          <li><b>线段：</b>两点之间线段最短；两点之间线段的长度叫距离。</li>
+          <li><b>中点：</b><span class="m">AM = MB = AB ÷ 2</span>。</li>
+          <li><b>角：</b>1° = 60′，1′ = 60″；角平分线把角分成两个相等的角。</li>
+          <li><b>余补角：</b>互余两角和 90°，互补两角和 180°。</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eq">AM = MB = AB ÷ 2<br>∠AOC = ∠COB = ∠AOB ÷ 2</div>
+        <div class="tip">几何题先画图，把已知标在图上，再写“因为……所以……”。</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">方法</span><h3>常规题的固定动作</h3></div>
+    <ol class="big-list">
+      <li><b>先画图：</b>把点的位置、线段长度、角度标清楚。</li>
+      <li><b>线段和差：</b>看点在不在线段上；不在线段上时，考虑延长线。</li>
+      <li><b>中点：</b>先找一半，再用“和”或“差”求目标线段。</li>
+      <li><b>角平分线：</b>先找两个相等的角，再算和差。</li>
+      <li><b>余补角：</b>抓住“和为 90° / 180°”，不要和“剩下的角”混为一谈。</li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <div class="card-head"><span class="tag">例题</span><h3>3 道题，从线段到钟面角</h3></div>
+    <p><b>例 1（基础）：</b>线段 AB = 10，M 是 AB 的中点，求 AM；一个角是 30°，求它的余角和补角。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>中点把线段平分：AM = 10 ÷ 2 = 5。</li>
+        <li>余角 = 90° − 30° = 60°。</li>
+        <li>补角 = 180° − 30° = 150°。</li>
+      </ol></div>
+    </details>
+    <p><b>例 2（提高）：</b>线段 AB = 12，C 是 AB 的中点，D 在 CB 上，CD = 3，求 AD。</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>C 是 AB 的中点，所以 AC = 12 ÷ 2 = 6。</li>
+        <li>D 在 CB 上，CD = 3，所以 AD = AC + CD。</li>
+        <li>AD = 6 + 3 = 9。</li>
+      </ol></div>
+    </details>
+    <p><b>例 3（应用）：</b>3 点 30 分，钟面上时针与分针的夹角是多少度？</p>
+    <details class="quick-task">
+      <summary>看详细解析</summary>
+      <div class="quick-answer"><ol class="tight">
+        <li>分针指向 6，是 180°。</li>
+        <li>时针在 3 和 4 的正中间，3.5 × 30° = 105°。</li>
+        <li>夹角 = 180° − 105° = 75°。</li>
+      </ol></div>
+    </details>
+  </article>
+
+  <div class="warn"><b>易错点：</b>直线不能量长度；射线只有一个端点；点可能在延长线上，要分类；余角和补角混淆；度分秒按 60 进制。</div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>人教版 2024 新版七年级数学上册 · 中级难度完整指南</p>
+  <p class="muted">先会做常规题，再挑战综合题。</p>
+</footer>
+
+</body>
+</html>
