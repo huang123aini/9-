@@ -363,6 +363,168 @@ body[data-chapter="25"] .hero {
   line-height: 1.7;
 }
 
+.level-up {
+  border-left: 6px solid var(--purple);
+}
+
+.level-medium {
+  border-top: 4px solid var(--primary);
+}
+
+.level-hard {
+  border-top: 4px solid var(--purple);
+}
+
+.level-hard h4 {
+  color: var(--purple);
+}
+
+.level-box h5 {
+  margin: 12px 0 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.level-bar {
+  border-bottom: 1px solid var(--line);
+  background: #f8fafc;
+}
+
+.level-bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.level-bar-inner > span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.level-bar-inner a {
+  padding: 5px 12px;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.level-bar-inner a:hover { background: #e2e8f0; color: var(--ink); }
+.level-bar-inner a.active { background: var(--primary); color: #ffffff; }
+.level-bar-inner a.hard.active { background: var(--purple); }
+
+.level-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--line);
+  font-size: 13px;
+}
+
+.level-switch > span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.level-switch a {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.level-switch a:hover { background: #dbeafe; }
+.level-switch a.quick { background: #fffbeb; color: #b45309; }
+.level-switch a.hard { background: #f3e8ff; color: var(--purple); }
+
+.level-hero.medium {
+  background:
+    radial-gradient(700px 380px at 84% 10%, rgba(45, 212, 191, 0.38), transparent 65%),
+    radial-gradient(600px 380px at 8% 92%, rgba(37, 99, 235, 0.5), transparent 65%),
+    linear-gradient(135deg, #0b1228 0%, #1e3a8a 55%, #0f766e 100%);
+}
+
+.level-hero.medium::before {
+  content: "中等 · 常规题型 · 方法清单";
+}
+
+.level-hero.medium::before,
+.level-hero.hard::before {
+  font-size: clamp(24px, 5.5vw, 72px);
+  opacity: 0.07;
+}
+
+.level-hero.hard {
+  background:
+    radial-gradient(700px 380px at 84% 10%, rgba(251, 191, 36, 0.35), transparent 65%),
+    radial-gradient(600px 380px at 8% 92%, rgba(124, 58, 237, 0.55), transparent 65%),
+    linear-gradient(135deg, #1c0b2e 0%, #4c1d95 52%, #9a3412 100%);
+}
+
+.level-hero.hard::before {
+  content: "高等 · 综合模型 · 压轴题";
+}
+
+.level-list { display: grid; gap: 12px; }
+
+.level-item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #ffffff;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+}
+
+.level-item:hover {
+  transform: translateY(-2px);
+  border-color: #bfdbfe;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+
+.level-num {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #eef2ff;
+  color: var(--primary);
+  font-family: Georgia, "PingFang SC", serif;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.level-item h3 { margin: 0 0 2px; font-size: 17px; }
+.level-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.level-go { margin-left: auto; color: var(--primary); font-weight: 700; font-size: 13px; white-space: nowrap; }
+
+.level-page.hard .level-num { background: #f3e8ff; color: var(--purple); }
+.level-page.hard .level-item:hover { border-color: #d8b4fe; }
+.level-page.hard .level-go { color: var(--purple); }
+
+@media (max-width: 640px) {
+  .level-item { flex-wrap: wrap; }
+  .level-go { margin-left: 0; }
+}
+
 @media (max-width: 900px) {
   .quick .grid-2 { grid-template-columns: 1fr; }
 }

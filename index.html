@@ -39,6 +39,15 @@
   </div>
 </nav>
 
+<div class="level-bar">
+  <div class="level-bar-inner">
+    <span>难度目录：</span>
+    <a class="active" href="index.html">初等</a>
+    <a href="medium/">中等目录</a>
+    <a href="hard/">高等目录</a>
+  </div>
+</div>
+
 <main>
 
 <section id="bookmap" class="section">
@@ -130,7 +139,7 @@
     <p>核心问题：一个未知数、最高次数是 2 的方程，怎么解？</p>
   </div>
 
-  <article class="card quick">
+  <article id="ch21-quick" class="card quick">
     <div class="card-head"><span class="tag">白话速览</span><h3>先用一句话看懂本章</h3></div>
     <p class="quick-line">一句话：<b>知道面积，反推边长。</b> 就像知道正方形面积是 9，问边长是多少；答案是 3 或 −3。</p>
     <div class="grid-2">
@@ -148,6 +157,53 @@
         <details class="quick-task">
           <summary>3 分钟小任务：解 x² − 5x + 6 = 0（点开看答案）</summary>
           <div class="quick-answer">x² − 5x + 6 = (x − 2)(x − 3) = 0，所以 x = 2 或 x = 3。检验：2 + 3 = 5，2 × 3 = 6。</div>
+        </details>
+      </div>
+    </div>
+  </article>
+
+  <article class="card level-up">
+    <div class="card-head"><span class="tag">难度进阶</span><h3>中等难度版 / 高等难度版</h3></div>
+    <p class="lead">基础看懂了，再用这两版往上走：中等版覆盖常规题型，高等版冲击综合题和压轴题。</p>
+    <div class="level-switch">
+      <span>本章切换：</span>
+      <a class="quick" href="#ch21-quick">初等</a>
+      <a href="#ch21-medium">中等</a>
+      <a class="hard" href="#ch21-hard">高等</a>
+    </div>
+    <div class="grid-2">
+      <div id="ch21-medium" class="quick-box level-medium">
+        <h4>中等难度版 · 会做常规题</h4>
+        <h5>重点方法</h5>
+        <ul class="tight">
+          <li><b>解法选择：</b>能开方、能因式分解就优先；看不出分解时用公式法；配方法主要用于推导和变形。</li>
+          <li><b>判别式：</b>含参数先保证 <span class="m">a ≠ 0</span>，再算 <span class="m">Δ = b² − 4ac</span>。</li>
+          <li><b>韦达定理：</b><span class="m">x₁ + x₂ = −b/a</span>，<span class="m">x₁x₂ = c/a</span>；使用前确认 Δ ≥ 0。</li>
+          <li><b>对称式：</b><span class="m">x₁² + x₂² = (x₁+x₂)² − 2x₁x₂</span>；<span class="m">1/x₁ + 1/x₂ = (x₁+x₂)/(x₁x₂)</span>。</li>
+          <li><b>应用题：</b>增长率 <span class="m">a(1+x)² = b</span>；面积、利润先建模，再检验根是否符合实际。</li>
+        </ul>
+        <h5>典型题</h5>
+        <p>已知 x₁、x₂ 是 <span class="m">x² − 3x − 2 = 0</span> 的两根，求 x₁² + x₂²。</p>
+        <details class="quick-task">
+          <summary>看答案</summary>
+          <div class="quick-answer">x₁ + x₂ = 3，x₁x₂ = −2，所以 x₁² + x₂² = (x₁+x₂)² − 2x₁x₂ = 9 − 2×(−2) = 13。</div>
+        </details>
+      </div>
+      <div id="ch21-hard" class="quick-box level-hard">
+        <h4>高等难度版 · 冲击压轴题</h4>
+        <h5>综合模型</h5>
+        <ul class="tight">
+          <li><b>根的分布：</b>两正根要 Δ ≥ 0、和 &gt; 0、积 &gt; 0；两负根要 Δ ≥ 0、和 &lt; 0、积 &gt; 0；异号只要积 &lt; 0。</li>
+          <li><b>两根都大于 k：</b>令 <span class="m">t = x − k</span>，转化为 t 的两个正根；也可结合对称轴和端点函数值。</li>
+          <li><b>含参讨论：</b>先分二次项系数为 0 和不为 0，再分 Δ 的符号。</li>
+          <li><b>整数根：</b>判别式是完全平方，配合因式分解、整除讨论。</li>
+          <li><b>构造方程：</b>以 <span class="m">x₁+1, x₂+1</span> 或 <span class="m">1/x₁, 1/x₂</span> 为根，先求和与积。</li>
+        </ul>
+        <h5>挑战题</h5>
+        <p>关于 x 的方程 <span class="m">(m−1)x² − 2mx + m + 1 = 0</span> 有两个不相等的正根，求 m 的取值范围。</p>
+        <details class="quick-task">
+          <summary>看答案</summary>
+          <div class="quick-answer">m ≠ 1。Δ = 4m² − 4(m−1)(m+1) = 4 &gt; 0。两根为 1 和 (m+1)/(m−1)，且 (m+1)/(m−1) 恒不等于 1，所以两根不相等。要两根都为正，只需 (m+1)/(m−1) &gt; 0，解得 m &lt; −1 或 m &gt; 1。所以 m ∈ (−∞, −1) ∪ (1, +∞)。</div>
         </details>
       </div>
     </div>
@@ -374,7 +430,7 @@
     <p>核心问题：一条抛物线，为什么由 a、h、k 三个数就决定了？</p>
   </div>
 
-  <article class="card quick">
+  <article id="ch22-quick" class="card quick">
     <div class="card-head"><span class="tag">白话速览</span><h3>先用一句话看懂本章</h3></div>
     <p class="quick-line">一句话：<b>投篮的路线。</b> 球飞出去，先上升再落下，路线是一条抛物线。二次函数就是描述这条路线。</p>
     <div class="grid-2">
@@ -392,6 +448,53 @@
         <details class="quick-task">
           <summary>3 分钟小任务：y = (x − 2)² + 3 的顶点、对称轴、最小值？（点开看答案）</summary>
           <div class="quick-answer">顶点是 (2, 3)，对称轴是 x = 2，最小值是 3。因为 a = 1 &gt; 0，开口向上，顶点就是最低点。</div>
+        </details>
+      </div>
+    </div>
+  </article>
+
+  <article class="card level-up">
+    <div class="card-head"><span class="tag">难度进阶</span><h3>中等难度版 / 高等难度版</h3></div>
+    <p class="lead">基础看懂了，再用这两版往上走：中等版覆盖常规题型，高等版冲击综合题和压轴题。</p>
+    <div class="level-switch">
+      <span>本章切换：</span>
+      <a class="quick" href="#ch22-quick">初等</a>
+      <a href="#ch22-medium">中等</a>
+      <a class="hard" href="#ch22-hard">高等</a>
+    </div>
+    <div class="grid-2">
+      <div id="ch22-medium" class="quick-box level-medium">
+        <h4>中等难度版 · 会做常规题</h4>
+        <h5>重点方法</h5>
+        <ul class="tight">
+          <li><b>求解析式：</b>已知三点用一般式；已知顶点用顶点式；已知与 x 轴两个交点用交点式。</li>
+          <li><b>图象性质：</b>a 定开口，对称轴 <span class="m">x = −b/(2a)</span>，顶点是最高点或最低点。</li>
+          <li><b>平移：</b>先化成顶点式，再“左加右减、上加下减”。</li>
+          <li><b>对称：</b>关于 x 轴 <span class="m">y → −y</span>；关于 y 轴 <span class="m">x → −x</span>；关于原点 <span class="m">(x,y) → (−x,−y)</span>。</li>
+          <li><b>与方程、不等式：</b>看图象与 x 轴交点；看图象在 x 轴上方还是下方。</li>
+        </ul>
+        <h5>典型题</h5>
+        <p>抛物线经过 (0, 3)、(1, 0)、(3, 0)，求它的解析式。</p>
+        <details class="quick-task">
+          <summary>看答案</summary>
+          <div class="quick-answer">与 x 轴交于 (1,0)、(3,0)，设 y = a(x−1)(x−3)。代入 (0,3)：3 = a×(−1)×(−3) = 3a，所以 a = 1。解析式为 y = (x−1)(x−3) = x² − 4x + 3。</div>
+        </details>
+      </div>
+      <div id="ch22-hard" class="quick-box level-hard">
+        <h4>高等难度版 · 冲击压轴题</h4>
+        <h5>综合模型</h5>
+        <ul class="tight">
+          <li><b>区间最值：</b>先看对称轴是否在区间内；轴动区间定、轴定区间动都要分类讨论。</li>
+          <li><b>含参抛物线：</b>恒过定点、顶点轨迹、判别式与交点个数。</li>
+          <li><b>抛物线与几何：</b>面积最大、线段和最小、存在性问题（等腰、直角、平行四边形）。</li>
+          <li><b>图象与绝对值：</b><span class="m">y = |ax²+bx+c|</span> 把 x 轴下方部分翻折到上方（拓展）。</li>
+          <li><b>数形结合：</b>方程的根 ↔ 交点横坐标；不等式的解集 ↔ 图象位置。</li>
+        </ul>
+        <h5>挑战题</h5>
+        <p>抛物线 <span class="m">y = x² − 2x − 3</span> 与 x 轴交于 A、B（A 在左），与 y 轴交于 C。在对称轴上求一点 P，使 PA + PC 最小，求 P 的坐标。</p>
+        <details class="quick-task">
+          <summary>看答案</summary>
+          <div class="quick-answer">A(−1,0)，B(3,0)，C(0,−3)，对称轴 x = 1。因为 PA = PB，所以 PA + PC = PB + PC；当 B、P、C 三点共线时最短。直线 BC：y = x − 3，令 x = 1，得 y = −2，所以 P(1, −2)。</div>
         </details>
       </div>
     </div>

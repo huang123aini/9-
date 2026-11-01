@@ -35,6 +35,15 @@
   </div>
 </nav>
 
+<div class="level-bar">
+  <div class="level-bar-inner">
+    <span>难度目录：</span>
+    <a href="index.html">初等</a>
+    <a href="medium/">中等目录</a>
+    <a href="hard/">高等目录</a>
+  </div>
+</div>
+
 <main>
 
 <section id="goals" class="section">
@@ -66,7 +75,7 @@
   </div>
 </section>
 
-<article class="card quick">
+<article id="ch23-quick" class="card quick">
   <div class="card-head"><span class="tag">白话速览</span><h3>先用一句话看懂本章</h3></div>
   <p class="quick-line">一句话：<b>风车转了一圈。</b> 图形绕一个点转动，形状和大小都不变，只是换了个位置。</p>
   <div class="grid-2">
@@ -84,6 +93,53 @@
       <details class="quick-task">
         <summary>3 分钟小任务：点 (3, −2) 关于原点对称？正方形绕中心至少转多少度与自身重合？（点开看答案）</summary>
         <div class="quick-answer">关于原点对称：(−3, 2)，两个坐标都变相反数。正方形绕中心至少转 90°，四个顶点位置互换，与自身重合。</div>
+      </details>
+    </div>
+  </div>
+</article>
+
+<article class="card level-up">
+  <div class="card-head"><span class="tag">难度进阶</span><h3>中等难度版 / 高等难度版</h3></div>
+  <p class="lead">基础看懂了，再用这两版往上走：中等版覆盖常规题型，高等版冲击综合题和压轴题。</p>
+  <div class="level-switch">
+    <span>本章切换：</span>
+    <a class="quick" href="#ch23-quick">初等</a>
+    <a href="#ch23-medium">中等</a>
+    <a class="hard" href="#ch23-hard">高等</a>
+  </div>
+  <div class="grid-2">
+    <div id="ch23-medium" class="quick-box level-medium">
+      <h4>中等难度版 · 会做常规题</h4>
+      <h5>重点方法</h5>
+      <ul class="tight">
+        <li><b>旋转作图：</b>定中心 → 连对应点 → 转相同角度 → 截相等长度。</li>
+        <li><b>旋转性质：</b>旋转前后全等；对应点到中心距离相等；对应点与中心连线的夹角等于旋转角。</li>
+        <li><b>中心对称：</b>旋转 180°；关于原点对称 <span class="m">(x,y) → (−x,−y)</span>。</li>
+        <li><b>中心对称图形：</b>平行四边形、圆、线段、正六边形等。</li>
+        <li><b>旋转对称：</b>每转 <span class="m">360°/n</span> 与自身重合。</li>
+      </ul>
+      <h5>典型题</h5>
+      <p>点 A(3, −2) 绕原点旋转 180° 后的坐标是什么？正方形绕中心至少转多少度与自身重合？</p>
+      <details class="quick-task">
+        <summary>看答案</summary>
+        <div class="quick-answer">关于原点对称，两个坐标都变相反数，所以是 (−3, 2)；正方形绕中心至少转 90° 与自身重合。</div>
+      </details>
+    </div>
+    <div id="ch23-hard" class="quick-box level-hard">
+      <h4>高等难度版 · 冲击压轴题</h4>
+      <h5>综合模型</h5>
+      <ul class="tight">
+        <li><b>旋转构造全等：</b>等边三角形、正方形共顶点的“手拉手”模型。</li>
+        <li><b>半角模型：</b>正方形中 ∠EAF = 45°，把 △ABE 绕 A 旋转 90° 到 △ADG，证 EF = BE + DF。</li>
+        <li><b>旋转中的最值：</b>把分散的线段转移到一起，利用“两点之间线段最短”。</li>
+        <li><b>坐标与旋转：</b>关于原点对称是基本型；绕任意点旋转要先平移再旋转（拓展）。</li>
+        <li><b>图案设计：</b>基本图形 + 旋转中心 + 份数。</li>
+      </ul>
+      <h5>挑战题</h5>
+      <p>正方形 ABCD 的边长为 4，E、F 分别在 BC、CD 上，∠EAF = 45°，求 △CEF 的周长。</p>
+      <details class="quick-task">
+        <summary>看答案</summary>
+        <div class="quick-answer">把 △ABE 绕 A 顺时针旋转 90° 到 △ADG，则 BE = DG，AE = AG，且 ∠GAF = 45°，所以 △AEF ≌ △AGF，EF = GF = DF + DG = DF + BE。于是 C△CEF = CE + CF + EF = (BC−BE) + (CD−DF) + (BE+DF) = BC + CD = 8。</div>
       </details>
     </div>
   </div>
